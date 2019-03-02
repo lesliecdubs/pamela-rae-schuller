@@ -1,0 +1,12 @@
+@import "../helpers/mixins";
+
+//  ==========================================================================
+//
+//  Include All Fonts
+//
+//  ==========================================================================
+@include declare-font-face('playfairdisplay-black', '../assets/fonts/playfairdisplay-black-webfont');
+@include declare-font-face('playfairdisplay-black-italic', '../assets/fonts/playfairdisplay-blackitalic-webfont');
+@include declare-font-face('heebo-bold', '../assets/fonts/heebo-bold-webfont');
+@include declare-font-face('heebo-medium', '../assets/fonts/heebo-medium-webfont');
+@include declare-font-face('heebo-regular', '../assets/fonts/heebo-regular-webfont');

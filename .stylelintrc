@@ -1,0 +1,62 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-declaration-strict-value",
+    "stylelint-order"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["neat-outer-container", "neat-span-columns"]
+    }],
+    "at-rule-empty-line-before": null,
+    "block-opening-brace-space-before": "always",
+    "color-hex-case": "lower",
+    "comment-empty-line-before": null,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-colon-newline-after": null,
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always-single-line",
+    "declaration-empty-line-before": null,
+    "declaration-property-unit-whitelist": [{
+      "font-size": ["em", "rem", "vw"],
+      "margin": ["em", "rem", "vh"],
+      "margin-top": ["em", "rem", "vh"],
+      "margin-right": ["em", "rem", "vh"],
+      "margin-bottom": ["em", "rem", "vh"],
+      "margin-left": ["em", "rem", "vh"],
+      "padding": ["em", "rem"],
+      "padding-top": ["em", "rem"],
+      "padding-right": ["em", "rem"],
+      "padding-bottom": ["em", "rem"],
+      "padding-left": ["em", "rem"],
+      "height": ["em", "rem", "%", "vh"],
+      "width": ["em", "rem", "%", "vw"]
+    }, {
+      "severity": "warning"
+      }
+    ],
+    "function-url-quotes": "always",
+    "no-descending-specificity": null,
+    "no-invalid-double-slash-comments": true,
+    "number-leading-zero": "always",
+		"order/order": [
+			"custom-properties",
+			"declarations"
+		],
+		"order/properties-alphabetical-order": true,
+    "scale-unlimited/declaration-strict-value": [
+      ["/color/", "border", "font-weight"], {
+      "ignoreKeywords": {
+        "/color/": ["currentColor", "transparent", "inherit", "white", "black"],
+        "border": ["currentColor", "transparent", "inherit", "white", "black", "0"],
+        "font-weight": ["normal", "inherit"]
+      },
+      "disableFix": true
+    }],
+    "selector-attribute-quotes": "always",
+    "selector-list-comma-newline-after": null,
+    "string-quotes": "double",
+    "value-list-comma-newline-after": null
+  }
+}

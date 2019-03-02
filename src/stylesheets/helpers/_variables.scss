@@ -1,0 +1,93 @@
+//  ======================================================================================================
+//
+//  Variables
+//
+//  ======================================================================================================
+
+//  Responsive Breakpoints
+//  --------------------------------------------------
+$break-sm: 580px !default;
+$break-md: 768px !default;
+$break-lg: 1024px !default;
+$break-xl: 1280px !default;
+
+//  Color
+//  --------------------------------------------------
+// Neutrals
+$white: rgba(255, 255, 255, 1) !default; // #FFFFFF
+$black: rgba(0, 0, 0, 1) !default; // #000000
+$transparent: rgba(0, 0, 0, 0) !default;
+
+// Theme
+$grey: rgba(64, 64, 64, 1) !default; // #404040
+$navy: rgba(44, 47, 65, 1) !default; // #2C2F41
+$spinnaker: rgba(164, 230, 222, 1) !default; // #A4E6DE
+$mint: rgb(6, 220, 192) !default; // #06DCC0
+
+//  Default Color Settings
+//  --------------------------------------------------
+$body-bg: $white !default;
+$default-txt-color: $grey !default;
+$placeholder-txt-color: $navy !default;
+
+$hr-color: $grey !default;
+$highlight: $mint !default;
+$highlight-text: $white !default;
+
+//  Font Families
+//  --------------------------------------------------
+$font-playfair-black: 'playfairdisplay-black', Georgia, serif !important;
+$font-playfair-black-italic: 'playfairdisplay-black-italic', Georgia, serif !important;
+$font-heebo-bold: 'heebo-bold', Helvetica, Arial, sans-serif !important;
+$font-heebo-medium: 'heebo-medium', Helvetica, Arial, sans-serif !important;
+$font-heebo-regular: 'heebo-regular', Helvetica, Arial, sans-serif !important;
+
+//  Font Stacks
+//  --------------------------------------------------
+$font-bold: $font-heebo-bold !default;
+$font-regular: $font-heebo-regular !default;
+$font-italic: $font-playfair-black-italic !default;
+$font-family-default: $font-regular !default;
+
+//  Type Sizes (use rem mixin to apply)
+//  --------------------------------------------------
+$font-size-root: 16 !default;
+$font-size-base: 1rem !default;
+
+//  Defaults
+//  --------------------------------------------------
+$font-weight-default: normal !default;
+$line-height-base: 1.25 !default;
+
+//  Headings
+//  --------------------------------------------------
+$headings-font-family: $font-playfair-black !default;
+$headings-font-weight: normal !default;
+$headings-line-height: $line-height-base !default;
+$headings-font-color: $navy !default;
+
+//  Blockquotes
+//  --------------------------------------------------
+$blockquote-font-family: $font-family-default !default;
+$blockquote-txt-size: $font-size-base !default;
+$blockquote-txt-color: $default-txt-color !default;
+
+//  Links
+//  --------------------------------------------------
+$link-color: $grey !default;
+$link-hover-color: $mint !default;
+
+//  Forms
+//  --------------------------------------------------
+$font-family-form: $font-family-default !default;
+$font-family-label: $font-family-default !default;
+
+//  Animation
+//  --------------------------------------------------
+$default-animation: all 0.15s !default;
+$default-animation-duration: 0.15s !default;
+
+//  Layout
+//  --------------------------------------------------
+$max-width: 1440px !default;
+$max-width-nav: 1600px !default;

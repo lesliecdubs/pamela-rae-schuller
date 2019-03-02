@@ -1,0 +1,37 @@
+//  ==========================================================================
+//
+//  Menu
+//
+//  ==========================================================================
+.menu-bar {
+  margin: rem(20px 0);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.menu__item {
+  @include font-size(20);
+  margin: rem(0 15px);
+
+  &:first-of-type {
+    margin-left: 0;
+    margin-right: rem(20px);
+  }
+
+  &:last-of-type {
+    margin-left: auto;
+  }
+
+  a {
+    padding: rem(5px);
+  }
+}

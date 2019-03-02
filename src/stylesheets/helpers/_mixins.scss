@@ -1,0 +1,258 @@
+// ======================================================================================================
+//
+// Mixins
+//
+// ======================================================================================================
+// --------------------------------------------------
+// Font Face Includes
+// --------------------------------------------------
+@mixin declare-font-face($font-family, $font-filename, $font-weight: normal, $font-style: normal, $font-stretch: normal) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('#{$font-filename}.woff2') format('woff2'),
+    url('#{$font-filename}.woff') format('woff');
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+    font-weight: $font-weight;
+  }
+}
+
+// --------------------------------------------------
+// Utils
+// --------------------------------------------------
+// Clearfix Mixin
+@mixin clearfix() {
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Sizing shortcuts
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+@mixin square-responsive() {
+  width: 100%;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+// ------------------------------------------------
+// Aspect ratio
+// ------------------------------------------------
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  >* {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+// ------------------------------------------------
+// Font Styles
+// ------------------------------------------------
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+}
+
+@mixin truncate-text() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Rem size calculator
+@mixin font-size($sizeValue) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / $font-size-root) + rem;
+}
+
+// Pixel to unitless line height calculation
+@mixin line-height($pixelLineHeight, $fontSize) {
+  line-height: ($pixelLineHeight / $fontSize);
+}
+
+//  Set combined font size & line height
+@mixin font-line-height-px($fontSize, $pixelLineHeight) {
+  font-size: $fontSize + px;
+  font-size: ($fontSize / $font-size-root) + rem;
+  line-height: ($pixelLineHeight / $fontSize);
+}
+
+// Photoshop to CSS letter spacing calcuation
+@mixin letter-spacing($spacingValue) {
+  letter-spacing: ($spacingValue / 1000) + em;
+}
+
+// ------------------------------------------------
+// Gradients
+// ------------------------------------------------
+@mixin linear-gradient($direction, $color1, $color2) {
+  background: linear-gradient(to $direction, $color1 0%, $color2 100%);
+}
+
+@mixin linear-gradient-hover($direction, $color1, $color2) {
+  background: linear-gradient(to $direction, $color1 0%, $color1 50%, $color2 50%, $color2 100%);
+  transition: all $default-animation-duration ease-in-out;
+
+  @if $direction=='bottom'or 'top' {
+    background-size: 100% 200%;
+    background-position: 0% 200%;
+  }
+
+  @else {
+    background-size: 200% 100%;
+    background-position: 100%;
+  }
+}
+
+@mixin text-gradient-with-hover($color1, $color2) {
+  color: $color1;
+  background: -webkit-linear-gradient(left,
+    $color1 0%,
+    $color1 50%,
+    $color2 51%,
+    $color2 100%);
+  background-position: 200%;
+  background-size: 202% 100%;
+  transition: all $default-animation-duration ease-in-out;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+
+  @include no-touch(':hover') {
+    color: $color2;
+    background-position: 100%;
+  }
+}
+
+// --------------------------------------------------
+// Responsive Breakpoints
+// --------------------------------------------------
+$breakpoints: ('sm' : (min-width: $break-sm),
+'md' : (min-width: $break-md),
+'lg' : (min-width: $break-lg),
+'xl' : (min-width: $break-xl));
+
+@mixin breakpoint($name) {
+  @media #{inspect(map-get($breakpoints, $name))} {
+    @content;
+  }
+}
+
+// --------------------------------------------------
+// Break out style so it only applies to non-touch devices
+// --------------------------------------------------
+// 'state' applies to a specific action, like :hover, :active, :focus
+@mixin no-touch($state: "") {
+  @if $state !="" {
+    @at-root .no-touch #{& + $state} {
+      @content;
+    }
+  }
+
+  @else {
+    @at-root .no-touch #{&} {
+      @content;
+    }
+  }
+}
+
+@mixin touch($state: "") {
+  @if $state !="" {
+    @at-root .touch #{& + $state} {
+      @content;
+    }
+  }
+
+  @else {
+    @at-root .touch #{&} {
+      @content;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Retina Media Query
+// --------------------------------------------------
+@mixin retina() {
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+    (-moz-min-device-pixel-ratio: 2),
+    (-o-min-device-pixel-ratio: 3/2),
+    (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+// --------------------------------------------------
+// Keyframe
+// --------------------------------------------------
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+
+  -webkit-animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  animation: $animations;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}

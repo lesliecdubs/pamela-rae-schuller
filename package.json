@@ -1,20 +1,29 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "pamela-rae-schuller",
+  "description": "Website of Pamela Rae Schuller, Comedian. Speaker. Advocate.",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Leslie Cohn-Wein <leslie@cohnwein.com>",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
-    "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.11",
     "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-react-svg": "^2.0.0",
+    "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.7",
+    "gatsby-source-contentful": "^2.0.33",
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-transformer-sharp": "^2.1.4",
+    "node-sass": "^4.11.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "sass-rem": "^2.0.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-declaration-strict-value": "^1.1.2",
+    "stylelint-order": "^2.0.0"
   },
   "keywords": [
     "gatsby"
