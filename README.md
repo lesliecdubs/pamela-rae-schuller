@@ -4,17 +4,15 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b13366f3-9553-43e6-b8ec-3be20b41f9cc/deploy-status)](https://app.netlify.com/sites/pamela-comedy/deploys)
 
-Pamela Rae Schuller does inclusion differently. Through comedy, storytelling, and laughter your community will leave with concrete goals and a new mindset to become more inclusive.
+Pamela Rae Schuller does inclusion differently. Through comedy, storytelling, and laughter, Pamela will transform your worldview and leave your group with concrete goals and a new mindset to become more inclusive.
 
-This repo contains Pamela's personal website.
-
-## 🚀 Quick start
-
-This site:
+This repo contains Pam's personal website. The site:
 - runs on [Gatsby](https://www.gatsbyjs.org), the static site generator for React
-- uses [Sass](https://sass-lang.com/) for super-powered styles (no need for CSS modules since this is a tiny site! we're using global styles with the cascade to our advantage)
+- uses [Sass](https://sass-lang.com/) for super-powered styles
 - has content powered by [Contentful](http://www.contentful.com), maintained and updated by Pamela and team
 - deploys to [Netlify](http://www.netlify.com)
+
+## 🚀 Quick start
 
 1.  **First-time setup.**
 
