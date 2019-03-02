@@ -1,16 +1,20 @@
-<h1 align="center">
+<h1 align="left">
   Pamela Rae Schuller
 </h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b13366f3-9553-43e6-b8ec-3be20b41f9cc/deploy-status)](https://app.netlify.com/sites/pamela-comedy/deploys)
 
-Kick off your project with this default boilerplate. This barebones starter ships with the main Gatsby configuration files you might need. 
+Pamela Rae Schuller does inclusion differently. Through comedy, storytelling, and laughter your community will leave with concrete goals and a new mindset to become more inclusive.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+This repo contains Pamela's personal website.
 
 ## 🚀 Quick start
 
-This site runs on [Gatsby](https://www.gatsbyjs.org), the static site generator for React, with [Sass](https://sass-lang.com/) and deploys to [Netlify](http://www.netlify.com).
+This site:
+- runs on [Gatsby](https://www.gatsbyjs.org), the static site generator for React
+- uses [Sass](https://sass-lang.com/) for super-powered styles (no need for CSS modules since this is a tiny site! we're using global styles with the cascade to our advantage)
+- has content powered by [Contentful](http://www.contentful.com), maintained and updated by Pamela and team
+- deploys to [Netlify](http://www.netlify.com)
 
 1.  **First-time setup.**
 
