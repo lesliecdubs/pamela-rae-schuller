@@ -28,11 +28,11 @@ const Layout = ({ children }) => {
       </Helmet>
       <Menu />
       <div className="page-fit">
-        <div className="page-fit__video">
+        {/* <div className="page-fit__video">
           <video muted loop autoPlay playsInline>
             <source src={triangleTextureVideo} type="video/mp4" />
           </video>
-        </div>
+        </div> */}
         <main className="main">
           {children}
         </main>

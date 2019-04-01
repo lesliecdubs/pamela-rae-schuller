@@ -21,7 +21,7 @@
 .home-img {
   @include breakpoint(md) {
     position: absolute !important;
-    right: -10%;
+    right: -16%;
     bottom: rem(-20px);
     width: 55%;
   }
@@ -43,6 +43,7 @@
     position: relative;
     margin: 0 auto;
     width: 90%;
+    max-width: rem(620px);
   }
 
   @include breakpoint(lg) {

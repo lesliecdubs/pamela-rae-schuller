@@ -43,7 +43,7 @@ export default class Menu extends Component {
           <ul className="menu__list">
             {menuRoutes.map(route => (
               <li key={route.path} className="menu__item">
-                <LinkBtn to={route.path}>{route.name}</LinkBtn>
+                <LinkBtn to={route.path} classNames={['link--drop-in']}>{route.name}</LinkBtn>
               </li>
             ))}
             <li className="is-hidden-desktop">

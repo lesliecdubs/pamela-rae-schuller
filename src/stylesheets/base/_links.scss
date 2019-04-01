@@ -17,3 +17,57 @@ button {
     outline-color: $highlight;
   }
 }
+
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+.link--drop-in {
+  position: relative;
+
+  &:before,
+  &:after {
+    background-color: $highlight;
+    bottom: 2px;
+    content: '';
+    height: 2px;
+    left: 0; right: 0;
+    position: absolute;
+  }
+
+  &:before {
+    opacity: 0;
+    transform: translateY(- $distance);
+    transition: transform 0s $easeOutBack, opacity 0s;
+  }
+
+  &:after {
+    opacity: 0;
+    transform: translateY($distance/2);
+    transition: transform 0.35s $easeOutBack, opacity 0.35s;
+  }
+
+  &.active,
+  &:hover,
+  &:focus {
+    color: inherit;
+
+    &:before,
+    &:after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:before {
+      transition: transform 0.35s $easeOutBack, opacity 0.35s;
+    }
+
+    &:after {
+      transition: transform 0s 0.35s $easeOutBack, opacity 0s 0.35s;
+    }
+  }
+
+  &.active:hover,
+  &.active:focus {
+    color: $navy;
+  }
+}

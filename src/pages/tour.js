@@ -1,12 +1,12 @@
 import React from 'react'
 import { LayoutViewportHeight, LinkBtn } from '../components'
 
-const MeetPage = () => (
+const TourPage = () => (
   <LayoutViewportHeight>
     <div className="contain">
-      <h1>Media</h1>
+      <h1>Tour</h1>
     </div>
   </LayoutViewportHeight>
 )
 
-export default MeetPage
+export default TourPage

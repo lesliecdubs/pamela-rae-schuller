@@ -203,7 +203,8 @@
 
   a {
     display: inline-block;
-    padding: rem(8px 20px);
+    padding: rem(8px 0);
+    margin: rem(0 20px);
   }
   
   &:nth-last-of-type(-n+2) {
