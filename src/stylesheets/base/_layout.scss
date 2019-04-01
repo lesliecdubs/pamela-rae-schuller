@@ -3,19 +3,89 @@
 //  Layout
 //
 //  ==========================================================================
+.main {
+  padding-top: $nav-height;
+
+  @include breakpoint(md) {
+    padding-top: $nav-height-md;
+  }
+
+  @include breakpoint(lg) {
+    padding-top: 0;
+  }
+}
+
 .page-fit {
-  height: 100vh;
-  overflow: hidden;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;  
+  min-height: 100vh;
+
+  @include breakpoint(md) {
+    height: 100vh;
+    justify-content: space-between;
+    min-height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+  }
+
+  @include breakpoint-hw(sm, md) {
+    min-height: 620px;
+  }
+
+  @include breakpoint(lg) {
+    min-height: calc(100vh - 106px); // 106px is $nav-height-lg
+    height: calc(100vh - 106px); // 106px is $nav-height-lg
+  }
+
+  @include breakpoint-hw(md, lg) {
+    min-height: 745px;
+    height: 745px;
+  }
+
+  > .main {
+    flex: 1;
+
+    @include breakpoint(md) {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @include breakpoint-hw(sm, md) {
+      overflow: visible;
+    }
+  }
+
+  > .footer {
+    @include breakpoint(md) {
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+      left: 0;
+    }
+
+    @include breakpoint-hw(sm, md) {
+      position: static;
+      z-index: 1;
+    }
+
+    @include breakpoint(lg) {
+      margin: 0 auto rem(30px);
+      max-width: $max-width;
+      padding: rem(0 20px);
+      right: 0;
+      width: 100%;
+    }
+  }
 }
 
 .page-fit__video {
   height: 100%;
-  overflow: hidden;
-  position: absolute;
+  position: fixed;
+  transform: translateZ(0);
+  left: 0;
   top: 0;
-  width: 100%;
-  z-index: 0;
 
   &::before {
     background-color: rgba($white, 0.8);
@@ -29,48 +99,58 @@
   }
 
   video {
-    height: auto;
-    left: 50%;
-    min-height: 100%;
-    min-width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: auto;
-    z-index: 1;
+    height: 100%;
+
+    @include breakpoint(lg) {
+      height: auto;
+      left: 50%;
+      min-height: 100%;
+      min-width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: auto;
+      z-index: 1;
+    }
 
     &::-webkit-media-controls {
       display: none !important;
     }
   }
-}
 
-.page-fit__content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  z-index: 3;
-}
-
-.page-fit__content__copy {
-  max-width: 500px;
-}
-
-.page-fit__content__image {
-  bottom: rem(-80px);
-  position: absolute !important;
-  width: 65%;
-  right: -10%;
+  @include breakpoint(lg) {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
 }
 
 .contain {
-  margin: 0 auto;
-  max-width: $max-width;
+  margin: rem(0 20px);
+
+  @include breakpoint(sm) {
+    margin: rem(0 30px);
+  }
+
+  @include breakpoint(md) {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  @include breakpoint(lg) {
+    margin: 0 auto;
+    max-width: $max-width;
+  }
 
   &--tight {
-    max-width: $break-lg;
+    margin: rem(0 20px);
+    width: auto;
+
+    @include breakpoint(lg) {
+      max-width: $break-lg;
+    }
   }
 }

@@ -54,3 +54,18 @@
 .is-hidden { display: none; }
 
 .is-hidden-important { display: none !important; }
+
+.is-hidden-desktop {
+  display: block !important;
+  @include breakpoint(lg) { display: none !important; }
+}
+
+.is-hidden-md {
+  display: block !important;
+  @include breakpoint(md) { display: none !important; }
+}
+
+.is-visible-md {
+  display: none !important;
+  @include breakpoint(md) { display: block !important; }
+}

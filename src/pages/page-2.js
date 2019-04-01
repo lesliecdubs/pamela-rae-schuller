@@ -1,14 +1,12 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Layout, LinkBtn } from '../components'
 
-import Layout from '../components/layout'
-
-const SecondPage = () => (
+const MeetPage = () => (
   <Layout>
     <h1>Hi from the second page</h1>
     <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <LinkBtn to="/">Go back to the homepage</LinkBtn>
   </Layout>
 )
 
-export default SecondPage
+export default MeetPage

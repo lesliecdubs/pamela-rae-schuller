@@ -271,17 +271,6 @@ select:-moz-focusring {
   text-shadow: 0 0 0 $white;
 }
 
-a,
-div,
-span,
-p,
-em,
-strong,
-a {
-  outline: none;
-  -moz-outline: none;
-}
-
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;

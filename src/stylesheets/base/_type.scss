@@ -4,12 +4,26 @@
 //
 //  ==========================================================================
 h1 {
-  @include font-size(96);
-  line-height: 1.025;
+  @include font-size(48);
+  line-height: 1.055;
   margin-bottom: rem(20px);
   text-shadow: -1px -1px #000;
 
+  @include breakpoint(md) {
+    @include font-size(72);
+  }
+
+  @include breakpoint(lg) {
+    @include font-size(96);
+    line-height: 1.025;
+  }
+
+
   +p {
-    @include font-line-height-px(22, 34);
+    @include font-line-height-px(18, 28);
+
+    @include breakpoint(lg) {
+      @include font-line-height-px(22, 34);
+    }
   }
 }

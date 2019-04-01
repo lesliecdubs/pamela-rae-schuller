@@ -1,38 +1,40 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { graphql } from 'gatsby'
-import { Layout } from '../components'
+import { LayoutViewportHeight, LinkBtn } from '../components'
+import { normalizeHomepage } from '../helpers'
 import Img from 'gatsby-image'
 
-const HomePage = ({ data }) => {
-  const {
-    headline,
-    description,
-    video,
-  } = data.allContentfulHomePage.edges[0].node
+class HomePage extends Component {
+  constructor(props) {
+    super(props)
+    this._homepage = normalizeHomepage(props.data.allContentfulHomePage.edges[0].node)
+  }
 
-  return (
-    <Layout>
-      <div className="page-fit">
-        <div className="page-fit__content contain contain--tight">
-          <div className="page-fit__content__copy">
+  render() {
+    const { headline, description, cta, ctaLink } = this._homepage
+    const { pamPrimary, pamPrimaryMobile } = this.props.data
+
+    return (
+      <LayoutViewportHeight>
+        <Img 
+          className="home-img--mobile is-hidden-md"
+          fluid={pamPrimaryMobile.childImageSharp.fluid} 
+        />
+        <div className="home contain">
+          <div className="home__content">
             <h1>{headline}</h1>
-            <p>{description.description}</p>
+            <p>{description}</p>
+            <LinkBtn to={ctaLink} classNames={["cta"]}>{cta}</LinkBtn>
           </div>
           <Img
-            className="page-fit__content__image"
-            fluid={data.pamPrimary.childImageSharp.fluid}
+            className="home-img is-visible-md"
+            fluid={pamPrimary.childImageSharp.fluid}
             alt="Pam smiling with hands on hips"
           />
         </div>
-        <div className="page-fit__video">
-          <video muted loop autoPlay playsInline>
-            <source src={video.file.url} type="video/mp4" />
-          </video>
-        </div>
-      </div>
-    </Layout>
-  )
+      </LayoutViewportHeight>
+    )
+  }
 }
 
 export const query = graphql`
@@ -44,10 +46,10 @@ export const query = graphql`
           description {
             description
           }
-          video {
-            file {
-              url
-              fileName
+          callToActionLink {
+            __typename
+            ... on ContentfulMeetPamPage {
+              page
             }
           }
           callToActionText
@@ -61,7 +63,13 @@ export const query = graphql`
         }
       }
     }
+    pamPrimaryMobile: file(relativePath: { eq: "pam-primary-mobile.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
   }
 `
-
 export default HomePage

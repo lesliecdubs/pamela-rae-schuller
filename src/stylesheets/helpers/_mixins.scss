@@ -161,13 +161,28 @@
 // --------------------------------------------------
 // Responsive Breakpoints
 // --------------------------------------------------
-$breakpoints: ('sm' : (min-width: $break-sm),
-'md' : (min-width: $break-md),
-'lg' : (min-width: $break-lg),
-'xl' : (min-width: $break-xl));
+$breakpoints: (
+  'xs' : (min-width: $break-xs),
+  'sm' : (min-width: $break-sm),
+  'md' : (min-width: $break-md),
+  'lg' : (min-width: $break-lg),
+  'xl' : (min-width: $break-xl)
+);
+
+$heights: (
+  'xs' : (max-height: $height-xs),
+  'sm' : (max-height: $height-sm),
+  'md' : (max-height: $height-md)
+);
 
 @mixin breakpoint($name) {
   @media #{inspect(map-get($breakpoints, $name))} {
+    @content;
+  }
+}
+
+@mixin breakpoint-hw($height, $name) {
+  @media #{inspect(map-get($heights, $height))} and #{inspect(map-get($breakpoints, $name))} {
     @content;
   }
 }

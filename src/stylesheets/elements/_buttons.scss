@@ -1,0 +1,55 @@
+//  ==========================================================================
+//
+//  Buttons
+//
+//  ==========================================================================
+.cta {
+  @include font-size(18);
+  border: 2px solid $highlight;
+  display: inline-block;
+  font-family: $font-display;
+  margin-top: rem(20px);
+  overflow: hidden;
+  padding: rem(12px 26px);
+  position: relative;
+  transition: color 0.25s;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.25s ease-in-out;
+    z-index: -1;
+  }
+
+  &::before {
+    border-bottom: 80px solid $highlight;
+    border-right: 50px solid transparent;
+    right: -50px;
+    transform: translateX(-100%);
+  }
+
+  &::after {
+    border-left: 50px solid transparent;
+    border-top: 80px solid $highlight;
+    left: -50px;
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    color: white;
+    
+    &::before {
+      transform: translateX(-49%);
+    }
+
+    &::after {
+      transform: translateX(49%);
+    }
+  }
+}

@@ -8,26 +8,27 @@ Pamela Rae Schuller does inclusion differently. Through comedy, storytelling, an
 
 This repo contains Pam's personal website. The site:
 - runs on [Gatsby](https://www.gatsbyjs.org), the static site generator for React
+- is powered by [Contentful](http://www.contentful.com), with content maintained and updated by Pamela and team
 - uses [Sass](https://sass-lang.com/) for super-powered styles
-- has content powered by [Contentful](http://www.contentful.com), maintained and updated by Pamela and team
 - deploys to [Netlify](http://www.netlify.com)
 
 ## 🚀 Quick start
 
 1.  **First-time setup.**
 
-    Clone into this repo and install project dependencies.
+    Clone this repo and install project dependencies.
     
     ```sh
+    git clone git@github.com:lesliecdubs/pamela-rae-schuller.git
+    cd pamela-rae-schuller/
     yarn install
     ```
 
 1.  **Start developing.**
 
-    Navigate into your new site’s directory.
+    When you're ready to develop, run this command to get Gatsby going.
 
     ```sh
-    cd pamela-rae-schuller/
     yarn develop
     ```
 

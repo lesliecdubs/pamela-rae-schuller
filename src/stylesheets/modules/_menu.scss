@@ -3,35 +3,231 @@
 //  Menu
 //
 //  ==========================================================================
+.menu-wrapper {
+  @include breakpoint(lg) {
+    display: flex;
+    margin: 0 auto;
+    max-width: $max-width;
+    // padding-top: rem(15px);
+  }
+
+  &.is-open {
+    .menu {
+      opacity: 0.95;
+      top: $nav-height;
+      transition: transform 0.5s ease, top 0s ease 0s, opacity 0.5s ease 0s;
+
+      @include breakpoint(md) {
+        top: $nav-height-md;
+      }
+    }
+
+    .menu__list,
+    .menu__list-social {
+      transform: translateY(0) translateX(0);
+    }
+  }
+}
+
 .menu-bar {
-  margin: rem(20px 0);
+  background: rgba($white, 0.925);
+  align-items: center;
+  display: flex;
+  height: $nav-height;
+  justify-content: space-between;
   position: fixed;
+  padding: rem(0 10px);
   top: 0;
   width: 100%;
   z-index: 9;
+
+  @include breakpoint(sm) {
+    padding: rem(0 20px);
+  }
+
+  @include breakpoint(md) {
+    height: $nav-height-md;
+  }
+  
+  @include breakpoint(lg) {
+    height: $nav-height-lg;
+    align-items: center;
+    position: relative;
+    background: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
+  }
 }
 
+// Brand group -- logo & mobile burger btn 
+// ==========================================================================
+.menu-brand__logo {
+  display: block;
+  width: 75%;
+  max-width: rem(260px);
+
+  @include breakpoint(md) {
+    max-width: rem(360px);
+  }
+
+  @include breakpoint(lg) {
+    max-width: rem(340px);
+    width: auto;
+  }
+
+  @include breakpoint(xl) {
+    max-width: rem(439px);
+  }
+
+  svg {
+    width: 100%;
+  }
+}
+
+.menu-brand__btn {
+  height: 20px;
+  margin: rem(-5px 5px 0);
+  padding: 0;
+  position: relative;
+  transition: all 0.15s;
+  width: 30px;
+
+  span {
+    background: $grey-medium;
+    border-radius: 48px;
+    display: block;
+    height: 3px;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+    width: 100%;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: rem(8px);
+    }
+
+    &:nth-child(4) {
+      top: rem(16px);
+    }
+  }
+
+  &.is-open {
+    span {
+      &:nth-child(1) {
+        left: 50%;
+        top: rem(18px);
+        width: 0%;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        left: 50%;
+        top: rem(18px);
+        width: 0%;
+      }
+    }
+  }
+}
+
+// Menu items
+// ==========================================================================
 .menu {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
+  background-color: rgba($white, 0.975);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px); // 64px is $nav-height
+  justify-content: center;
+  left: 0;
+  top: -1000%;
+  opacity: 0;
+  position: fixed;
+  transition: opacity 0.5s ease, top 0s ease 0.5s;
+  width: 100vw;
+  z-index: 2;
+
+  @include breakpoint(md) {
+    height: calc(100vh - 76px); // 76px is $nav-height-md
+  }
+
+  @include breakpoint(lg) {
+    height: calc(100vh - 106px); // 106px is $nav-height-lg
+    background: none;
+    height: auto;
+    opacity: 1;
+    padding: 0;
+    position: relative;
+    top: 0;
+    width: auto;
+    flex: 1;
+    align-items: flex-start;
+  }
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(0) translateX(0) scale(0.75);
+  transition: transform 0.5s ease;
+  margin-top: rem(-40px);
+
+  @include breakpoint(lg) {
+    align-items: center;
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    transform: none;
+    width: 100%;
+  }
 }
 
 .menu__item {
   @include font-size(20);
-  margin: rem(0 15px);
-
-  &:first-of-type {
-    margin-left: 0;
-    margin-right: rem(20px);
-  }
-
-  &:last-of-type {
-    margin-left: auto;
-  }
+  font-family: $font-regular;
+  text-align: center;
 
   a {
-    padding: rem(5px);
+    display: inline-block;
+    padding: rem(8px 20px);
+  }
+  
+  &:nth-last-of-type(-n+2) {
+    @include breakpoint(lg) {
+      margin-left: auto;
+    }
+  }
+}
+
+.menu__list-social {
+  margin-top: rem(10px);
+  transform: translateY(0) translateX(0) scale(0.75);
+  transition: transform 0.5s ease;
+}
+
+.menu__list-social__item {
+  a {
+    display: block;
+    margin: rem(0 3px);
+  }
+
+  svg {
+    display: inline-block;
+    // height: 32px;
+    // width: 30px;
   }
 }

@@ -1,0 +1,67 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "cy": true,
+    "Cypress": true,
+    "ENV": true
+  },
+  "plugins": [
+    "flowtype",
+    "jsx-a11y",
+    "prettier"
+  ],
+  "extends": [
+    "react-app",
+    "prettier",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:flowtype/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "rules": {
+    "curly": "error",
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "no-irregular-whitespace": "warn",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none",
+        "ignoreRestSiblings": true,
+        "varsIgnorePattern": "_"
+      }
+    ],
+    "jsx-a11y/aria-role": [
+      "error",
+      {
+        "ignoreNonDOM": true
+      }
+    ],
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/no-onchange": "off",
+    "react/no-deprecated": "warn",
+    "react/prop-types": "off"
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    },
+    "react": {
+      "version": "16.6"
+    }
+  }
+}

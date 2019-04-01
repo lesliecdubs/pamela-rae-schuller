@@ -12,7 +12,7 @@ import triangleTextureVideo from '../assets/videos/triangles.mp4'
 import Menu from './menu'
 import Footer from './footer'
 
-const Layout = ({ children }) => {
+const LayoutViewportHeight = ({ children }) => {
   const { title } = useSiteMetadata()
 
   return (
@@ -42,8 +42,8 @@ const Layout = ({ children }) => {
   )
 }
 
-Layout.propTypes = {
+LayoutViewportHeight.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default LayoutViewportHeight

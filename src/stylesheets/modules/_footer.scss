@@ -1,0 +1,38 @@
+//  ==========================================================================
+//
+//  Footer
+//
+//  ==========================================================================
+.footer {
+  align-items: center;
+  display: flex;
+  position: relative;
+  margin: rem(40px 10px 10px);
+
+  @include breakpoint(md) {
+    margin-top: 0;
+    margin-left: rem(30px);
+  }
+
+  p {
+    @include font-size(12);
+    color: $grey-medium;
+  }
+
+  .menu__list-social {
+    display: flex;
+    margin-right: rem(10px);
+    margin-top: 0;
+    transform: none;
+
+    a {
+      height: 30px;
+      width: 30px;
+    }
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

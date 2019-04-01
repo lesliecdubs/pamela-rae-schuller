@@ -1,25 +1,57 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { Component } from 'react'
+import { LinkBtn, Social } from "./"
 import { Logo } from '../assets/images'
-import { allRoutes, menuRoutes } from '../helpers/routes'
+import { allRoutes, menuRoutes, socialRoutes } from '../helpers/routes'
+import cn from 'classnames'
 
-const Menu = ({ siteTitle }) => (
-  <nav className="menu-bar">
-    <div className="contain">
-      <ul className="menu">
-        <li className="menu__item">
-          <Link to={allRoutes.home}>
+export default class Menu extends Component {
+  state = { open: false }
+
+  handleClick = () => {
+    this.setState({ open: !this.state.open })
+  }
+
+  render() {
+    const { open } = this.state
+
+    return (
+      <nav
+        className={cn('menu-wrapper', {
+          'is-open': open,
+        })}
+      >
+        <div className="menu-bar">
+          <LinkBtn to={allRoutes.home} classNames={["menu-brand__logo"]}>
             <Logo />
-          </Link>
-        </li>
-        {menuRoutes.map(route => (
-          <li key={route.path} className="menu__item">
-            <Link to={route.path}>{route.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </nav>
-)
+          </LinkBtn>
 
-export default Menu
+          <button
+            className={cn('menu-brand__btn is-hidden-desktop', {
+              'is-open': open,
+            })}
+            onClick={this.handleClick}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        {/* menu items / interior drawer nav on mobile */}
+        <div className="menu">
+          <ul className="menu__list">
+            {menuRoutes.map(route => (
+              <li key={route.path} className="menu__item">
+                <LinkBtn to={route.path}>{route.name}</LinkBtn>
+              </li>
+            ))}
+            <li className="is-hidden-desktop">
+              <Social />
+            </li>
+          </ul>
+        </div>
+      </nav>
+    )
+  }
+}

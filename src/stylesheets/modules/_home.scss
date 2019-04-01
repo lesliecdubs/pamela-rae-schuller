@@ -1,0 +1,73 @@
+//  ==========================================================================
+//
+//  Home Page
+//
+//  ==========================================================================
+.page-home {
+  @include breakpoint(md) {
+    height: 100vh;
+  }
+}
+
+.home-img--mobile {
+  margin-bottom: rem(20px);
+  z-index: 1;
+
+  @include breakpoint(xs) {
+    margin-bottom: rem(30px);
+  }
+}
+
+.home-img {
+  @include breakpoint(md) {
+    position: absolute !important;
+    right: -10%;
+    bottom: rem(-20px);
+    width: 55%;
+  }
+
+  @include breakpoint-hw(sm, md) {
+    bottom: rem(-40px);
+    max-width: rem(380px);
+  }
+
+  @include breakpoint(lg) {
+    max-width: 100%;
+    width: 60%;
+  }
+}
+
+.home {
+  @include breakpoint(md) {
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  @include breakpoint(lg) {
+    display: flex;
+    align-items: center;
+    max-width: rem(920px);
+  }
+}
+
+.home__content {
+  margin-bottom: rem(20px);
+  max-width: rem(430px);
+  position: relative;
+
+  @include breakpoint(md) {
+    top: 25%;
+    max-width: rem(400px);
+  }
+
+  @include breakpoint-hw(sm, md) {
+    top: 10%;
+  }
+
+  @include breakpoint(lg) {
+    top: 0;
+    max-width: rem(500px);
+  }
+}
