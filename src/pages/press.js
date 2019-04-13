@@ -1,12 +1,12 @@
 import React from 'react'
-import { LayoutViewportHeight, LinkBtn } from '../components'
+import { Layout, LinkBtn } from '../components'
 
 const PressPage = () => (
-  <LayoutViewportHeight>
+  <Layout>
     <div className="contain">
       <h1>Press</h1>
     </div>
-  </LayoutViewportHeight>
+  </Layout>
 )
 
 export default PressPage

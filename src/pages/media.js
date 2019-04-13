@@ -1,12 +1,12 @@
 import React from 'react'
-import { LayoutViewportHeight, LinkBtn } from '../components'
+import { Layout, LinkBtn } from '../components'
 
 const MediaPage = () => (
-  <LayoutViewportHeight>
+  <Layout>
     <div className="contain">
       <h1>Meet Pam</h1>
     </div>
-  </LayoutViewportHeight>
+  </Layout>
 )
 
 export default MediaPage

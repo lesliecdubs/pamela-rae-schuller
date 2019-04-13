@@ -159,7 +159,7 @@ blockquote {
 a {
   color: $link-color;
   text-decoration: none;
-  transition: all $default-animation-duration;
+  transition: all $default-transition-duration;
 
   &:hover {
     color: $link-hover-color;
@@ -212,9 +212,9 @@ button {
   border: 0;
   overflow: visible;
   transition:
-    outline-width $default-animation-duration,
-    outline-offset $default-animation-duration,
-    background-color $default-animation-duration;
+    outline-width $default-transition-duration,
+    outline-offset $default-transition-duration,
+    background-color $default-transition-duration;
   -webkit-appearance: none;
 }
 
@@ -254,14 +254,14 @@ input {
   border-radius: 0;
   line-height: normal;
   transition:
-    outline-width $default-animation-duration,
-    outline-offset $default-animation-duration;
+    outline-width $default-transition-duration,
+    outline-offset $default-transition-duration;
 }
 
 select {
   transition:
-    outline-width $default-animation-duration,
-    outline-offset $default-animation-duration;
+    outline-width $default-transition-duration,
+    outline-offset $default-transition-duration;
   -webkit-appearance: none;
   -moz-appearance: none;
 }

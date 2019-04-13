@@ -6,9 +6,14 @@
 .menu-wrapper {
   @include breakpoint(lg) {
     display: flex;
+    left: 0;
     margin: 0 auto;
     max-width: $max-width;
-    // padding-top: rem(15px);
+    padding-top: rem(20px);
+    position: fixed;
+    right: 0;
+    transition: all 0.35s ease-out;
+    width: 100%;
   }
 
   &.is-open {
@@ -25,6 +30,28 @@
     .menu__list,
     .menu__list-social {
       transform: translateY(0) translateX(0);
+    }
+  }
+
+  &.is-squished {
+    @include breakpoint(lg) {
+      background: rgba($white, 0.95);
+      padding-top: 0;
+      z-index: 1;
+    }
+
+    .menu-bar {
+      svg {
+        @include breakpoint(lg) {
+          width: 330px;
+        }
+      }
+    }
+
+    .menu__item {
+      @include breakpoint(lg) {
+        @include font-size(18);
+      }
     }
   }
 }
@@ -48,15 +75,20 @@
   @include breakpoint(md) {
     height: $nav-height-md;
   }
-  
+
   @include breakpoint(lg) {
-    height: $nav-height-lg;
     align-items: center;
     position: relative;
     background: none;
     flex-direction: row;
     flex-wrap: nowrap;
     width: auto;
+  }
+
+  svg {
+    @include breakpoint(lg) {
+      transition: all 0.35s ease-out;
+    }
   }
 }
 
@@ -166,7 +198,7 @@
   }
 
   @include breakpoint(lg) {
-    height: calc(100vh - 106px); // 106px is $nav-height-lg
+    height: calc(100vh - 96px); // 96px is height of lg nav
     background: none;
     height: auto;
     opacity: 1;
@@ -206,7 +238,7 @@
     padding: rem(8px 0);
     margin: rem(0 20px);
   }
-  
+
   &:nth-last-of-type(-n+2) {
     @include breakpoint(lg) {
       margin-left: auto;

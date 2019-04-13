@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { LinkBtn, Social } from "./"
+import { LinkBtn, Social } from './'
 import { Logo } from '../assets/images'
 import { allRoutes, menuRoutes, socialRoutes } from '../helpers/routes'
 import cn from 'classnames'
@@ -13,15 +13,17 @@ export default class Menu extends Component {
 
   render() {
     const { open } = this.state
+    const { isSquished } = this.props
 
     return (
       <nav
         className={cn('menu-wrapper', {
           'is-open': open,
+          'is-squished': isSquished,
         })}
       >
         <div className="menu-bar">
-          <LinkBtn to={allRoutes.home} classNames={["menu-brand__logo"]}>
+          <LinkBtn to={allRoutes.home} classNames={['menu-brand__logo']}>
             <Logo />
           </LinkBtn>
 
@@ -31,10 +33,10 @@ export default class Menu extends Component {
             })}
             onClick={this.handleClick}
           >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span />
+            <span />
+            <span />
+            <span />
           </button>
         </div>
 
@@ -43,7 +45,9 @@ export default class Menu extends Component {
           <ul className="menu__list">
             {menuRoutes.map(route => (
               <li key={route.path} className="menu__item">
-                <LinkBtn to={route.path} classNames={['link--drop-in']}>{route.name}</LinkBtn>
+                <LinkBtn to={route.path} className="link--drop-in">
+                  {route.name}
+                </LinkBtn>
               </li>
             ))}
             <li className="is-hidden-desktop">

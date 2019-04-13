@@ -12,9 +12,7 @@ $break-md: 768px !default;
 $break-lg: 1024px !default;
 $break-xl: 1280px !default;
 
-$height-xs: 620px !default;
-$height-sm: 735px !default;
-$height-md: 835px !default;
+$height-sm: 785px !default;
 
 //  Color
 //  --------------------------------------------------
@@ -42,11 +40,24 @@ $highlight-text: $white !default;
 
 //  Font Families
 //  --------------------------------------------------
-$font-playfair-black: 'playfairdisplay-black', Georgia, serif !important;
-$font-playfair-black-italic: 'playfairdisplay-black-italic', Georgia, serif !important;
-$font-heebo-bold: 'heebo-bold', Helvetica, Arial, sans-serif !important;
-$font-heebo-medium: 'heebo-medium', Helvetica, Arial, sans-serif !important;
-$font-heebo-regular: 'heebo-regular', Helvetica, Arial, sans-serif !important;
+$font-playfair-black: 'playfairdisplay-black',
+Georgia,
+serif !important;
+$font-playfair-black-italic: 'playfairdisplay-black-italic',
+Georgia,
+serif !important;
+$font-heebo-bold: 'heebo-bold',
+Helvetica,
+Arial,
+sans-serif !important;
+$font-heebo-medium: 'heebo-medium',
+Helvetica,
+Arial,
+sans-serif !important;
+$font-heebo-regular: 'heebo-regular',
+Helvetica,
+Arial,
+sans-serif !important;
 
 //  Font Stacks
 //  --------------------------------------------------
@@ -90,10 +101,10 @@ $link-hover-color: $mint !default;
 $font-family-form: $font-family-default !default;
 $font-family-label: $font-family-default !default;
 
-//  Animation
+//  Transition
 //  --------------------------------------------------
-$default-animation: all 0.15s !default;
-$default-animation-duration: 0.15s !default;
+$default-transition: all 0.15s !default;
+$default-transition-duration: 0.15s !default;
 
 //  Layout
 //  --------------------------------------------------
@@ -101,5 +112,4 @@ $max-width: 1440px !default;
 $max-width-nav: 1600px !default;
 
 $nav-height: 64px;
-$nav-height-md: 76px; 
-$nav-height-lg: 106px;
+$nav-height-md: 76px;

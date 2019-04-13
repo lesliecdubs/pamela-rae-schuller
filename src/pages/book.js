@@ -1,12 +1,12 @@
 import React from 'react'
-import { LayoutViewportHeight, LinkBtn } from '../components'
+import { Layout, LinkBtn } from '../components'
 
 const BookPage = () => (
-  <LayoutViewportHeight>
+  <Layout>
     <div className="contain">
       <h1>Book Now</h1>
     </div>
-  </LayoutViewportHeight>
+  </Layout>
 )
 
 export default BookPage

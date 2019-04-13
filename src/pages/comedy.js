@@ -1,12 +1,12 @@
 import React from 'react'
-import { LayoutViewportHeight, LinkBtn } from '../components'
+import { Layout, LinkBtn } from '../components'
 
 const ComedyPage = () => (
-  <LayoutViewportHeight>
+  <Layout>
     <div className="contain">
       <h1>Comedy</h1>
     </div>
-  </LayoutViewportHeight>
+  </Layout>
 )
 
 export default ComedyPage

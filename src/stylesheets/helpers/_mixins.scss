@@ -124,7 +124,7 @@
 
 @mixin linear-gradient-hover($direction, $color1, $color2) {
   background: linear-gradient(to $direction, $color1 0%, $color1 50%, $color2 50%, $color2 100%);
-  transition: all $default-animation-duration ease-in-out;
+  transition: all $default-transition-duration ease-in-out;
 
   @if $direction=='bottom'or 'top' {
     background-size: 100% 200%;
@@ -146,7 +146,7 @@
     $color2 100%);
   background-position: 200%;
   background-size: 202% 100%;
-  transition: all $default-animation-duration ease-in-out;
+  transition: all $default-transition-duration ease-in-out;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -161,18 +161,13 @@
 // --------------------------------------------------
 // Responsive Breakpoints
 // --------------------------------------------------
-$breakpoints: (
-  'xs' : (min-width: $break-xs),
-  'sm' : (min-width: $break-sm),
-  'md' : (min-width: $break-md),
-  'lg' : (min-width: $break-lg),
-  'xl' : (min-width: $break-xl)
-);
+$breakpoints: ('xs' : (min-width: $break-xs),
+'sm' : (min-width: $break-sm),
+'md' : (min-width: $break-md),
+'lg' : (min-width: $break-lg),
+'xl' : (min-width: $break-xl));
 
-$heights: (
-  'sm' : (max-height: $height-sm),
-  'md' : (max-height: $height-md)
-);
+$heights: ('sm' : (max-height: $height-sm));
 
 @mixin breakpoint($name) {
   @media #{inspect(map-get($breakpoints, $name))} {

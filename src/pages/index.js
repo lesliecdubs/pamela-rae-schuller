@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
-import { LayoutViewportHeight, LinkBtn } from '../components'
+import { Layout, LinkBtn } from '../components'
 import { normalizeHomepage } from '../helpers'
 import Img from 'gatsby-image'
 
 class HomePage extends Component {
   constructor(props) {
     super(props)
-    this._homepage = normalizeHomepage(props.data.allContentfulHomePage.edges[0].node)
+    this._homepage = normalizeHomepage(
+      props.data.allContentfulHomePage.edges[0].node
+    )
   }
 
   render() {
@@ -15,16 +17,18 @@ class HomePage extends Component {
     const { pamPrimary, pamPrimaryMobile } = this.props.data
 
     return (
-      <LayoutViewportHeight>
-        <Img 
+      <Layout>
+        <Img
           className="home-img--mobile is-hidden-md"
-          fluid={pamPrimaryMobile.childImageSharp.fluid} 
+          fluid={pamPrimaryMobile.childImageSharp.fluid}
         />
         <div className="home contain">
           <div className="home__content">
             <h1>{headline}</h1>
             <p>{description}</p>
-            <LinkBtn to={ctaLink} classNames={["cta"]}>{cta}</LinkBtn>
+            <LinkBtn to={ctaLink} className="cta">
+              {cta}
+            </LinkBtn>
           </div>
           <Img
             className="home-img is-visible-md"
@@ -32,7 +36,7 @@ class HomePage extends Component {
             alt="Pam smiling with hands on hips"
           />
         </div>
-      </LayoutViewportHeight>
+      </Layout>
     )
   }
 }

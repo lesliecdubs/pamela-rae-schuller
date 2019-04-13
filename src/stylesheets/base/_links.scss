@@ -30,7 +30,8 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
     bottom: 2px;
     content: '';
     height: 2px;
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     position: absolute;
   }
 
@@ -69,5 +70,17 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   &.active:hover,
   &.active:focus {
     color: $navy;
+  }
+}
+
+.link--social {
+  path {
+    transition: $default-transition;
+  }
+
+  &:hover {
+    path {
+      fill: $navy;
+    }
   }
 }

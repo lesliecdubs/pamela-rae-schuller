@@ -9,13 +9,13 @@ export default class LinkBtn extends Component {
   }
 
   render() {
-    const { to, classNames, attrs, children } = this.props;
+    const { to, className, attrs, children } = this.props
 
     const linkMarkup = this._isExternalLink ? (
       <a
         href={to}
         target={this._isExternalLink ? '_blank' : '_self'}
-        className={classNames ? classNames.join(' ').trim() : null}
+        className={className}
         {...attrs}
       >
         {children}
@@ -23,7 +23,7 @@ export default class LinkBtn extends Component {
     ) : (
       <Link
         to={`/${to}`}
-        className={classNames ? classNames.join(' ').trim() : null}
+        className={className}
         activeClassName="active"
         {...attrs}
       >

@@ -3,12 +3,6 @@
 //  Home Page
 //
 //  ==========================================================================
-.page-home {
-  @include breakpoint(md) {
-    height: 100vh;
-  }
-}
-
 .home-img--mobile {
   margin-bottom: rem(20px);
   z-index: 1;
@@ -21,9 +15,9 @@
 .home-img {
   @include breakpoint(md) {
     position: absolute !important;
-    right: -16%;
+    right: -20%;
     bottom: rem(-20px);
-    width: 55%;
+    width: 62%;
   }
 
   @include breakpoint-hw(sm, md) {
@@ -32,8 +26,9 @@
   }
 
   @include breakpoint(lg) {
-    max-width: 100%;
-    width: 60%;
+    right: -8%;
+    width: 55%;
+    max-width: 55%;
   }
 }
 
@@ -59,12 +54,12 @@
   position: relative;
 
   @include breakpoint(md) {
-    top: 25%;
+    top: 18%;
     max-width: rem(400px);
   }
 
   @include breakpoint-hw(sm, md) {
-    top: 10%;
+    top: rem(70px);
   }
 
   @include breakpoint(lg) {
