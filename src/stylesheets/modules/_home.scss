@@ -63,6 +63,7 @@
   }
 
   @include breakpoint(lg) {
+    margin-top: rem(-50px);
     top: 0;
     max-width: rem(500px);
   }

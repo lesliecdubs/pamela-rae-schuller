@@ -4,7 +4,7 @@ import { Layout, LinkBtn } from '../components'
 const MediaPage = () => (
   <Layout>
     <div className="contain">
-      <h1>Meet Pam</h1>
+      <h1>Media</h1>
     </div>
   </Layout>
 )

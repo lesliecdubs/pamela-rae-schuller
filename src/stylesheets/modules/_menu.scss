@@ -12,7 +12,7 @@
     padding-top: rem(20px);
     position: fixed;
     right: 0;
-    transition: all 0.35s ease-out;
+    transition: all 0.25s ease-out;
     width: 100%;
   }
 
@@ -41,10 +41,8 @@
     }
 
     .menu-bar {
-      svg {
-        @include breakpoint(lg) {
-          width: 330px;
-        }
+      @include breakpoint(lg) {
+        width: 330px;
       }
     }
 
@@ -78,16 +76,17 @@
 
   @include breakpoint(lg) {
     align-items: center;
-    position: relative;
     background: none;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: auto;
+    position: relative;
+    transition: all 0.25s ease-out;
+    width: 479px;
   }
 
   svg {
     @include breakpoint(lg) {
-      transition: all 0.35s ease-out;
+      transition: all 0.25s ease-out;
     }
   }
 }
