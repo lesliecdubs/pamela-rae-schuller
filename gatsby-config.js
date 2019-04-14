@@ -1,5 +1,7 @@
 let activeEnv = process.env.ACTIVE_ENV
-if (!activeEnv) activeEnv = 'staging'
+if (!activeEnv) {
+  activeEnv = 'staging'
+}
 
 require('dotenv').config({
   path: `.env.${activeEnv}`,
@@ -28,6 +30,7 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    '@contentful/gatsby-transformer-contentful-richtext',
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

@@ -23,6 +23,7 @@ $transparent: rgba(0, 0, 0, 0) !default;
 
 // Theme
 $grey: rgba(64, 64, 64, 1) !default; // #404040
+$grey-dark: rgb(82, 82, 82) !default; // #525252
 $grey-medium: rgb(138, 138, 138) !default; // #8A8A8A
 $navy: rgba(44, 47, 65, 1) !default; // #2C2F41
 $spinnaker: rgba(164, 230, 222, 1) !default; // #A4E6DE
@@ -35,6 +36,7 @@ $default-txt-color: $grey !default;
 $placeholder-txt-color: $navy !default;
 
 $hr-color: $grey !default;
+$highlight-light: $spinnaker !default;
 $highlight: $mint !default;
 $highlight-text: $white !default;
 
@@ -46,14 +48,17 @@ serif !important;
 $font-playfair-black-italic: 'playfairdisplay-black-italic',
 Georgia,
 serif !important;
+
 $font-heebo-bold: 'heebo-bold',
 Helvetica,
 Arial,
 sans-serif !important;
+
 $font-heebo-medium: 'heebo-medium',
 Helvetica,
 Arial,
 sans-serif !important;
+
 $font-heebo-regular: 'heebo-regular',
 Helvetica,
 Arial,

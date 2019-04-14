@@ -4,9 +4,9 @@
 //
 //  ==========================================================================
 h1 {
-  @include font-size(48);
+  @include font-size(56);
   line-height: 1.055;
-  margin-bottom: rem(20px);
+  margin: rem(20px 0 15px);
   text-shadow: -1px -1px #000;
 
   @include breakpoint(md) {
@@ -26,4 +26,9 @@ h1 {
       @include font-line-height-px(22, 34);
     }
   }
+}
+
+h2 {
+  @include font-size(38);
+  line-height: 1.055;
 }

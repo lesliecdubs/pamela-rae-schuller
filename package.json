@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Leslie Cohn-Wein <leslie@cohnwein.com>",
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "classnames": "^2.2.6",
     "dotenv": "^6.2.0",
     "eslint": "^5.16.0",

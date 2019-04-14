@@ -1,6 +1,6 @@
 export const allRoutes = {
   home: '',
-  meet: 'meet',
+  meet: 'about',
   media: 'media',
   comedy: 'comedy',
   tour: 'tour',
@@ -8,7 +8,7 @@ export const allRoutes = {
   book: 'book',
   facebook: 'https://www.facebook.com/PamelaRaeSchuller/',
   twitter: 'https://twitter.com/PamelaComedy',
-  instagram: 'https://www.instagram.com/pamelacomedy/'
+  instagram: 'https://www.instagram.com/pamelacomedy/',
 }
 
 const routeFactory = (name, path, opts = {}) => ({ name, path, ...opts })

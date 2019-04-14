@@ -37,6 +37,10 @@
     overflow: scroll;
   }
 
+  &.page--scroll {
+    height: auto;
+  }
+
   >.main {
     flex: 1;
 
