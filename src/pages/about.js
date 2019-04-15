@@ -16,7 +16,7 @@ class MeetPage extends Component {
     const { bioIntro, bio, headshot, description } = this._meetPage
 
     return (
-      <Layout style="page--scroll">
+      <Layout style="page--scroll" pageName="Meet Pam">
         <div className="contain rich-text">
           <h1>Meet Pam</h1>
           <p>{bioIntro}</p>
