@@ -69,3 +69,9 @@
   display: none !important;
   @include breakpoint(md) { display: block !important; }
 }
+
+.is-visible-desktop {
+  display: none !important;
+  @include breakpoint(lg) { display: block !important; }
+
+}

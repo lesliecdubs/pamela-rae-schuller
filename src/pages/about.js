@@ -13,15 +13,16 @@ class MeetPage extends Component {
   }
 
   render() {
-    const { bioIntro, bio, headshot, description } = this._meetPage
+    const { hero, heroAlt, bioIntro, bio, headshot, headshotAlt } = this._meetPage
 
     return (
       <Layout style="page--scroll" pageName="Meet Pam">
-        <div className="contain rich-text">
+        <Img className="page__hero" fluid={hero} alt={heroAlt} />
+        <div className="page__block rich-text">
           <h1>Meet Pam</h1>
-          <p>{bioIntro}</p>
-          <Img className="rich-text__img" fluid={headshot} alt={description} />
-          <div dangerouslySetInnerHTML={{ __html: bio }} />
+          <p className="rich-text__intro">{bioIntro}</p>
+          <Img className="rich-text__img" fluid={headshot} alt={headshotAlt} />
+          <div className="rich-text__content" dangerouslySetInnerHTML={{ __html: bio }} />
         </div>
       </Layout>
     )
@@ -33,6 +34,15 @@ export const query = graphql`
     allContentfulMeetPamPage {
       edges {
         node {
+          hero {
+            description
+            fluid(maxWidth: 1600) {
+              sizes
+              src
+              srcSet
+              aspectRatio
+            }
+          }
           headshot {
             description
             fluid(maxWidth: 613) {

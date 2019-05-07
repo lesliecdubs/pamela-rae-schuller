@@ -48,7 +48,8 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   }
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     color: inherit;
 
     &:before,
@@ -66,14 +67,13 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
     }
   }
 
-  &.active {
-    color: $highlight;
-  }
+  // &.active {
+  //   color: $highlight;
+  // }
 
-  &.active:hover,
-  &.active:focus {
-    color: $navy;
-  }
+  // &.active:focus {
+  //   color: $navy;
+  // }
 }
 
 .link--social {

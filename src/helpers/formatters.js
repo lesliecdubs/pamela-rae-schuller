@@ -14,8 +14,10 @@ export const normalizeHomepage = home => ({
 })
 
 export const normalizeMeetPage = meet => ({
-  description: meet.headshot.description,
+  hero: meet.hero.fluid,
+  heroAlt: meet.hero.description,
   headshot: meet.headshot.fluid,
+  headshotAlt: meet.headshot.description,
   bioIntro: meet.bioIntro.bioIntro,
   bio: meet.bio.childContentfulRichText.html,
 })

@@ -66,4 +66,11 @@
     top: 0;
     max-width: rem(500px);
   }
+
+  h1 {
+    @include breakpoint(lg) {
+      margin-bottom: rem(15px);
+      margin-top: 0;
+    }
+  }
 }

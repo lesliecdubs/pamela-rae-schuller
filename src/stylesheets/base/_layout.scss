@@ -40,6 +40,46 @@
 
   &.page--scroll {
     height: auto;
+
+    > .footer {
+      margin-top: rem(20px);
+
+      @include breakpoint(sm) {
+        margin-top: rem(40px);
+      }
+
+      @include breakpoint(md) {
+        margin-bottom: rem(20px);
+        margin-top: rem(40px);
+      }
+
+      @include breakpoint(lg) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: rem(50px);
+        max-width: $max-width;
+        width: 100%;
+      }
+    }
+  }
+
+  &:not(.page--scroll) {
+    >.footer {
+      @include breakpoint(md) {
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        left: 0;
+      }
+  
+      @include breakpoint(lg) {
+        margin: 0 auto rem(20px);
+        max-width: $max-width;
+        padding: rem(0 20px);
+        right: 0;
+        width: 100%;
+      }
+    }
   }
 
   >.main {
@@ -50,23 +90,6 @@
       flex-direction: column;
       overflow: hidden;
       position: relative;
-    }
-  }
-
-  >.footer {
-    @include breakpoint(md) {
-      position: absolute;
-      bottom: 0;
-      width: 50%;
-      left: 0;
-    }
-
-    @include breakpoint(lg) {
-      margin: 0 auto rem(20px);
-      max-width: $max-width;
-      padding: rem(0 20px);
-      right: 0;
-      width: 100%;
     }
   }
 }
@@ -98,5 +121,57 @@
   @include breakpoint(lg) {
     margin: 0 auto;
     max-width: $max-width;
+  }
+}
+
+//  Page interior
+//  ==========================================================================
+.page__hero {
+  height: 200px;
+  position: relative;
+
+  @include breakpoint(sm) {
+    height: 320px;
+  }
+
+  @include breakpoint(lg) {
+    height: 480px;
+  }
+
+  &::before {
+    @include linear-gradient(top, rgba($navy, 0.7), $transparent);
+    bottom: 0;
+    content: '';
+    height: 50%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.page__block {
+  margin: rem(-75px 20px 0);
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(sm) {
+    margin: rem(0 auto);
+    max-width: 580px;
+    width: 90%;
+  }
+
+  @include breakpoint(md) {
+    box-shadow: 0 15px 30px rgba($navy, 0.2);
+    background-color: $white;
+    padding: rem(30px 60px 60px);
+    margin: rem(-70px auto 40px);
+    max-width: 700px;
+    width: 90%;
+  }
+
+  @include breakpoint(lg) {
+    margin-top: rem(-100px);
+    max-width: 1024px;
+    padding: rem(40px 70px 120px);
   }
 }

@@ -7,17 +7,19 @@ import { Meta, Menu, Footer } from './'
 const Layout = ({ pageName, style, children }) => {
   const [isTop, setIsTop] = useState(true)
 
-  useEffect(
-    () => {
-      window.addEventListener('scroll', () => {
-        const checkTop = window.scrollY < 20
-        if (checkTop !== isTop) {
-          setIsTop(checkTop)
-        }
-      })
-    },
-    [isTop]
-  )
+  const listener = () => {
+    const checkTop = window.scrollY < 3
+    if (checkTop !== isTop) {
+      setIsTop(checkTop)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', listener);
+    return () => {
+      window.removeEventListener('scroll', listener);
+    };
+  }, [isTop]);
 
   return (
     <>

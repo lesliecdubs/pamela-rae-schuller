@@ -11,13 +11,13 @@ h1 {
 
   @include breakpoint(md) {
     @include font-size(72);
+    margin: rem(40px 0 30px);
   }
 
   @include breakpoint(lg) {
     @include font-size(96);
     line-height: 1.025;
   }
-
 
   +p {
     @include font-line-height-px(18, 28);
@@ -29,6 +29,10 @@ h1 {
 }
 
 h2 {
-  @include font-size(38);
+  @include font-size(32);
   line-height: 1.055;
+
+  @include breakpoint(lg) {
+    @include font-size(42);
+  }
 }

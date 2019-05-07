@@ -8,19 +8,27 @@
     display: flex;
     left: 0;
     margin: 0 auto;
-    max-width: $max-width;
-    padding-top: rem(20px);
+    padding-top: rem(10px);
     position: fixed;
     right: 0;
     transition: all 0.25s ease-out;
     width: 100%;
   }
 
+  .menu-wrapper-group {
+    @include breakpoint(lg) {
+      display: flex;
+      margin: 0 auto;
+      max-width: $max-width;
+      width: 100%;
+    }
+  }
+
   &.is-open {
     .menu {
       opacity: 0.95;
       top: $nav-height;
-      transition: transform 0.5s ease, top 0s ease 0s, opacity 0.5s ease 0s;
+      transition: transform 0.25s ease, top 0s ease 0s, opacity 0.25s ease 0s;
 
       @include breakpoint(md) {
         top: $nav-height-md;
@@ -35,14 +43,15 @@
 
   &.is-squished {
     @include breakpoint(lg) {
-      background: rgba($white, 0.95);
+      background: rgba($white, 0.98);
       padding-top: 0;
-      z-index: 1;
+      z-index: 2;
     }
 
     .menu-bar {
       @include breakpoint(lg) {
-        width: 330px;
+        height: 62px;
+        width: 300px;
       }
     }
 
@@ -181,7 +190,7 @@
 // ==========================================================================
 .menu {
   align-items: center;
-  background-color: rgba($white, 0.975);
+  background-color: $white;
   display: flex;
   flex-direction: column;
   height: calc(100vh - 64px); // 64px is $nav-height
@@ -190,7 +199,7 @@
   top: -1000%;
   opacity: 0;
   position: fixed;
-  transition: opacity 0.5s ease, top 0s ease 0.5s;
+  transition: opacity 0.25s ease, top 0s ease 0.25s;
   width: 100vw;
   z-index: 2;
 
@@ -216,7 +225,7 @@
   display: flex;
   flex-direction: column;
   transform: translateY(0) translateX(0) scale(0.75);
-  transition: transform 0.5s ease;
+  transition: transform 0.25s ease;
   margin-top: rem(-40px);
 
   @include breakpoint(lg) {
@@ -250,7 +259,7 @@
 .menu__list-social {
   margin-top: rem(10px);
   transform: translateY(0) translateX(0) scale(0.75);
-  transition: transform 0.5s ease;
+  transition: transform 0.25s ease;
 }
 
 .menu__list-social__item {

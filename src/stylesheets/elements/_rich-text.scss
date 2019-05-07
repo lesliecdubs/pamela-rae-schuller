@@ -5,12 +5,19 @@
 //  ==========================================================================
 .rich-text {
   h1 {
-    margin-bottom: rem(10px);
+    color: $white; 
+    margin-bottom: 0;
     position: relative;
     text-shadow: 2px 1px $highlight;
+    text-shadow: 
+      2px 1px $navy,
+      3px 3px $navy,
+      4px 4px $navy;
 
-    +p {
-      margin-top: rem(10px);
+    @include breakpoint(md) {
+      color: $navy;
+      margin: rem(0 0 5px);
+      text-shadow: 3px 1px $highlight;
     }
   }
 
@@ -18,14 +25,35 @@
     margin-top: rem(40px);
     position: relative;
 
+    @include breakpoint(sm) {
+      margin-top: rem(60px);
+    }
+
+    @include breakpoint(md) {
+      margin-top: rem(80px);
+    }
+
     &:after {
-      background: $navy;
-      content: '';
-      height: 3px;
-      margin-left: rem(5px);
-      width: 25%;
-      display: block;
-      margin: rem(10px 0);
+      @include breakpoint(sm) {
+        background: $navy;
+        content: '';
+        display: block;
+        height: 3px;
+        margin-left: rem(5px);
+        margin: rem(10px 0);
+        position: absolute;
+        width: 25%;
+      }
+
+      @include breakpoint(sm) {
+        top: rem(-20px);
+        width: 12%;
+      }
+
+      @include breakpoint(lg) {
+        margin-top: rem(20px);
+        top: rem(-40px);
+      }
     }
 
     +p {
@@ -38,12 +66,61 @@
     color: $grey-dark;
     line-height: 1.5;
     margin-top: rem(20px);
+
+    @include breakpoint(md) {
+      margin-top: rem(30px);
+    }
+  }
+
+  .rich-text__intro {
+    margin-top: rem(10px);
+
+    @include breakpoint(sm) {
+      float: left;
+      margin-bottom: rem(80px);
+      width: 64%;
+    }
+
+    @include breakpoint(md) {
+      width: 65%;
+    }
+
+    @include breakpoint(lg) {
+      font-size: rem(24px);
+      margin-bottom: rem(100px);
+      width: 75%;
+    }
+
+    @include breakpoint(xl) {
+      width: 71%;
+    }
   }
 
   .rich-text__img {
     border: 3px solid $grey-medium;
     margin-top: rem(30px);
     overflow: visible !important;
+
+    @include breakpoint(sm) {
+      float: left;
+      margin: rem(25px 0 20px 20px);
+      width: 32%;
+    }
+
+    @include breakpoint(md) {
+      margin-top: rem(5px);
+      width: 31%;
+    }
+
+    @include breakpoint(lg) {
+      margin: rem(0 0 30px 30px);
+      width: rem(160px);
+    }
+
+    @include breakpoint(xl) {
+      margin-top: rem(-80px);
+      width: 25%;
+    }
 
     &::before,
     &::after {
@@ -89,6 +166,20 @@
         right: rem(-12px);
         width: 3px;
       }
+    }
+  }
+
+  .rich-text__content {
+    @include breakpoint(sm) {
+      clear: both;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 580px;
+    }
+
+    @include breakpoint(lg) {
+      margin: rem(0 auto);
+      max-width: 620px;
     }
   }
 }
