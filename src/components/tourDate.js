@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Img from 'gatsby-image'
 import { LinkBtn } from './'
 
 const TourDate = ({ title, date, venue, venueLink, type, audience, link }) => (
@@ -11,7 +10,7 @@ const TourDate = ({ title, date, venue, venueLink, type, audience, link }) => (
     </p>
     <p>{type}</p>
     <p>{audience}</p>
-    {link && <LinkBtn to={link} />}
+    {link && <LinkBtn to={link}>Get tickets</LinkBtn>}
   </Fragment>
 )
 

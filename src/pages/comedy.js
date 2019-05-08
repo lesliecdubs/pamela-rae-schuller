@@ -100,18 +100,7 @@ export const query = graphql`
     allContentfulTourDates(filter: { comedyShow: { eq: true } }) {
       edges {
         node {
-          title
-          date(formatString: "dddd, MMMM Do, YYYY, h:mm a")
-          venueName
-          googleMapsLink
-          typeOfShow {
-            typeOfShow
-          }
-          audienceAge {
-            audienceAge
-          }
-          ticketLink
-          comedyShow
+          ...TourDateFragment
         }
       }
     }
