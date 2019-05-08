@@ -52,6 +52,13 @@ const normalizePressPiece = press => ({
   byline: press && press.byline,
 })
 
+const normalizeBookingPackage = book => ({
+  name: book.packageName,
+  description: book.packageDescription.packageDescription,
+  imageAlt: book.packageImage.alt,
+  image: book.packageImage.fluid,
+})
+
 export const normalizeTourDate = tour => ({
   title: tour.title,
   date: tour.date,
@@ -100,4 +107,10 @@ export const normalizePressPage = press => ({
   asSeenOn: press.asSeenOn.map(l => normalizePressLogo(l)),
   byPam: press.pressByPamela.map(p => normalizePressPiece(p)),
   aboutPam: press.pressAboutPamela.map(p => normalizePressPiece(p)),
+})
+
+export const normalizeBookingPage = book => ({
+  title: book.title,
+  packages: book.packages.map(p => normalizeBookingPackage(p)),
+  pastGigTypes: book.pastGigTypes,
 })
