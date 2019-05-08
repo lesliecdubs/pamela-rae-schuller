@@ -1,0 +1,17 @@
+.carousel__slide {
+  height: 400px;
+
+  >img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.slick-list {
+  margin: 0 -5px;
+}
+
+.slick-slide>div {
+  padding: 0 5px;
+}

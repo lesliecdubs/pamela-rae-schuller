@@ -30,6 +30,7 @@
     "react": "16.8.0",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-helmet": "6.0.0-beta",
+    "react-slick": "^0.24.0",
     "sass-rem": "^2.0.1",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",

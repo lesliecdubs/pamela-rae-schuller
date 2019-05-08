@@ -13,7 +13,14 @@ class MeetPage extends Component {
   }
 
   render() {
-    const { hero, heroAlt, bioIntro, bio, headshot, headshotAlt } = this._meetPage
+    const {
+      hero,
+      heroAlt,
+      bioIntro,
+      bio,
+      headshot,
+      headshotAlt,
+    } = this._meetPage
 
     return (
       <Layout style="page--scroll" pageName="Meet Pam">
@@ -22,7 +29,10 @@ class MeetPage extends Component {
           <h1>Meet Pam</h1>
           <p className="rich-text__intro">{bioIntro}</p>
           <Img className="rich-text__img" fluid={headshot} alt={headshotAlt} />
-          <div className="rich-text__content" dangerouslySetInnerHTML={{ __html: bio }} />
+          <div
+            className="rich-text__content"
+            dangerouslySetInnerHTML={{ __html: bio }}
+          />
         </div>
       </Layout>
     )

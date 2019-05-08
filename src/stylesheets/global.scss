@@ -31,7 +31,13 @@
 //  ________________________________________________
 @import "./modules/menu";
 @import "./modules/home";
+@import "./modules/carousel";
 @import "./modules/footer";
+
+//  Vendor
+//  ________________________________________________
+@import "./vendor/slick";
+@import "./vendor/slick-theme";
 
 //  Helper Overrides
 //  ________________________________________________
