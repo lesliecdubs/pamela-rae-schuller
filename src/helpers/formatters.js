@@ -40,6 +40,18 @@ const normalizeFlyer = flyer => ({
   image: flyer.flyerPdf && flyer.flyerPdf.fluid,
 })
 
+const normalizePressLogo = logo => ({
+  title: logo.title,
+  image: logo.fluid,
+})
+
+const normalizePressPiece = press => ({
+  headline: press.headline,
+  publication: press.publication,
+  publicationUrl: press.publicationUrl,
+  byline: press && press.byline,
+})
+
 export const normalizeTourDate = tour => ({
   title: tour.title,
   date: tour.date,
@@ -81,4 +93,11 @@ export const normalizeComedyPage = comedy => ({
   description: comedy.description.description,
   flyers: comedy.showFlyers.map(f => normalizeFlyer(f)),
   videos: comedy.comedyVideos.map(v => normalizeVideo(v)),
+})
+
+export const normalizePressPage = press => ({
+  headline: press.headline,
+  asSeenOn: press.asSeenOn.map(l => normalizePressLogo(l)),
+  byPam: press.pressByPamela.map(p => normalizePressPiece(p)),
+  aboutPam: press.pressAboutPamela.map(p => normalizePressPiece(p)),
 })
