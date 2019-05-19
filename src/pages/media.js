@@ -38,9 +38,11 @@ class MediaPage extends Component {
 
         <section>
           <h2 className="is-visually-hidden">Testimonials</h2>
-          {testimonials.map((testimonial, i) => (
-            <Testimonial key={i} {...testimonial} />
-          ))}
+          <div className="blockquote-group">
+            {testimonials.map((testimonial, i) => (
+              <Testimonial key={i} {...testimonial} />
+            ))}
+          </div>
         </section>
       </Layout>
     )

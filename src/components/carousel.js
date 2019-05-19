@@ -6,8 +6,7 @@ export default class Carousel extends Component {
     super(props)
 
     this.state = {
-      slider: null,
-      // thumbs: null,
+      slider: null
     }
 
     this._carouselSettings = {
@@ -16,13 +15,25 @@ export default class Carousel extends Component {
       slidesToScroll: 1,
       slidesToShow: 3,
       useTransform: false,
+      responsive: [
+        {
+          breakpoint: 1023,
+          settings: {
+            slidesToShow: 1,
+            dots: true,
+            arrows: true
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            dots: true,
+            arrows: false
+          }
+        }
+      ]
     }
-
-    // this._carouselThumbSettings = {
-    //   slidesToShow: 4,
-    //   swipeToSlide: true,
-    //   focusOnSelect: true,
-    // }
 
     this._carouselSlides = props.photos.map((slide, i) => (
       <div key={i} className="carousel__slide">
@@ -38,8 +49,7 @@ export default class Carousel extends Component {
 
   componentDidMount() {
     this.setState({
-      slider: this.slider,
-      // thumbs: this.thumbs
+      slider: this.slider
     })
   }
 
@@ -59,15 +69,6 @@ export default class Carousel extends Component {
         >
           {this._carouselSlides}
         </Slider>
-
-        {/* <Slider
-          {...this._carouselThumbSettings}
-          asNavFor={this.state.slider}
-          ref={slider => (this.thumbs = slider)}
-          className="carousel-thumbs"
-        >
-          {this._carouselSlides}
-        </Slider> */}
       </div>
     )
   }

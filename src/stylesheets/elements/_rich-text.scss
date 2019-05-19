@@ -33,6 +33,10 @@
       margin-top: rem(80px);
     }
 
+    @include breakpoint(lg) {
+      margin-top: rem(120px);
+    }
+
     &:after {
       @include breakpoint(sm) {
         background: $navy;
@@ -65,7 +69,7 @@
     @include font-size(20);
     color: $grey-dark;
     line-height: 1.5;
-    margin-top: rem(20px);
+    margin-top: rem(10px);
 
     @include breakpoint(md) {
       margin-top: rem(30px);
@@ -172,12 +176,12 @@
       clear: both;
       margin-left: auto;
       margin-right: auto;
-      max-width: 580px;
+      max-width: rem(580px);
     }
 
     @include breakpoint(lg) {
       margin: rem(0 auto);
-      max-width: 620px;
+      max-width: rem(700px);
     }
   }
 }

@@ -42,8 +42,12 @@ section {
 
 .page-section__wrap {
   > p {
-    @include breakpoint(md) {
-      font-size: rem(22px);
+    @include font-size(20);
+    color: $grey-dark;
+    line-height: 1.5;
+
+    @include breakpoint(lg) {
+      font-size: rem(24px);
     }
   }
 }
@@ -53,11 +57,12 @@ section {
     
   @include breakpoint(md) {
     padding: rem(0 30px);
-    margin-bottom: rem(-12px);
+    margin-bottom: rem(-10px);
   }
 
   @include breakpoint(lg) {
     padding: rem(0 80px);
+    margin-bottom: rem(-12px);
   }
 }
 
@@ -150,8 +155,80 @@ section {
   }
 }
 
+.blockquote-group {
+  @include breakpoint(xl) {
+    display: flex;
+  }
+
+  .blockquote {
+    @include breakpoint(xl) {
+      flex: 0 0 calc(33.333% - 40px);
+      margin: rem(0 20px);
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    > p {
+      @include breakpoint(xl) {
+        order: 2;
+      }
+    }
+
+    cite {
+      @include breakpoint(xl) {
+        flex-direction: column;
+        margin-bottom: rem(10px);
+      }
+
+      p {
+        @include breakpoint(xl) {
+          text-align: center;
+        }
+      }
+    }
+
+    .blockquote__headshot {
+      @include breakpoint(xl) {
+        margin-bottom: rem(10px);
+        margin-right: 0;
+      }
+    }
+  }
+
+  .blockquote + .blockquote {
+    @include breakpoint(xl) {
+      margin: rem(0 30px);
+    }
+  }
+}
+
 .blockquote {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem(430px);
   padding: 0;
+  text-align: center;
+
+  @include breakpoint(sm) {
+    max-width: rem(530px);
+  }
+
+  &:not(.blockquote--featured):last-of-type {
+    margin-bottom: rem(40px);
+
+    @include breakpoint(md) {
+      margin-bottom: rem(80px);
+    }
+  }
+
+  + .blockquote {
+    margin-top: rem(80px);
+
+    @include breakpoint(sm) {
+      margin-top: rem(120px);
+    }
+  }
 
   >p {
     font-size: rem(28px);
@@ -175,14 +252,24 @@ section {
 
   .blockquote__headshot {
     border-radius: 50%;
-    width: 90px;
     border: 5px solid $highlight-light;
+    height: rem(90px);
     margin-right: rem(20px);
+    width: rem(90px);
   }
 
   &--featured {
     text-align: center;
     margin: rem(120px auto);
-    max-width: 530px;
+
+    @include breakpoint(lg) {
+      max-width: rem(720px);
+    }
+
+    > p {
+      @include breakpoint(lg) {
+        @include font-size(38);
+      }
+    }
   }
 }

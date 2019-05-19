@@ -1,17 +1,142 @@
-.carousel__slide {
-  height: 400px;
+.carousel-wrap {
+  @include breakpoint(sm) {
+    margin-bottom: rem(60px);
+  }
 
-  >img {
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
+  @include breakpoint(md) {
+    padding: rem(0 30px);
   }
 }
 
-.slick-list {
-  margin: 0 -5px;
-}
+.carousel {
+  padding-bottom: rem(60px);
 
-.slick-slide>div {
-  padding: 0 5px;
+  .slick-track {
+    display: flex;
+
+    .slick-slide {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 1px;
+
+      > div {
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .carousel__slide {
+    height: 100%;
+
+    > img {
+      height: rem(350px);
+      object-fit: cover;
+      object-position: 50% 50%;
+      width: 100%;
+
+      @include breakpoint(sm) {
+        height: rem(600px);
+      }
+
+      @include breakpoint(lg) {
+        height: rem(250px);
+      }
+
+      @include breakpoint(xl) {
+        height: rem(350px);
+      }
+    }
+  }
+
+  .slick-list {
+    margin: 0 -5px;
+  }
+  
+  .slick-dots {
+    bottom: rem(30px);
+    margin-left: rem(3px);
+
+    li {
+      width: auto;
+      height: auto;
+
+      button {
+        height: rem(12px);
+        padding: 0;
+        position: relative;
+        width: rem(12px);
+
+        &::before {
+          background: $navy;
+          border-radius: 50%;
+          content: '';
+          width: 100%;
+          height: 100%;
+          transition: opacity 0.15s;
+        }
+      }
+
+      &.slick-active {
+        button:before {
+          color: $navy;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    @include breakpoint(md) {
+      background: none;
+      height: rem(38px);
+      width: rem(38px);
+      top: 48%;
+      transition: all 0.3s;
+      z-index: 1;
+    }
+
+    @include breakpoint(lg) {
+      top: 42%;
+    }
+
+    &::before {
+      @include breakpoint(md) {
+        @include font-size(38);
+        content: "\2192";
+        position: absolute;
+        color: $navy;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .slick-next {
+    &:hover {
+      @include breakpoint(md) {
+        transform: translate(15px, -50%)
+      }
+    }
+  }
+
+  .slick-prev {
+    &::before {
+      @include breakpoint(md) {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      @include breakpoint(md) {
+        transform: translate(-15px, -50%)
+      }
+    }
+  }
 }
