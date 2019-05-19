@@ -41,7 +41,7 @@
   &.page--scroll {
     height: auto;
 
-    > .footer {
+    >.footer {
       margin-top: rem(20px);
 
       @include breakpoint(sm) {
@@ -71,7 +71,7 @@
         width: 50%;
         left: 0;
       }
-  
+
       @include breakpoint(lg) {
         margin: 0 auto rem(20px);
         max-width: $max-width;
@@ -124,54 +124,23 @@
   }
 }
 
-//  Page interior
-//  ==========================================================================
-.page__hero {
-  height: 200px;
-  position: relative;
-
-  @include breakpoint(sm) {
-    height: 320px;
-  }
-
-  @include breakpoint(lg) {
-    height: 480px;
-  }
-
-  &::before {
-    @include linear-gradient(top, rgba($navy, 0.7), $transparent);
-    bottom: 0;
-    content: '';
-    height: 50%;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
+h1 + .contain__block {
+  @include breakpoint(md) {
+    padding: rem(0 80px);
   }
 }
 
-.page__block {
-  margin: rem(-75px 20px 0);
-  position: relative;
-  z-index: 1;
-
-  @include breakpoint(sm) {
-    margin: rem(0 auto);
-    max-width: 580px;
-    width: 90%;
-  }
-
+.contain__block {
   @include breakpoint(md) {
-    box-shadow: 0 15px 30px rgba($navy, 0.2);
-    background-color: $white;
-    padding: rem(30px 60px 60px);
-    margin: rem(-70px auto 40px);
-    max-width: 700px;
-    width: 90%;
+    background: $white;
+    padding: rem(40px 80px);
   }
+}
 
-  @include breakpoint(lg) {
-    margin-top: rem(-100px);
-    max-width: 1024px;
-    padding: rem(40px 70px 120px);
-  }
+//  Layout elements
+//  ==========================================================================
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: rem(20px);
 }

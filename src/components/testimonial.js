@@ -8,18 +8,31 @@ const Testimonial = ({
   name,
   title,
   organization,
+  featured,
 }) => (
-  <blockquote>
-    {/* {headshot && <Img className="" fluid={headshot} alt={headshotAlt} />} */}
-    <p>{quote}</p>
+  <blockquote
+    className={featured ? 'blockquote blockquote--featured' : 'blockquote'}
+  >
+    <p>“{quote}”</p>
     <cite>
-      <p>{name}</p>
-      {(title || organization) && (
-        <p>
-          {title && `${title}, `}
-          {organization && organization}
-        </p>
+      {headshot && (
+        <Img
+          className="blockquote__headshot"
+          fluid={headshot}
+          alt={headshotAlt}
+        />
       )}
+      <div>
+        <p>
+          <strong>{name}</strong>
+        </p>
+        {title && <p>{title}</p>}
+        {organization && (
+          <p>
+            <em>{organization}</em>
+          </p>
+        )}
+      </div>
     </cite>
   </blockquote>
 )

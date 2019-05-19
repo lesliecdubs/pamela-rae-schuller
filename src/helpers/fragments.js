@@ -1,3 +1,24 @@
+import { graphql } from 'gatsby'
+
+export const flyerFragment = graphql`
+  fragment FlyerFragment on ContentfulTourFlyers {
+    flyerName
+    flyerPdf {
+      fluid(maxWidth: 660) {
+        sizes
+        src
+        srcSet
+        aspectRatio
+      }
+      file {
+        url
+        contentType
+      }
+      title
+    }
+  }
+`
+
 // TODO: fix time zone in date format
 export const tourDateFragment = graphql`
   fragment TourDateFragment on ContentfulTourDates {
@@ -13,5 +34,8 @@ export const tourDateFragment = graphql`
     }
     ticketLink
     comedyShow
+    relevantFlyer {
+      ...FlyerFragment
+    }
   }
 `

@@ -67,6 +67,7 @@ export const normalizeTourDate = tour => ({
   type: tour.typeOfShow && tour.typeOfShow.typeOfShow,
   audience: tour.audienceAge && tour.audienceAge.audienceAge,
   link: tour.ticketLink,
+  flyer: tour.relevantFlyer && normalizeFlyer(tour.relevantFlyer)
 })
 
 // Normalize pages

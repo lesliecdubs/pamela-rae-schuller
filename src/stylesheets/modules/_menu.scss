@@ -5,10 +5,11 @@
 //  ==========================================================================
 .menu-wrapper {
   @include breakpoint(lg) {
+    background: rgba($white, 0.925);
     display: flex;
     left: 0;
     margin: 0 auto;
-    padding-top: rem(10px);
+    padding: rem(10px 0);
     position: fixed;
     right: 0;
     transition: all 0.25s ease-out;
@@ -22,6 +23,10 @@
       max-width: $max-width;
       width: 100%;
     }
+  }
+
+  &.is-transparent {
+    background: none;
   }
 
   &.is-open {
@@ -43,9 +48,12 @@
 
   &.is-squished {
     @include breakpoint(lg) {
-      background: rgba($white, 0.98);
-      padding-top: 0;
+      padding: 0;
       z-index: 2;
+    }
+
+    &.is-transparent {
+      background: rgba($white, 0.95);
     }
 
     .menu-bar {
@@ -85,6 +93,7 @@
   }
 
   @include breakpoint(lg) {
+    background: transparent;
     align-items: center;
     background: none;
     border-bottom: 0;
@@ -92,7 +101,7 @@
     flex-wrap: nowrap;
     position: relative;
     transition: all 0.25s ease-out;
-    width: 380px;
+    width: 320px;
   }
 
   svg {
@@ -106,11 +115,10 @@
 // ==========================================================================
 .menu-brand__logo {
   display: block;
-  width: 320px;
-  max-width: rem(260px);
+  width: 220px;
 
   @include breakpoint(md) {
-    max-width: rem(360px);
+    width: 320px;
   }
 
   @include breakpoint(lg) {

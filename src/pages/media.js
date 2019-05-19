@@ -23,28 +23,25 @@ class MediaPage extends Component {
 
     return (
       <Layout style="page--scroll" pageName={headline}>
-        <div className="contain">
-          <h1>{headline}</h1>
-          <p>{description}</p>
+        <p>{description}</p>
 
-          <VideoSection videos={videos} />
+        <VideoSection videos={videos} />
 
-          <aside>
-            <Testimonial {...featuredTestimonial} />
-          </aside>
+        <aside>
+          <Testimonial {...featuredTestimonial} featured={true} />
+        </aside>
 
-          <section>
-            <h2>Photos</h2>
-            <Carousel photos={photos} />
-          </section>
+        <section>
+          <h2 className="is-visually-hidden">Photos</h2>
+          <Carousel photos={photos} />
+        </section>
 
-          <section>
-            <h2>Testimonials</h2>
-            {testimonials.map((testimonial, i) => (
-              <Testimonial key={i} {...testimonial} />
-            ))}
-          </section>
-        </div>
+        <section>
+          <h2 className="is-visually-hidden">Testimonials</h2>
+          {testimonials.map((testimonial, i) => (
+            <Testimonial key={i} {...testimonial} />
+          ))}
+        </section>
       </Layout>
     )
   }

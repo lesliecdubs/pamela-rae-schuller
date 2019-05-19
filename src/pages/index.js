@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
-import { Layout, LinkBtn } from '../components'
+import { LayoutHome, LinkBtn } from '../components'
 import { normalizeHomepage } from '../helpers'
 import Img from 'gatsby-image'
 
@@ -17,12 +17,12 @@ class HomePage extends Component {
     const { pamPrimary, pamPrimaryMobile } = this.props.data
 
     return (
-      <Layout>
+      <LayoutHome>
         <Img
           className="home-img--mobile is-hidden-md"
           fluid={pamPrimaryMobile.childImageSharp.fluid}
         />
-        <div className="home contain">
+        <div className="home home--contain">
           <div className="home__content">
             <h1>{headline}</h1>
             <p>{description}</p>
@@ -36,7 +36,7 @@ class HomePage extends Component {
             alt="Pam smiling with hands on hips"
           />
         </div>
-      </Layout>
+      </LayoutHome>
     )
   }
 }

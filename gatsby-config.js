@@ -34,8 +34,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
-        include: /assets\/images\/inline-svgs/,
+        include: /assets\/images\/inline-svgs/
       },
-    },
+    }
   ],
 }

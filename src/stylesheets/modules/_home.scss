@@ -3,6 +3,24 @@
 //  Home Page
 //
 //  ==========================================================================
+.home--contain {
+  margin: rem(0 20px);
+
+  @include breakpoint(sm) {
+    margin: rem(0 30px);
+  }
+
+  @include breakpoint(md) {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  @include breakpoint(lg) {
+    margin: 0 auto;
+    max-width: 1380px
+  }
+}
+
 .home-img--mobile {
   margin-bottom: rem(20px);
   z-index: 1;

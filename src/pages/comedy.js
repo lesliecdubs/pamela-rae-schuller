@@ -20,41 +20,38 @@ class ComedyPage extends Component {
 
     return (
       <Layout style="page--scroll" pageName={headline}>
-        <div className="contain">
-          <h1>{headline}</h1>
-          <p>{description}</p>
+        <p>{description}</p>
 
-          {this._comedyShows && (
-            <section>
-              <h2>Upcoming Shows</h2>
-              <ul>
-                {this._comedyShows.map((show, i) => (
+        {this._comedyShows && (
+          <section>
+            <h2>Upcoming Shows</h2>
+            <ul>
+              {this._comedyShows.map((show, i) => (
+                <li key={i}>
+                  <TourDate {...show} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {flyers && (
+          <section>
+            <ul>
+              {flyers.map((flyer, i) => {
+                return (
                   <li key={i}>
-                    <TourDate {...show} />
+                    <LinkBtn to={`http:${flyer.file}`}>
+                      <Img fluid={flyer.image} alt="" />
+                    </LinkBtn>
                   </li>
-                ))}
-              </ul>
-            </section>
-          )}
+                )
+              })}
+            </ul>
+          </section>
+        )}
 
-          {flyers && (
-            <section>
-              <ul>
-                {flyers.map((flyer, i) => {
-                  return (
-                    <li key={i}>
-                      <LinkBtn to={`http:${flyer.file}`}>
-                        <Img fluid={flyer.image} alt="" />
-                      </LinkBtn>
-                    </li>
-                  )
-                })}
-              </ul>
-            </section>
-          )}
-
-          {videos && <VideoSection videos={videos} />}
-        </div>
+        {videos && <VideoSection videos={videos} />}
       </Layout>
     )
   }
@@ -72,20 +69,7 @@ export const query = graphql`
             description
           }
           showFlyers {
-            flyerName
-            flyerPdf {
-              fluid(maxWidth: 660) {
-                sizes
-                src
-                srcSet
-                aspectRatio
-              }
-              file {
-                url
-                contentType
-              }
-              title
-            }
+            ...FlyerFragment
           }
           comedyVideos {
             videoTitle

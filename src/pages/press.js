@@ -17,24 +17,18 @@ class PressPage extends Component {
 
     return (
       <Layout style="page--scroll" pageName={headline}>
-        <div className="contain">
-          <h1>{headline}</h1>
+        <h2>As Seen On</h2>
+        <ul>
+          {asSeenOn.map((logo, i) => (
+            <li key={i}>
+              <PressLogo {...logo} />
+            </li>
+          ))}
+        </ul>
 
-          <section>
-            <h2>As Seen On</h2>
-            <ul>
-              {asSeenOn.map((logo, i) => (
-                <li key={i}>
-                  <PressLogo {...logo} />
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <div>
-            <PressGroup title="Press About Pamela" data={aboutPam} />
-            <PressGroup title="Press By Pamela" data={byPam} />
-          </div>
+        <div>
+          <PressGroup title="Press About Pamela" data={aboutPam} />
+          <PressGroup title="Press By Pamela" data={byPam} />
         </div>
       </Layout>
     )

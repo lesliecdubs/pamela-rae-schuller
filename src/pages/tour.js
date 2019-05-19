@@ -14,19 +14,15 @@ class TourPage extends Component {
   render() {
     return (
       <Layout style="page--scroll" pageName="Tour">
-        <section className="contain">
-          <h1>Upcoming Shows</h1>
-
-          {this._tourDates && (
-            <ul>
-              {this._tourDates.map((show, i) => (
-                <li key={i}>
-                  <TourDate {...show} />
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
+        {this._tourDates && (
+          <ul>
+            {this._tourDates.map((show, i) => (
+              <li key={i}>
+                <TourDate {...show} />
+              </li>
+            ))}
+          </ul>
+        )}
       </Layout>
     )
   }

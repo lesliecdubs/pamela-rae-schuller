@@ -4,7 +4,7 @@ import { Logo } from '../assets/images'
 import { allRoutes, menuRoutes } from '../helpers/routes'
 import cn from 'classnames'
 
-const Menu = ({ isSquished }) => {
+const Menu = ({ isSquished, isTransparent = false }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   function handleClick() {
@@ -14,6 +14,7 @@ const Menu = ({ isSquished }) => {
   return (
     <nav
       className={cn('menu-wrapper', {
+        'is-transparent': isTransparent,
         'is-open': isOpen,
         'is-squished': isSquished,
       })}

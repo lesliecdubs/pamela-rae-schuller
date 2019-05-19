@@ -1,22 +1,12 @@
 import React from 'react'
+import { Video } from './'
 
 const VideoSection = ({ videos }) => (
   <section>
-    <h2>Videos</h2>
-    <ul>
+    <h2 className="is-visually-hidden">Video Clips</h2>
+    <ul className="grid">
       {videos.map((video, i) => (
-        <li key={i}>
-          <h3>{video.title}</h3>
-          <iframe
-            title={video.title}
-            src={`https://www.youtube.com/embed/${
-              video.id
-            }?color=white&modestbranding=1&showinfo=0`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </li>
+        <Video key={i} {...video} />
       ))}
     </ul>
   </section>

@@ -6,12 +6,14 @@
 h1 {
   @include font-size(56);
   line-height: 1.055;
-  margin: rem(20px 0 15px);
+  margin: rem(10px 0);
+  // margin: rem(20px 0 15px);
   text-shadow: -1px -1px #000;
 
   @include breakpoint(md) {
     @include font-size(72);
-    margin: rem(40px 0 30px);
+    margin: rem(20px 0 10px);
+    // margin: rem(40px 0 30px);
   }
 
   @include breakpoint(lg) {
@@ -31,8 +33,10 @@ h1 {
 h2 {
   @include font-size(32);
   line-height: 1.055;
+  margin: rem(10px 0);
 
   @include breakpoint(lg) {
     @include font-size(42);
+    margin: rem(20px 0);
   }
 }

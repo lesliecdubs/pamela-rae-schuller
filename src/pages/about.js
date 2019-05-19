@@ -24,9 +24,8 @@ class MeetPage extends Component {
 
     return (
       <Layout style="page--scroll" pageName="Meet Pam">
-        <Img className="page__hero" fluid={hero} alt={heroAlt} />
-        <div className="page__block rich-text">
-          <h1>Meet Pam</h1>
+        <Img fluid={hero} alt={heroAlt} className="is-visible-md" />
+        <div className="page-section__longform rich-text">
           <p className="rich-text__intro">{bioIntro}</p>
           <Img className="rich-text__img" fluid={headshot} alt={headshotAlt} />
           <div

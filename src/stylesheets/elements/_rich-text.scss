@@ -77,18 +77,20 @@
 
     @include breakpoint(sm) {
       float: left;
-      margin-bottom: rem(80px);
+      margin-bottom: rem(70px);
       width: 64%;
     }
 
     @include breakpoint(md) {
-      width: 65%;
+      margin-right: 2%;
+      width: 68%;
     }
 
     @include breakpoint(lg) {
       font-size: rem(24px);
       margin-bottom: rem(100px);
-      width: 75%;
+      margin-right: 0;
+      width: 70%;
     }
 
     @include breakpoint(xl) {
@@ -103,23 +105,19 @@
 
     @include breakpoint(sm) {
       float: left;
-      margin: rem(25px 0 20px 20px);
+      margin: rem(-55px 0 20px 20px);
+      max-width: rem(200px);
       width: 32%;
     }
 
     @include breakpoint(md) {
-      margin-top: rem(5px);
-      width: 31%;
+      margin-top: rem(20px);
+      width: rem(150px);
     }
 
     @include breakpoint(lg) {
-      margin: rem(0 0 30px 30px);
-      width: rem(160px);
-    }
-
-    @include breakpoint(xl) {
-      margin-top: rem(-80px);
-      width: 25%;
+      margin: rem(20px 0 30px 40px);
+      width: rem(150px);
     }
 
     &::before,

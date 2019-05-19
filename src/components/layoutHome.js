@@ -4,7 +4,7 @@ import '../helpers/focus-visible.js'
 import '../stylesheets/global.scss' // import global styles
 import { Meta, Menu, Footer } from './'
 
-const Layout = ({ pageName, style, children }) => {
+const LayoutHome = ({ pageName, style, children }) => {
   const [isTop, setIsTop] = useState(true)
 
   const listener = () => {
@@ -24,16 +24,10 @@ const Layout = ({ pageName, style, children }) => {
   return (
     <>
       <Meta lang="en" pageName={pageName} />
-      <Menu isSquished={!isTop} />
+      <Menu isSquished={!isTop} isTransparent={true} />
       <div className={`page ${style}`}>
         <main className="main">
-          <div className="paint is-visible-md" />
-          <div className="page-section contain">
-            <h1 className="page-section__title">{pageName}</h1>
-            <div className="page-section__wrap">
-              {children}
-            </div>
-          </div>
+          {children}
         </main>
         <Footer />
       </div>
@@ -41,14 +35,14 @@ const Layout = ({ pageName, style, children }) => {
   )
 }
 
-Layout.defaultProps = {
+LayoutHome.defaultProps = {
   pageName: 'Pamela Rae Schuller',
   style: '',
 }
 
-Layout.propTypes = {
+LayoutHome.propTypes = {
   pageName: PropTypes.string,
   style: PropTypes.string,
 }
 
-export default Layout
+export default LayoutHome
