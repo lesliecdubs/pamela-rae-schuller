@@ -10,7 +10,6 @@ class BookingPage extends Component {
     this._bookingPage = normalizeBookingPage(
       props.data.allContentfulBookingPage.edges[0].node
     )
-    console.log(this._bookingPage)
   }
 
   render() {

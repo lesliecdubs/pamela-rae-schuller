@@ -9,6 +9,7 @@ import {
   sortByAscendingDate,
   sortByDescendingDate
 } from '../helpers'
+import Img from 'gatsby-image'
 
 class TourPage extends Component {
   constructor(props) {
@@ -22,20 +23,32 @@ class TourPage extends Component {
   }
 
   render() {
-    const { headline, description } = this._tourPage
+    const { headline, hero, heroAlt, separator, separatorAlt, description } = this._tourPage
     const upcomingShows = sortByAscendingDate(getUpcomingShows(this._tourDates))
     const pastShows = sortByDescendingDate(getPastShows(this._tourDates))
 
     return (
       <Layout style="page--scroll" pageName={headline}>
+        <Img 
+          fluid={hero} 
+          alt={heroAlt} 
+          className="is-visible-sm" 
+        />
         <p>{description}</p>
 
         {upcomingShows && upcomingShows.length > 0 && (
-          <TourDateGroup 
-            title="Upcoming Shows" 
-            shows={upcomingShows} 
-            showType={true}
-          />
+          <Fragment>
+            <TourDateGroup 
+              title="Upcoming Shows" 
+              shows={upcomingShows} 
+              showType={true}
+            />
+            <Img 
+              fluid={separator} 
+              alt={separatorAlt} 
+              className="tour__separator is-visible-md" 
+            />
+          </Fragment>
         )}
 
         {pastShows && pastShows.length > 0 && (
@@ -51,15 +64,26 @@ class TourPage extends Component {
   }
 }
 
-// TODO: filter upcoming shows to only show those in the future
 export const query = graphql`
   query TourPageQuery {
     allContentfulTourPage {
       edges {
         node {
           headline
+          hero {
+            description
+            fluid(maxWidth: 1600) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
           description {
             description
+          }
+          separatorImage {
+            description
+            fluid(maxWidth: 1600) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
           }
         }
       }

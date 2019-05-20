@@ -65,6 +65,11 @@
   @include breakpoint(md) { display: none !important; }
 }
 
+.is-visible-sm {
+  display: none !important;
+  @include breakpoint(sm) { display: block !important; }
+}
+
 .is-visible-md {
   display: none !important;
   @include breakpoint(md) { display: block !important; }

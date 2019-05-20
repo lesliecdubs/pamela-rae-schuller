@@ -257,11 +257,11 @@
     margin: rem(0 20px);
   }
 
-  &:nth-last-of-type(-n+2) {
-    @include breakpoint(lg) {
-      margin-left: auto;
-    }
-  }
+  // &:nth-last-of-type(-n+2) {
+  //   @include breakpoint(lg) {
+  //     margin-left: auto;
+  //   }
+  // }
 }
 
 .menu__list-social {

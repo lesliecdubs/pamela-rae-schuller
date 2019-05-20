@@ -9,6 +9,7 @@ const typeMap = {
   ContentfulMediaPage: 'media',
   ContentfulComedyPage: 'comedy',
   ContentfulPressPage: 'press',
+  ContentfulBookingPage: 'book'
 }
 
 // Normalize content types
@@ -75,20 +76,23 @@ export const normalizeHomepage = home => ({
   headline: home.headline,
   description: home.description.description,
   cta: home.callToActionText,
-  ctaLink: home.callToActionLink.page,
+  ctaLink: typeMap[home.callToActionLink.__typename]
 })
 
 export const normalizeMeetPage = meet => ({
   hero: meet.hero.fluid,
   heroAlt: meet.hero.description,
-  headshot: meet.headshot.fluid,
-  headshotAlt: meet.headshot.description,
   bioIntro: meet.bioIntro.bioIntro,
   bio: meet.bio.childContentfulRichText.html,
+  bioImage: meet.bioImage.fluid,
+  bioImageAlt: meet.bioImage.description,
+  bioPartTwo: meet.bioPartTwo.childContentfulRichText.html
 })
 
 export const normalizeMediaPage = media => ({
   headline: media.headline,
+  hero: media.hero.fluid,
+  heroAlt: media.hero.description,
   description: media.description.description,
   videos: media.videos.map(v => normalizeVideo(v)),
   featuredTestimonial: normalizeTestimonial(media.featuredTestimonial),
@@ -98,6 +102,8 @@ export const normalizeMediaPage = media => ({
 
 export const normalizeComedyPage = comedy => ({
   headline: comedy.headline,
+  hero: comedy.hero.fluid,
+  heroAlt: comedy.hero.description,
   description: comedy.description.description,
   flyers: comedy.showFlyers.map(f => normalizeFlyer(f)),
   videos: comedy.comedyVideos.map(v => normalizeVideo(v)),
@@ -105,6 +111,8 @@ export const normalizeComedyPage = comedy => ({
 
 export const normalizePressPage = press => ({
   headline: press.headline,
+  hero: press.hero.fluid,
+  heroAlt: press.hero.description,
   asSeenOn: press.asSeenOn.map(l => normalizePressLogo(l)),
   byPam: press.pressByPamela.map(p => normalizePressPiece(p)),
   aboutPam: press.pressAboutPamela.map(p => normalizePressPiece(p)),
@@ -118,6 +126,10 @@ export const normalizeBookingPage = book => ({
 
 export const normalizeTourPage = tour => ({
   headline: tour.headline,
-  description: tour.description.description
+  hero: tour.hero.fluid,
+  heroAlt: tour.hero.description,
+  description: tour.description.description,
+  separator: tour.separatorImage.fluid,
+  separatorAlt: tour.separatorImage.description
 })
 

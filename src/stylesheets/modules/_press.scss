@@ -1,0 +1,12 @@
+.press-logos {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: rem(25px);
+}
+
+.press-logos__item {
+  flex: 0 0 calc(50% - 20px);
+  margin: rem(0 10px);
+}

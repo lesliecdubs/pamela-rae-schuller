@@ -18,19 +18,34 @@ class MeetPage extends Component {
       heroAlt,
       bioIntro,
       bio,
-      headshot,
-      headshotAlt,
+      bioImage,
+      bioImageAlt,
+      bioPartTwo
     } = this._meetPage
 
     return (
       <Layout style="page--scroll" pageName="Meet Pam">
-        <Img fluid={hero} alt={heroAlt} className="is-visible-md" />
+        <Img
+          fluid={hero} 
+          alt={heroAlt} 
+          className="is-visible-sm" 
+        />
+        <p>{bioIntro}</p>
+
         <div className="page-section__longform rich-text">
-          <p className="rich-text__intro">{bioIntro}</p>
-          <Img className="rich-text__img" fluid={headshot} alt={headshotAlt} />
           <div
             className="rich-text__content"
             dangerouslySetInnerHTML={{ __html: bio }}
+          />
+          {bioImage &&
+            <Img
+              fluid={bioImage} 
+              alt={bioImageAlt} 
+            />
+          }
+          <div
+            className="rich-text__content"
+            dangerouslySetInnerHTML={{ __html: bioPartTwo }}
           />
         </div>
       </Layout>
@@ -46,25 +61,24 @@ export const query = graphql`
           hero {
             description
             fluid(maxWidth: 1600) {
-              sizes
-              src
-              srcSet
-              aspectRatio
-            }
-          }
-          headshot {
-            description
-            fluid(maxWidth: 613) {
-              sizes
-              src
-              srcSet
-              aspectRatio
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           bioIntro {
             bioIntro
           }
           bio {
+            childContentfulRichText {
+              html
+            }
+          }
+          bioImage {
+            description
+            fluid(maxWidth: 1600) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+          bioPartTwo {
             childContentfulRichText {
               html
             }

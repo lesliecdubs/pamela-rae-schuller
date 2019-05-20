@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import { Carousel, Layout, Testimonial, VideoSection } from '../components'
 import { normalizeMediaPage } from '../helpers'
+import Img from 'gatsby-image'
 
 class MediaPage extends Component {
   constructor(props) {
@@ -14,6 +15,8 @@ class MediaPage extends Component {
   render() {
     const {
       headline,
+      hero,
+      heroAlt,
       description,
       videos,
       featuredTestimonial,
@@ -23,6 +26,11 @@ class MediaPage extends Component {
 
     return (
       <Layout style="page--scroll" pageName={headline}>
+        <Img 
+          fluid={hero} 
+          alt={heroAlt} 
+          className="is-visible-sm" 
+        />
         <p>{description}</p>
 
         <VideoSection videos={videos} />
@@ -55,6 +63,12 @@ export const query = graphql`
       edges {
         node {
           headline
+          hero {
+            description
+            fluid(maxWidth: 1600) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
           description {
             description
           }
@@ -75,10 +89,7 @@ export const query = graphql`
             headshot {
               description
               fluid(maxWidth: 660) {
-                sizes
-                src
-                srcSet
-                aspectRatio
+                ...GatsbyContentfulFluid_tracedSVG
               }
             }
           }
@@ -87,10 +98,7 @@ export const query = graphql`
             photo {
               description
               fluid(maxWidth: 1600) {
-                sizes
-                src
-                srcSet
-                aspectRatio
+                ...GatsbyContentfulFluid_tracedSVG
               }
             }
           }
@@ -104,10 +112,7 @@ export const query = graphql`
             headshot {
               description
               fluid(maxWidth: 660) {
-                sizes
-                src
-                srcSet
-                aspectRatio
+                ...GatsbyContentfulFluid_tracedSVG
               }
             }
           }

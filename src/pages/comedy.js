@@ -23,12 +23,17 @@ class ComedyPage extends Component {
   }
 
   render() {
-    const { headline, description, flyers, videos } = this._comedyPage
+    const { headline, hero, heroAlt, description, flyers, videos } = this._comedyPage
     const upcomingShows = sortByAscendingDate(getUpcomingShows(this._comedyShows))
     const pastShows = sortByDescendingDate(getPastShows(this._comedyShows))
 
     return (
       <Layout style="page--scroll" pageName={headline}>
+        <Img 
+          fluid={hero} 
+          alt={heroAlt} 
+          className="is-visible-sm" 
+        />
         <p>{description}</p>
 
         {upcomingShows && upcomingShows.length > 0 && (
@@ -77,6 +82,12 @@ export const query = graphql`
       edges {
         node {
           headline
+          hero {
+            description
+            fluid(maxWidth: 1600) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
           description {
             description
           }

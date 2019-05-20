@@ -46,11 +46,16 @@ section {
     color: $grey-dark;
     line-height: 1.5;
 
+    @include breakpoint(sm) {
+      margin-top: rem(20px);
+    }
+
     @include breakpoint(md) {
       max-width: 80%;
     }
 
     @include breakpoint(lg) {
+      margin-top: rem(30px);
       font-size: rem(24px);
     }
   }

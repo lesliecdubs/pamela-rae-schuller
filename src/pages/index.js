@@ -52,9 +52,6 @@ export const query = graphql`
           }
           callToActionLink {
             __typename
-            ... on ContentfulMeetPamPage {
-              page
-            }
           }
           callToActionText
         }

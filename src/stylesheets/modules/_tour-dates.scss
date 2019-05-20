@@ -107,10 +107,6 @@
   }
 }
 
-.tour__show-type {
-  
-}
-
 .tour__venue-link {
   background: $highlight;
   color: $white;
@@ -156,5 +152,15 @@
 
   .cta {
     margin-top: 0;
+  }
+}
+
+.tour__separator {
+  @include breakpoint(md) {
+    margin-top: rem(30px);
+  }
+
+  @include breakpoint(lg) {
+    margin-top: rem(40px);
   }
 }
