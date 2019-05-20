@@ -23,7 +23,8 @@ export const flyerFragment = graphql`
 export const tourDateFragment = graphql`
   fragment TourDateFragment on ContentfulTourDates {
     title
-    date(formatString: "dddd, MMMM Do, YYYY, h:mm a")
+    date
+    city
     venueName
     googleMapsLink
     typeOfShow {

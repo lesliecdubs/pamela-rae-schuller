@@ -18,75 +18,71 @@ class BookingPage extends Component {
 
     return (
       <Layout style="page--scroll" pageName={title}>
-        <div className="contain">
-          <h1>{title}</h1>
+        <section>
+          <h2>Packages</h2>
+          <ul>
+            {packages.map((pack, i) => (
+              <li key={i}>
+                <Img fluid={pack.image} alt={pack.imageAlt} />
+                <h3>{pack.name}</h3>
+                <p>{pack.description}</p>
+              </li>
+            ))}
+          </ul>
 
-          <section>
-            <h2>Packages</h2>
-            <ul>
-              {packages.map((pack, i) => (
-                <li key={i}>
-                  <Img fluid={pack.image} alt={pack.imageAlt} />
-                  <h3>{pack.name}</h3>
-                  <p>{pack.description}</p>
-                </li>
-              ))}
-            </ul>
+          <p>Pamela is available for the following: </p>
+          <ul>
+            {pastGigTypes.map((gig, i) => (
+              <li key={i}>{gig}</li>
+            ))}
+          </ul>
+        </section>
 
-            <p>Pamela is available for the following: </p>
-            <ul>
-              {pastGigTypes.map((gig, i) => (
-                <li key={i}>{gig}</li>
-              ))}
-            </ul>
-          </section>
-
-          <form>
-            <div>
-              <label htmlFor="name">Full name*</label>
-              <input type="text" name="name" id="name" required />
-            </div>
-            <div>
-              <label htmlFor="email">Email address*</label>
-              <input type="email" name="email" id="email" required />
-            </div>
-            <div>
-              <label htmlFor="org">Organization / Company</label>
-              <input type="text" name="org" id="org" />
-            </div>
-            <div>
-              <label htmlFor="date">Ideal date</label>
-              <input
-                type="date"
-                id="date"
-                name="date"
-                defaultValue={new Date()}
-                min={new Date()}
-              />
-            </div>
-            <div>
-              <label htmlFor="org">Type of show</label>
-              <input type="checkbox" name="typeOfShow" value="Performance" />
-              Performance
-              <input type="checkbox" name="typeOfShow" value="Workshop" />
-              Workshop
-              <input
-                type="checkbox"
-                name="typeOfShow"
-                value="Professional Development"
-              />
-              Professional Development
-              <input type="checkbox" name="typeOfShow" value="Motivational" />
-              Motivational
-              <input type="checkbox" name="typeOfShow" value="Other" />
-              Other
-            </div>
-            <div>
-              <label htmlFor="age">Age group</label>
-              <input type="age" name="age" id="age" />
-            </div>
-          </form>
-        </div>
+        <form>
+          <div>
+            <label htmlFor="name">Full name*</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div>
+            <label htmlFor="email">Email address*</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div>
+            <label htmlFor="org">Organization / Company</label>
+            <input type="text" name="org" id="org" />
+          </div>
+          <div>
+            <label htmlFor="date">Ideal date</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              defaultValue={new Date()}
+              min={new Date()}
+            />
+          </div>
+          <div>
+            <label htmlFor="org">Type of show</label>
+            <input type="checkbox" name="typeOfShow" value="Performance" />
+            Performance
+            <input type="checkbox" name="typeOfShow" value="Workshop" />
+            Workshop
+            <input
+              type="checkbox"
+              name="typeOfShow"
+              value="Professional Development"
+            />
+            Professional Development
+            <input type="checkbox" name="typeOfShow" value="Motivational" />
+            Motivational
+            <input type="checkbox" name="typeOfShow" value="Other" />
+            Other
+          </div>
+          <div>
+            <label htmlFor="age">Age group</label>
+            <input type="age" name="age" id="age" />
+          </div>
+        </form>
       </Layout>
     )
   }

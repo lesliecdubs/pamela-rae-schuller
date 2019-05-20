@@ -1,0 +1,35 @@
+.flyers {
+  @include breakpoint(xs) {
+    display: flex;
+    margin-left: rem(-5px);
+    width: calc(100% + 10px);
+  }
+}
+
+.flyer {
+  margin: rem(0 0 20px 0);
+
+  @include breakpoint(xs) {
+    flex: 1 0 auto;
+    margin: rem(0 5px);
+  }
+
+  .gatsby-image-wrapper {
+    @include breakpoint(xs) {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.flyer__link {
+  display: block;
+  height: 100%;
+  opacity: 0.9;
+  transition: all 0.15s;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.035);
+  }
+}

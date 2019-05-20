@@ -60,8 +60,8 @@ const normalizeBookingPackage = book => ({
 })
 
 export const normalizeTourDate = tour => ({
-  title: tour.title,
   date: tour.date,
+  city: tour.city,
   venue: tour.venueName,
   venueLink: tour.googleMapsLink,
   type: tour.typeOfShow && tour.typeOfShow.typeOfShow,

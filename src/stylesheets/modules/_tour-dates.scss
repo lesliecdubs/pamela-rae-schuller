@@ -1,0 +1,156 @@
+.tour__date {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: rem(20px);
+
+  @include breakpoint(lg) {
+    flex-wrap: nowrap;
+    padding: rem(40px 30px);
+  }
+  
+  &:nth-of-type(odd) {
+    background-color: rgba($highlight-light, 0.3);
+
+    @include breakpoint(md) {
+      background-color: rgba($highlight-light, 0.2);
+    }
+  }
+}
+
+.tour__datetime-wrap {
+  flex: 0 0 82px;
+}
+
+.tour__datetime {
+  display: block;
+  margin-right: rem(30px);
+
+  p {
+    &:first-of-type {
+      @include font-size(28);
+      line-height: 1;
+
+      @include breakpoint(lg) {
+        @include font-size(38);
+      }
+    }
+
+    &:nth-of-type(2) {
+      @include font-size(48);
+      line-height: 0.75;
+
+      @include breakpoint(lg) {
+        @include font-size(65);
+        line-height: 0.65;
+      }
+    }
+
+    &:last-of-type {
+      @include font-size(23);
+      color: $grey-medium;
+      line-height: 1.5;
+
+      @include breakpoint(lg) {
+        @include font-size(30);
+      }
+    }
+  }
+}
+
+.tour__info {
+  flex: 1 1 calc(65% - 90px);
+
+  @include breakpoint(md) {
+    flex-basis: auto;
+  }
+
+  @include breakpoint(xl) {
+    margin-top: rem(-5px);
+  }
+}
+
+.tour__city {
+  @include font-size(24);
+  font-family: $font-playfair-black;
+  line-height: 1;
+  color: $navy;
+
+  @include breakpoint(lg) {
+    @include font-size(38);
+  }
+
+  @include breakpoint(xl) {
+    @include font-size(68);
+    margin-bottom: rem(5px);
+  }
+}
+
+.tour__details {
+  @include font-size(20);
+  color: $grey-medium;
+  margin-bottom: rem(5px);
+  margin-top: rem(3px);
+
+  time {
+    display: block;
+    margin-bottom: rem(3px);
+
+    @include breakpoint(xl) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint(xl) {
+    display: flex;
+    margin-bottom: 0;
+  }
+}
+
+.tour__venue-link {
+  background: $highlight;
+  color: $white;
+  display: inline;
+
+  @include breakpoint(lg) {
+    padding: rem(0 5px);
+  }
+
+  @include breakpoint(xl) {
+    margin: rem(0 10px);
+  }
+
+  &:hover {
+    background: $highlight-light;
+    color: $navy;
+  }
+}
+
+.tour__flyer {
+  @include breakpoint(md) {
+    flex: 0 0 75px;
+    margin-left: auto;
+  }
+
+  @include breakpoint(lg) {
+    flex-basis: 90px;
+  }
+}
+
+.tour__tickets {
+  align-self: center;
+  margin: rem(15px auto 0);
+  flex: 0 0 145px;
+
+  @include breakpoint(md) {
+    margin-left: rem(20px);
+  }
+
+  @include breakpoint(xl) {
+    margin-left: rem(40px);
+  }
+
+  .cta {
+    margin-top: 0;
+  }
+}

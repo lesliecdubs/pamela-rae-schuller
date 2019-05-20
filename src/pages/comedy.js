@@ -1,8 +1,31 @@
 import React, { Component, Fragment } from 'react'
 import { graphql } from 'gatsby'
-import { Layout, TourDate, LinkBtn, VideoSection } from '../components'
+import { Layout, TourDateGroup, Flyer, LinkBtn, VideoSection } from '../components'
 import { normalizeComedyPage, normalizeTourDate } from '../helpers'
 import Img from 'gatsby-image'
+import moment from 'moment'
+
+function getUpcomingShows(showList) {
+  const now = moment()
+  return showList.filter(show => moment(show.date).isAfter(now));
+}
+
+function getPastShows(showList) {
+  const now = moment()
+  return showList.filter(show => moment(show.date).isBefore(now));
+}
+
+function sortByAscendingDate(array) {
+  return array.sort(function(a, b) {
+    return new Date(a.date) - new Date(b.date)
+  });
+}
+
+function sortByDescendingDate(array) {
+  return array.sort(function(a, b) {
+    return new Date(b.date) - new Date(a.date)
+  });
+}
 
 class ComedyPage extends Component {
   constructor(props) {
@@ -17,33 +40,29 @@ class ComedyPage extends Component {
 
   render() {
     const { headline, description, flyers, videos } = this._comedyPage
+    const upcomingShows = sortByAscendingDate(getUpcomingShows(this._comedyShows))
+    const pastShows = sortByDescendingDate(getPastShows(this._comedyShows))
 
     return (
       <Layout style="page--scroll" pageName={headline}>
         <p>{description}</p>
 
-        {this._comedyShows && (
-          <section>
-            <h2>Upcoming Shows</h2>
-            <ul>
-              {this._comedyShows.map((show, i) => (
-                <li key={i}>
-                  <TourDate {...show} />
-                </li>
-              ))}
-            </ul>
-          </section>
+        {upcomingShows && upcomingShows.length > 0 && (
+          <TourDateGroup title="Upcoming Shows" shows={upcomingShows} />
         )}
 
         {flyers && (
           <section>
-            <ul>
+            <h2>Flyers</h2>
+            <ul className="flyers">
               {flyers.map((flyer, i) => {
                 return (
-                  <li key={i}>
-                    <LinkBtn to={`http:${flyer.file}`}>
-                      <Img fluid={flyer.image} alt="" />
-                    </LinkBtn>
+                  <li key={i} className="flyer">
+                    <Flyer 
+                      title={flyer.title} 
+                      file={flyer.file} 
+                      image={flyer.image} 
+                    />
                   </li>
                 )
               })}
@@ -51,7 +70,11 @@ class ComedyPage extends Component {
           </section>
         )}
 
-        {videos && <VideoSection videos={videos} />}
+        {videos && <VideoSection videos={videos} title="Comedy Clips" />}
+
+        {pastShows && pastShows.length > 0 && (
+          <TourDateGroup title="Past Shows" shows={pastShows} />
+        )}
       </Layout>
     )
   }
