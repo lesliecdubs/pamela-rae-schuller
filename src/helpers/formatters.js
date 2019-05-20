@@ -5,7 +5,7 @@ const getVideoId = url => {
 
 const typeMap = {
   ContentfulHomePage: 'home',
-  ContentfulMeetPamPage: 'meet',
+  ContentfulMeetPamPage: 'about',
   ContentfulMediaPage: 'media',
   ContentfulComedyPage: 'comedy',
   ContentfulPressPage: 'press',

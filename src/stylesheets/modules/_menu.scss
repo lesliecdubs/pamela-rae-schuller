@@ -122,12 +122,7 @@
   }
 
   @include breakpoint(lg) {
-    max-width: rem(340px);
-    width: auto;
-  }
-
-  @include breakpoint(xl) {
-    max-width: rem(439px);
+    width: 280px;
   }
 
   svg {
