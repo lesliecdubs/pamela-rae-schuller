@@ -115,3 +115,9 @@ export const normalizeBookingPage = book => ({
   packages: book.packages.map(p => normalizeBookingPackage(p)),
   pastGigTypes: book.pastGigTypes,
 })
+
+export const normalizeTourPage = tour => ({
+  headline: tour.headline,
+  description: tour.description.description
+})
+

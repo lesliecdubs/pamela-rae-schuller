@@ -1,31 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import { graphql } from 'gatsby'
 import { Layout, TourDateGroup, Flyer, LinkBtn, VideoSection } from '../components'
-import { normalizeComedyPage, normalizeTourDate } from '../helpers'
+import { 
+  normalizeComedyPage, 
+  normalizeTourDate, 
+  getUpcomingShows, 
+  getPastShows, 
+  sortByAscendingDate, 
+  sortByDescendingDate 
+} from '../helpers'
 import Img from 'gatsby-image'
-import moment from 'moment'
-
-function getUpcomingShows(showList) {
-  const now = moment()
-  return showList.filter(show => moment(show.date).isAfter(now));
-}
-
-function getPastShows(showList) {
-  const now = moment()
-  return showList.filter(show => moment(show.date).isBefore(now));
-}
-
-function sortByAscendingDate(array) {
-  return array.sort(function(a, b) {
-    return new Date(a.date) - new Date(b.date)
-  });
-}
-
-function sortByDescendingDate(array) {
-  return array.sort(function(a, b) {
-    return new Date(b.date) - new Date(a.date)
-  });
-}
 
 class ComedyPage extends Component {
   constructor(props) {
@@ -48,7 +32,10 @@ class ComedyPage extends Component {
         <p>{description}</p>
 
         {upcomingShows && upcomingShows.length > 0 && (
-          <TourDateGroup title="Upcoming Shows" shows={upcomingShows} />
+          <TourDateGroup 
+            title="Upcoming Comedy" 
+            shows={upcomingShows} 
+          />
         )}
 
         {flyers && (
@@ -73,15 +60,17 @@ class ComedyPage extends Component {
         {videos && <VideoSection videos={videos} title="Comedy Clips" />}
 
         {pastShows && pastShows.length > 0 && (
-          <TourDateGroup title="Past Shows" shows={pastShows} />
+          <TourDateGroup 
+            title="Past Comedy" 
+            shows={pastShows}
+            past={true}
+          />
         )}
       </Layout>
     )
   }
 }
 
-// TODO: fix time zone in date format
-// TODO: filter upcoming shows to only show those in the future
 export const query = graphql`
   query ComedyPageQuery {
     allContentfulComedyPage {

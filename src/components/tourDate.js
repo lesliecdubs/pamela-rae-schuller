@@ -21,7 +21,7 @@ function formatTime(timestamp) {
   return moment(timestamp).format('LT')
 }
 
-const TourDate = ({ date, city, venue, venueLink, type, audience, link, flyer }) => (
+const TourDate = ({ date, city, venue, venueLink, type, audience, link, flyer, past, showType }) => (
   <Fragment>
     <h3 className="tour__datetime-wrap">
       <time className="tour__datetime">
@@ -36,7 +36,12 @@ const TourDate = ({ date, city, venue, venueLink, type, audience, link, flyer })
         <time>{formatTime(date)}</time>
         <LinkBtn to={venueLink} className="tour__venue-link">{venue}</LinkBtn>
       </div>
-      <p className="tour__details">Ages {audience}</p>
+      <div className="tour__details">
+        <p>
+          {showType && `${type}, `}
+          <em>Ages {audience}</em>
+        </p>
+      </div>
     </div>
     {(flyer && flyer.file || link) &&
       <div className="tour__flyer is-visible-md">
@@ -50,7 +55,7 @@ const TourDate = ({ date, city, venue, venueLink, type, audience, link, flyer })
       </div>
     }
     <div className="tour__tickets">
-     {link && 
+     {!past && link && 
         <LinkBtn to={link} className="cta">
           Get tickets
         </LinkBtn>
