@@ -18,7 +18,7 @@ export const menuRoutes = [
   routeFactory('Media', allRoutes.media),
   routeFactory('Comedy', allRoutes.comedy),
   routeFactory('Tour', allRoutes.tour),
-  routeFactory('Press', allRoutes.press),
+  // routeFactory('Press', allRoutes.press),
   // routeFactory('Book Now', allRoutes.book),
 ]
 
