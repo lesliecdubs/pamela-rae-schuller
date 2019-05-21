@@ -37,60 +37,69 @@ class BookingPage extends Component {
           </ul>
         </section>
 
-        <form
-          name="book-now"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <input type="hidden" name="book-now" value="book-now" />
-          <div>
-            <label htmlFor="name">Full name*</label>
-            <input type="text" name="name" id="name" required />
-          </div>
-          <div>
-            <label htmlFor="email">Email address*</label>
-            <input type="email" name="email" id="email" required />
-          </div>
-          <div>
-            <label htmlFor="org">Organization / Company</label>
-            <input type="text" name="org" id="org" />
-          </div>
-          <div>
-            <label htmlFor="date">Ideal date</label>
-            <input
-              type="date"
-              id="date"
-              name="date"
-              defaultValue={new Date()}
-              min={new Date()}
-            />
-          </div>
-          <div>
-            <label htmlFor="org">Type of show</label>
-            <input type="checkbox" name="typeOfShow" value="Performance" />
-            Performance
-            <input type="checkbox" name="typeOfShow" value="Workshop" />
-            Workshop
-            <input
-              type="checkbox"
-              name="typeOfShow"
-              value="Professional Development"
-            />
-            Professional Development
-            <input type="checkbox" name="typeOfShow" value="Motivational" />
-            Motivational
-            <input type="checkbox" name="typeOfShow" value="Other" />
-            Other
-          </div>
-          <div>
-            <label htmlFor="age">Age group</label>
-            <input type="age" name="age" id="age" />
-          </div>
-          <div>
-            <button type="submit">Submit</button>
-          </div>
-        </form>
+        <section>
+          <h2>Book Now</h2>
+          <form
+            name="book-now"
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="book-now" value="book-now" />
+            <div>
+              <label htmlFor="name">Full name*</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+
+            <div>
+              <label htmlFor="email">Email address*</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+
+            <div>
+              <label htmlFor="org">Organization / Company</label>
+              <input type="text" name="org" id="org" />
+            </div>
+
+            <div>
+              <label htmlFor="date">Ideal date</label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                defaultValue={new Date()}
+                min={new Date()}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="org">Type of show</label>
+              <input type="checkbox" name="typeOfShow" value="Performance" />
+              Performance
+              <input type="checkbox" name="typeOfShow" value="Workshop" />
+              Workshop
+              <input
+                type="checkbox"
+                name="typeOfShow"
+                value="Professional Development"
+              />
+              Professional Development
+              <input type="checkbox" name="typeOfShow" value="Motivational" />
+              Motivational
+              <input type="checkbox" name="typeOfShow" value="Other" />
+              Other
+            </div>
+
+            <div>
+              <label htmlFor="age">Age group</label>
+              <input type="age" name="age" id="age" />
+            </div>
+
+            <div>
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </section>
       </Layout>
     )
   }
