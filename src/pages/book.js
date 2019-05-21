@@ -37,7 +37,13 @@ class BookingPage extends Component {
           </ul>
         </section>
 
-        <form>
+        <form
+          name="book-now"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="book-now" value="book-now" />
           <div>
             <label htmlFor="name">Full name*</label>
             <input type="text" name="name" id="name" required />
@@ -80,6 +86,9 @@ class BookingPage extends Component {
           <div>
             <label htmlFor="age">Age group</label>
             <input type="age" name="age" id="age" />
+          </div>
+          <div>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </Layout>
