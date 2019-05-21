@@ -9,7 +9,7 @@ const typeMap = {
   ContentfulMediaPage: 'media',
   ContentfulComedyPage: 'comedy',
   ContentfulPressPage: 'press',
-  ContentfulBookingPage: 'book'
+  ContentfulBookingPage: 'book',
 }
 
 // Normalize content types
@@ -68,7 +68,7 @@ export const normalizeTourDate = tour => ({
   type: tour.typeOfShow && tour.typeOfShow.typeOfShow,
   audience: tour.audienceAge && tour.audienceAge.audienceAge,
   link: tour.ticketLink,
-  flyer: tour.relevantFlyer && normalizeFlyer(tour.relevantFlyer)
+  flyer: tour.relevantFlyer && normalizeFlyer(tour.relevantFlyer),
 })
 
 // Normalize pages
@@ -76,7 +76,7 @@ export const normalizeHomepage = home => ({
   headline: home.headline,
   description: home.description.description,
   cta: home.callToActionText,
-  ctaLink: typeMap[home.callToActionLink.__typename]
+  ctaLink: typeMap[home.callToActionLink.__typename],
 })
 
 export const normalizeMeetPage = meet => ({
@@ -86,7 +86,7 @@ export const normalizeMeetPage = meet => ({
   bio: meet.bio.childContentfulRichText.html,
   bioImage: meet.bioImage.fluid,
   bioImageAlt: meet.bioImage.description,
-  bioPartTwo: meet.bioPartTwo.childContentfulRichText.html
+  bioPartTwo: meet.bioPartTwo.childContentfulRichText.html,
 })
 
 export const normalizeMediaPage = media => ({
@@ -105,7 +105,6 @@ export const normalizeComedyPage = comedy => ({
   hero: comedy.hero.fluid,
   heroAlt: comedy.hero.description,
   description: comedy.description.description,
-  flyers: comedy.showFlyers.map(f => normalizeFlyer(f)),
   videos: comedy.comedyVideos.map(v => normalizeVideo(v)),
 })
 
@@ -130,6 +129,5 @@ export const normalizeTourPage = tour => ({
   heroAlt: tour.hero.description,
   description: tour.description.description,
   separator: tour.separatorImage.fluid,
-  separatorAlt: tour.separatorImage.description
+  separatorAlt: tour.separatorImage.description,
 })
-
