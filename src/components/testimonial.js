@@ -15,12 +15,18 @@ const Testimonial = ({
   >
     <p>“{quote}”</p>
     <cite>
-      {headshot && (
+      {headshot ? (
         <Img
           className="blockquote__headshot"
           fluid={headshot}
           alt={headshotAlt}
         />
+      ) : (
+        <div className="blockquote__headshot">
+          <span className="blockquote__headshot-placeholder">
+            {name.charAt(0)}
+          </span>
+        </div>
       )}
       <div>
         <p>

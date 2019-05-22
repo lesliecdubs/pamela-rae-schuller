@@ -240,10 +240,15 @@ section {
   }
 
   >p {
-    font-size: rem(28px);
+    @include font-size(28);
     margin-bottom: rem(20px);
     line-height: 1.4;
     position: relative;
+
+    @include breakpoint(lg) {
+      @include font-size(18);
+      line-height: 1.6;
+    }
   }
 
   cite {
@@ -260,11 +265,25 @@ section {
   }
 
   .blockquote__headshot {
+    background-color: $grey-medium;
     border-radius: 50%;
     border: 5px solid $highlight-light;
     height: rem(90px);
     margin-right: rem(20px);
+    position: relative;
     width: rem(90px);
+  }
+
+  .blockquote__headshot-placeholder {
+    @include font-size(56);
+    color: $white;
+    font-family: $font-playfair-black-italic;
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    right: 0;
+    top: 48%;
+    transform: translateY(-50%);
   }
 
   &--featured {
