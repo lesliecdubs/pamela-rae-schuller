@@ -1,5 +1,6 @@
 const getVideoId = url => {
   const id = url.split('=')
+  console.log(id, id[1])
   return id[1]
 }
 
@@ -91,9 +92,7 @@ export const normalizeMeetPage = meet => ({
 
 export const normalizeMediaPage = media => ({
   headline: media.headline,
-  hero: media.hero.fluid,
-  heroAlt: media.hero.description,
-  description: media.description.description,
+  featuredVideo: normalizeVideo(media.featuredVideo),
   videos: media.videos.map(v => normalizeVideo(v)),
   featuredTestimonial: normalizeTestimonial(media.featuredTestimonial),
   photos: media.photos.map(p => normalizePhoto(p)),

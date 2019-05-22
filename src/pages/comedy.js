@@ -44,7 +44,11 @@ class ComedyPage extends Component {
           <TourDateGroup title="Upcoming Comedy" shows={upcomingShows} />
         )}
 
-        {videos && <VideoSection videos={videos} title="Comedy Clips" />}
+        {videos && (
+          <section>
+            <VideoSection videos={videos} title="Comedy Clips" />
+          </section>
+        )}
 
         {pastShows && pastShows.length > 0 && (
           <TourDateGroup title="Past Comedy" shows={pastShows} past={true} />

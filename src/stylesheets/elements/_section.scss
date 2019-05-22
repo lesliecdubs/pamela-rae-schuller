@@ -41,7 +41,7 @@ section {
 }
 
 .page-section__wrap {
-  > p {
+  >p {
     @include font-size(20);
     color: $grey-dark;
     line-height: 1.5;
@@ -63,7 +63,7 @@ section {
 
 .page-section__title {
   text-shadow: 3px 1px $highlight;
-    
+
   @include breakpoint(md) {
     padding: rem(0 30px);
     margin-bottom: rem(-10px);
@@ -177,8 +177,8 @@ section {
       display: flex;
       flex-direction: column;
     }
-    
-    > p {
+
+    >p {
       @include breakpoint(xl) {
         order: 2;
       }
@@ -205,7 +205,7 @@ section {
     }
   }
 
-  .blockquote + .blockquote {
+  .blockquote+.blockquote {
     @include breakpoint(xl) {
       margin: rem(0 30px);
     }
@@ -231,7 +231,7 @@ section {
     }
   }
 
-  + .blockquote {
+  +.blockquote {
     margin-top: rem(80px);
 
     @include breakpoint(sm) {
@@ -275,7 +275,7 @@ section {
       max-width: rem(720px);
     }
 
-    > p {
+    >p {
       @include breakpoint(lg) {
         @include font-size(38);
       }

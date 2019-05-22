@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import { Carousel, Layout, Testimonial, VideoSection } from '../components'
 import { normalizeMediaPage } from '../helpers'
-import Img from 'gatsby-image'
 
 class MediaPage extends Component {
   constructor(props) {
@@ -15,9 +14,7 @@ class MediaPage extends Component {
   render() {
     const {
       headline,
-      hero,
-      heroAlt,
-      description,
+      featuredVideo,
       videos,
       featuredTestimonial,
       testimonials,
@@ -26,14 +23,7 @@ class MediaPage extends Component {
 
     return (
       <Layout style="page--scroll" pageName={headline}>
-        <Img 
-          fluid={hero} 
-          alt={heroAlt} 
-          className="is-visible-sm" 
-        />
-        <p>{description}</p>
-
-        <VideoSection videos={videos} />
+        <VideoSection featuredVideo={featuredVideo} videos={videos} />
 
         <aside>
           <Testimonial {...featuredTestimonial} featured={true} />
@@ -63,14 +53,12 @@ export const query = graphql`
       edges {
         node {
           headline
-          hero {
-            description
-            fluid(maxWidth: 1600) {
-              ...GatsbyContentfulFluid_tracedSVG
+          featuredVideo {
+            videoTitle
+            videoUrl
+            videoProducer {
+              videoProducer
             }
-          }
-          description {
-            description
           }
           videos {
             videoTitle

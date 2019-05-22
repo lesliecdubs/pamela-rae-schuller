@@ -8,7 +8,7 @@
     flex-wrap: nowrap;
     padding: rem(40px 30px);
   }
-  
+
   &:nth-of-type(odd) {
     background-color: rgba($highlight-light, 0.3);
 
@@ -123,6 +123,20 @@
   &:hover {
     background: $highlight-light;
     color: $navy;
+  }
+}
+
+.tour__venue-name {
+  background: $grey-medium;
+  color: $white;
+  display: inline;
+
+  @include breakpoint(lg) {
+    padding: rem(0 5px);
+  }
+
+  @include breakpoint(xl) {
+    margin: rem(0 10px);
   }
 }
 

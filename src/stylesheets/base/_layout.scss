@@ -124,7 +124,7 @@
   }
 }
 
-h1 + .contain__block {
+h1+.contain__block {
   @include breakpoint(md) {
     padding: rem(0 80px);
   }
@@ -146,5 +146,13 @@ h1 + .contain__block {
 
   @include breakpoint(md) {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid--featured-item {
+  .grid__item {
+    &:first-of-type {
+      grid-column-start: span 2;
+    }
   }
 }
