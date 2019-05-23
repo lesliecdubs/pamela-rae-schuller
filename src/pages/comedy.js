@@ -27,7 +27,14 @@ class ComedyPage extends Component {
   }
 
   render() {
-    const { headline, hero, heroAlt, description, videos } = this._comedyPage
+    const {
+      headline,
+      hero,
+      heroAlt,
+      description,
+      videos,
+      pastShows,
+    } = this._comedyPage
     const upcomingShows = sortByAscendingDate(
       getUpcomingShows(this._comedyShows)
     )
@@ -46,6 +53,19 @@ class ComedyPage extends Component {
             <VideoSection videos={videos} title="Comedy Clips" />
           </section>
         )}
+
+        {/* {pastShows && (
+          <section>
+            <h2>Places Pam Has Performed</h2>
+            <ul>
+              {pastShows.map((place, index) => (
+                <li key={index}>
+                  <Img fluid={place.logo} alt={place.place} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )} */}
       </Layout>
     )
   }
@@ -72,6 +92,14 @@ export const query = graphql`
               videoProducer
             }
             videoUrl
+          }
+          placesPamPerformedComedy {
+            place
+            placeLogo {
+              fluid(maxWidth: 660) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
+            }
           }
         }
       }

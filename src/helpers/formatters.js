@@ -1,6 +1,5 @@
 const getVideoId = url => {
   const id = url.split('=')
-  console.log(id, id[1])
   return id[1]
 }
 
@@ -54,6 +53,11 @@ const normalizePressPiece = press => ({
   byline: press && press.byline,
 })
 
+const normalizePlace = pl => ({
+  place: pl.place,
+  logo: pl.placeLogo.fluid,
+})
+
 const normalizeBookingPackage = book => ({
   name: book.packageName,
   description: book.packageDescription.packageDescription,
@@ -105,6 +109,7 @@ export const normalizeComedyPage = comedy => ({
   heroAlt: comedy.hero.description,
   description: comedy.description.description,
   videos: comedy.comedyVideos.map(v => normalizeVideo(v)),
+  pastShows: comedy.placesPamPerformedComedy.map(p => normalizePlace(p)),
 })
 
 export const normalizePressPage = press => ({
