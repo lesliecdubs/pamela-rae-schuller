@@ -19,7 +19,6 @@ export const flyerFragment = graphql`
   }
 `
 
-// TODO: fix time zone in date format
 export const tourDateFragment = graphql`
   fragment TourDateFragment on ContentfulTourDates {
     title
