@@ -30,6 +30,10 @@
 
 .gigs__list {
   margin: rem(15px 0);
+
+  @include breakpoint(lg) {
+    margin-top: rem(5px);
+  }
 }
 
 .gigs__item {

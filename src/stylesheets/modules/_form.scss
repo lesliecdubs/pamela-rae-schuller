@@ -1,3 +1,10 @@
+.form {
+  @include breakpoint(lg) {
+    margin: rem(0 auto);
+    max-width: rem(700px);
+  }
+}
+
 .form__label {
   @include font-size(18);
   display: block;

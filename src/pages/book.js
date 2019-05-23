@@ -60,10 +60,9 @@ class BookingPage extends Component {
           className="gig-separator is-visible-sm"
         />
 
-        <section>
+        <section className="form">
           <h2>Book Now</h2>
           <form
-            className="form"
             name="book-now"
             method="post"
             data-netlify="true"
