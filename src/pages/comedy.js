@@ -11,9 +11,7 @@ import {
   normalizeComedyPage,
   normalizeTourDate,
   getUpcomingShows,
-  getPastShows,
   sortByAscendingDate,
-  sortByDescendingDate,
 } from '../helpers'
 import Img from 'gatsby-image'
 
@@ -33,7 +31,6 @@ class ComedyPage extends Component {
     const upcomingShows = sortByAscendingDate(
       getUpcomingShows(this._comedyShows)
     )
-    const pastShows = sortByDescendingDate(getPastShows(this._comedyShows))
 
     return (
       <Layout style="page--scroll" pageName={headline}>
@@ -48,10 +45,6 @@ class ComedyPage extends Component {
           <section>
             <VideoSection videos={videos} title="Comedy Clips" />
           </section>
-        )}
-
-        {pastShows && pastShows.length > 0 && (
-          <TourDateGroup title="Past Comedy" shows={pastShows} past={true} />
         )}
       </Layout>
     )
