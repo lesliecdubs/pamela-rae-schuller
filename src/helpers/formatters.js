@@ -29,7 +29,6 @@ const normalizeTestimonial = testimonial => ({
   quote: testimonial.quote.quote,
   name: testimonial.name,
   title: testimonial.title,
-  organization: testimonial.organization,
   headshotAlt: testimonial.headshot && testimonial.headshot.description,
   headshot: testimonial.headshot && testimonial.headshot.fluid,
 })

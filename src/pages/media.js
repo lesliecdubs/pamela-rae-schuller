@@ -73,7 +73,6 @@ export const query = graphql`
             }
             name
             title
-            organization
             headshot {
               description
               fluid(maxWidth: 660) {
@@ -96,7 +95,6 @@ export const query = graphql`
             }
             name
             title
-            organization
             headshot {
               description
               fluid(maxWidth: 660) {

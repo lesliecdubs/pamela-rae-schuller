@@ -7,7 +7,6 @@ const Testimonial = ({
   quote,
   name,
   title,
-  organization,
   featured,
 }) => (
   <blockquote
@@ -33,11 +32,6 @@ const Testimonial = ({
           <strong>{name}</strong>
         </p>
         {title && <p>{title}</p>}
-        {organization && (
-          <p>
-            <em>{organization}</em>
-          </p>
-        )}
       </div>
     </cite>
   </blockquote>
