@@ -5,9 +5,7 @@ import {
   normalizeTourPage,
   normalizeTourDate,
   getUpcomingShows,
-  getPastShows,
   sortByAscendingDate,
-  sortByDescendingDate,
 } from '../helpers'
 import Img from 'gatsby-image'
 
@@ -30,9 +28,9 @@ class TourPage extends Component {
       separator,
       separatorAlt,
       description,
+      pastShows,
     } = this._tourPage
     const upcomingShows = sortByAscendingDate(getUpcomingShows(this._tourDates))
-    const pastShows = sortByDescendingDate(getPastShows(this._tourDates))
 
     return (
       <Layout style="page--scroll" pageName={headline}>
@@ -54,14 +52,19 @@ class TourPage extends Component {
           </Fragment>
         )}
 
-        {pastShows && pastShows.length > 0 && (
-          <TourDateGroup
-            title="Past Shows"
-            past={true}
-            shows={pastShows}
-            showType={true}
-          />
-        )}
+        <section className="gigs">
+          <p className="gigs__intro">
+            Pam has performed in six countries, almost every state in the US,
+            and for more than 350,000 people, at places like:{' '}
+          </p>
+          <ul className="gigs__list">
+            {pastShows.map((gig, i) => (
+              <li key={i} className="gigs__item">
+                {gig.place}
+              </li>
+            ))}
+          </ul>
+        </section>
       </Layout>
     )
   }
@@ -87,6 +90,9 @@ export const query = graphql`
             fluid(maxWidth: 1600) {
               ...GatsbyContentfulFluid_tracedSVG
             }
+          }
+          pastShows {
+            place
           }
         }
       }

@@ -135,4 +135,5 @@ export const normalizeTourPage = tour => ({
   description: tour.description.description,
   separator: tour.separatorImage.fluid,
   separatorAlt: tour.separatorImage.description,
+  pastShows: tour.pastShows,
 })
