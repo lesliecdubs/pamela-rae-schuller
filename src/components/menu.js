@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { LinkBtn, Social } from './'
 import { Logo } from '../assets/images'
-import { allRoutes, menuRoutes } from '../helpers/routes'
+import { allRoutes, menuRoutes, bookRoute } from '../helpers/routes'
 import cn from 'classnames'
 
 const Menu = ({ isSquished, isTransparent = false }) => {
@@ -48,6 +48,11 @@ const Menu = ({ isSquished, isTransparent = false }) => {
                 </LinkBtn>
               </li>
             ))}
+            <li key={bookRoute.path} className="menu__item">
+              <LinkBtn to={bookRoute.path} className="cta">
+                {bookRoute.name}
+              </LinkBtn>
+            </li>
             <li className="is-hidden-desktop">
               <Social />
             </li>

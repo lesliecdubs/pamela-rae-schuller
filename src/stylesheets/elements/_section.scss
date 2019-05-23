@@ -217,10 +217,13 @@ section {
   margin-right: auto;
   max-width: rem(430px);
   padding: 0;
-  text-align: center;
 
   @include breakpoint(sm) {
     max-width: rem(530px);
+  }
+
+  @include breakpoint(sm) {
+    text-align: center;
   }
 
   &:not(.blockquote--featured):last-of-type {
@@ -240,21 +243,19 @@ section {
   }
 
   >p {
-    @include font-size(28);
+    @include font-size(20);
     margin-bottom: rem(20px);
-    line-height: 1.4;
+    line-height: 1.6;
     position: relative;
-
-    @include breakpoint(lg) {
-      @include font-size(18);
-      line-height: 1.6;
-    }
   }
 
   cite {
     display: flex;
     align-items: center;
-    justify-content: center;
+
+    @include breakpoint(sm) {
+      justify-content: center;
+    }
 
     p {
       font-style: normal;
@@ -269,7 +270,7 @@ section {
     border-radius: 50%;
     border: 5px solid $highlight-light;
     height: rem(90px);
-    margin-right: rem(20px);
+    margin-right: rem(12px);
     position: relative;
     width: rem(90px);
   }
@@ -282,13 +283,17 @@ section {
     line-height: 1;
     position: absolute;
     right: 0;
+    text-align: center;
     top: 48%;
     transform: translateY(-50%);
   }
 
   &--featured {
-    text-align: center;
     margin: rem(120px auto);
+
+    @include breakpoint(sm) {
+      text-align: center;
+    }
 
     @include breakpoint(lg) {
       max-width: rem(720px);

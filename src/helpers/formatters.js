@@ -119,6 +119,8 @@ export const normalizePressPage = press => ({
 export const normalizeBookingPage = book => ({
   title: book.title,
   packages: book.packages.map(p => normalizeBookingPackage(p)),
+  separator: book.separator.fluid,
+  separatorAlt: book.separator.description,
   pastGigTypes: book.pastGigTypes,
 })
 

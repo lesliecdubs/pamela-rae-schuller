@@ -13,16 +13,19 @@ class PressPage extends Component {
   }
 
   render() {
-    const { headline, hero, heroAlt, asSeenOn, byPam, aboutPam } = this._pressPage
+    const {
+      headline,
+      hero,
+      heroAlt,
+      asSeenOn,
+      byPam,
+      aboutPam,
+    } = this._pressPage
 
     return (
       <Layout style="page--scroll" pageName={headline}>
-        <Img 
-          fluid={hero} 
-          alt={heroAlt} 
-          className="is-visible-sm" 
-        />
-        
+        <Img fluid={hero} alt={heroAlt} className="is-visible-sm" />
+
         <h2>As Seen On</h2>
         <ul className="press-logos">
           {asSeenOn.map((logo, i) => (
@@ -56,7 +59,10 @@ export const query = graphql`
           asSeenOn {
             title
             fluid(maxWidth: 660) {
-              ...GatsbyContentfulFluid_tracedSVG
+              aspectRatio
+              sizes
+              src
+              srcSet
             }
           }
           pressByPamela {

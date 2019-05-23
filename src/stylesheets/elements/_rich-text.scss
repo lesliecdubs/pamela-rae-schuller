@@ -5,11 +5,11 @@
 //  ==========================================================================
 .rich-text {
   h1 {
-    color: $white; 
+    color: $white;
     margin-bottom: 0;
     position: relative;
     text-shadow: 2px 1px $highlight;
-    text-shadow: 
+    text-shadow:
       2px 1px $navy,
       3px 3px $navy,
       4px 4px $navy;
@@ -33,7 +33,7 @@
       margin-top: rem(80px);
     }
 
-    &:after {
+    &::after {
       @include breakpoint(sm) {
         background: $navy;
         content: '';
@@ -71,101 +71,6 @@
       margin-top: rem(30px);
     }
   }
-
-  // .rich-text__intro {
-  //   margin-top: rem(10px);
-
-  //   @include breakpoint(sm) {
-  //     float: left;
-  //     margin-bottom: rem(70px);
-  //     width: 64%;
-  //   }
-
-  //   @include breakpoint(md) {
-  //     margin-right: 2%;
-  //     width: 68%;
-  //   }
-
-  //   @include breakpoint(lg) {
-  //     font-size: rem(24px);
-  //     margin-bottom: rem(100px);
-  //     margin-right: 0;
-  //     width: 70%;
-  //   }
-
-  //   @include breakpoint(xl) {
-  //     width: 71%;
-  //   }
-  // }
-
-  // .rich-text__img {
-  //   border: 3px solid $grey-medium;
-  //   margin-top: rem(30px);
-  //   overflow: visible !important;
-
-  //   @include breakpoint(sm) {
-  //     float: left;
-  //     margin: rem(-55px 0 20px 20px);
-  //     max-width: rem(200px);
-  //     width: 32%;
-  //   }
-
-  //   @include breakpoint(md) {
-  //     margin-top: rem(20px);
-  //     width: rem(150px);
-  //   }
-
-  //   @include breakpoint(lg) {
-  //     margin: rem(20px 0 30px 40px);
-  //     width: rem(150px);
-  //   }
-
-  //   &::before,
-  //   &::after {
-  //     background: $grey-medium;
-  //     content: '';
-  //     position: absolute;
-  //   }
-
-  //   &::before {
-  //     height: 3px;
-  //     left: rem(-12px);
-  //     top: rem(-12px);
-  //     width: 30%;
-  //   }
-
-  //   &::after {
-  //     height: 20%;
-  //     left: rem(-12px);
-  //     top: rem(-12px);
-  //     width: 3px;
-  //   }
-
-  //   >div {
-  //     position: relative;
-
-  //     &::before,
-  //     &::after {
-  //       background: $grey-medium;
-  //       content: '';
-  //       position: absolute;
-  //     }
-
-  //     &::before {
-  //       bottom: rem(-12px);
-  //       height: 3px;
-  //       right: rem(-12px);
-  //       width: 30%;
-  //     }
-
-  //     &::after {
-  //       bottom: rem(-12px);
-  //       height: 20%;
-  //       right: rem(-12px);
-  //       width: 3px;
-  //     }
-  //   }
-  // }
 
   .rich-text__content {
     @include breakpoint(sm) {

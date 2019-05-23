@@ -246,17 +246,37 @@
   font-family: $font-regular;
   text-align: center;
 
-  a {
+  a:not(.cta) {
     display: inline-block;
     padding: rem(8px 0);
     margin: rem(0 20px);
   }
 
-  // &:nth-last-of-type(-n+2) {
-  //   @include breakpoint(lg) {
-  //     margin-left: auto;
-  //   }
-  // }
+  a.cta {
+    margin: rem(0 20px);
+    padding: rem(6px 16px);
+
+    &.active {
+      background-color: $highlight;
+      color: $white;
+
+      &:hover {
+        &::before {
+          transform: translateX(0);
+        }
+
+        &::after {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  &:nth-last-of-type(-n+2) {
+    @include breakpoint(lg) {
+      margin-left: auto;
+    }
+  }
 }
 
 .menu__list-social {

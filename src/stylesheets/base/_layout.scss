@@ -152,7 +152,9 @@ h1+.contain__block {
 .grid--featured-item {
   .grid__item {
     &:first-of-type {
-      grid-column-start: span 2;
+      @include breakpoint(sm) {
+        grid-column-start: span 2;
+      }
     }
   }
 }

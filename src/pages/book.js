@@ -13,90 +13,170 @@ class BookingPage extends Component {
   }
 
   render() {
-    const { title, packages, pastGigTypes } = this._bookingPage
+    const {
+      title,
+      packages,
+      separator,
+      separatorAlt,
+      pastGigTypes,
+    } = this._bookingPage
 
     return (
       <Layout style="page--scroll" pageName={title}>
-        <section>
-          <h2>Packages</h2>
-          <ul>
-            {packages.map((pack, i) => (
-              <li key={i}>
-                <Img fluid={pack.image} alt={pack.imageAlt} />
-                <h3>{pack.name}</h3>
-                <p>{pack.description}</p>
-              </li>
-            ))}
-          </ul>
+        <h2 className="is-visually-hidden">Packages</h2>
+        <ul className="packages">
+          {packages.map((pack, i) => (
+            <li key={i} className="packages__package">
+              <Img
+                fluid={pack.image}
+                alt={pack.imageAlt}
+                className="packages__package-image"
+              />
+              <div>
+                <h3 className="packages__package-title">{pack.name}</h3>
+                <p className="packages__package-info">{pack.description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
 
-          <p>Pamela is available for the following: </p>
-          <ul>
+        <section className="gigs">
+          <p className="gigs__intro">
+            Pam has worked with a wide variety of communities and organizations,
+            including:{' '}
+          </p>
+          <ul className="gigs__list">
             {pastGigTypes.map((gig, i) => (
-              <li key={i}>{gig}</li>
+              <li key={i} className="gigs__item">
+                {gig}
+              </li>
             ))}
           </ul>
         </section>
 
+        <Img
+          fluid={separator}
+          alt={separatorAlt}
+          className="gig-separator is-visible-sm"
+        />
+
         <section>
           <h2>Book Now</h2>
           <form
+            className="form"
             name="book-now"
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
             <input type="hidden" name="book-now" value="book-now" />
-            <div>
-              <label htmlFor="name">Full name*</label>
-              <input type="text" name="name" id="name" required />
-            </div>
 
-            <div>
-              <label htmlFor="email">Email address*</label>
-              <input type="email" name="email" id="email" required />
-            </div>
-
-            <div>
-              <label htmlFor="org">Organization / Company</label>
-              <input type="text" name="org" id="org" />
-            </div>
-
-            <div>
-              <label htmlFor="date">Ideal date</label>
+            <div className="form__group form__group--split">
+              <label className="form__label" htmlFor="name">
+                Full name*
+              </label>
               <input
-                type="date"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="First Last"
+                required
+              />
+            </div>
+
+            <div className="form__group form__group--split">
+              <label className="form__label" htmlFor="email">
+                Email*
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email@me.com"
+                required
+              />
+            </div>
+
+            <div className="form__group form__group--split">
+              <label className="form__label" htmlFor="phone">
+                Phone
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="(222) 222-2222"
+              />
+            </div>
+
+            <div className="form__group form__group--split">
+              <label className="form__label" htmlFor="org">
+                Company
+              </label>
+              <input
+                type="text"
+                name="org"
+                id="org"
+                placeholder="Organization"
+              />
+            </div>
+
+            <div className="form__group form__group--split">
+              <label className="form__label" htmlFor="date">
+                Ideal date
+              </label>
+              <input
+                type="text"
                 id="date"
                 name="date"
-                defaultValue={new Date()}
-                min={new Date()}
+                placeholder="MM/DD/YYYY"
               />
             </div>
 
-            <div>
-              <label htmlFor="org">Type of show</label>
-              <input type="checkbox" name="typeOfShow" value="Performance" />
-              Performance
-              <input type="checkbox" name="typeOfShow" value="Workshop" />
-              Workshop
-              <input
-                type="checkbox"
-                name="typeOfShow"
-                value="Professional Development"
-              />
-              Professional Development
-              <input type="checkbox" name="typeOfShow" value="Motivational" />
-              Motivational
-              <input type="checkbox" name="typeOfShow" value="Other" />
-              Other
+            <div className="form__group form__group--split">
+              <label className="form__label" htmlFor="age">
+                Age group
+              </label>
+              <input type="age" name="age" id="age" placeholder="18+" />
             </div>
 
-            <div>
-              <label htmlFor="age">Age group</label>
-              <input type="age" name="age" id="age" />
+            <div className="form__group form__group--checkboxes">
+              <p className="form__label">Type of show</p>
+              <label className="checkbox">
+                Performance
+                <input type="checkbox" name="typeOfShow" value="Performance" />
+                <span className="checkbox__box" tabIndex="1" />
+              </label>
+              <label className="checkbox">
+                Workshop
+                <input type="checkbox" name="typeOfShow" value="Workshop" />
+                <span className="checkbox__box" tabIndex="1" />
+              </label>
+              <label className="checkbox">
+                Professional Development
+                <input
+                  type="checkbox"
+                  name="typeOfShow"
+                  value="Professional Development"
+                />
+                <span className="checkbox__box" tabIndex="1" />
+              </label>
+              <label className="checkbox">
+                Motivational
+                <input type="checkbox" name="typeOfShow" value="Motivational" />
+                <span className="checkbox__box" tabIndex="1" />
+              </label>
+              <label className="checkbox">
+                Other
+                <input type="checkbox" name="typeOfShow" value="Motivational" />
+                <span className="checkbox__box" tabIndex="1" />
+              </label>
             </div>
 
-            <div>
-              <button type="submit">Submit</button>
+            <div className="form__group">
+              <button type="submit" className="cta">
+                Submit
+              </button>
             </div>
           </form>
         </section>
@@ -118,11 +198,16 @@ export const query = graphql`
             }
             packageImage {
               fluid(maxWidth: 660) {
-                sizes
-                src
-                srcSet
                 aspectRatio
+                srcSet
+                src
+                sizes
               }
+            }
+          }
+          separator {
+            fluid(maxWidth: 1600) {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           pastGigTypes

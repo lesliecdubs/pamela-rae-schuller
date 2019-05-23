@@ -33,7 +33,7 @@ $mint: rgb(6, 220, 192) !default; // #06DCC0
 //  --------------------------------------------------
 $body-bg: $white !default;
 $default-txt-color: $grey !default;
-$placeholder-txt-color: $navy !default;
+$placeholder-txt-color: rgba($grey-medium, 0.5) !default;
 
 $hr-color: $grey !default;
 $highlight-light: $spinnaker !default;

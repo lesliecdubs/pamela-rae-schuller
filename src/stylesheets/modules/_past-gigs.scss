@@ -1,0 +1,70 @@
+.gigs {
+  position: relative;
+
+  @include breakpoint(sm) {
+    margin-bottom: rem(30px);
+  }
+
+  &::before {
+    background: $navy;
+    content: '';
+    display: block;
+    height: 3px;
+    margin-left: rem(5px);
+    margin: rem(10px 0);
+    position: absolute;
+    top: rem(-20px);
+    width: 25%;
+
+    @include breakpoint(lg) {
+      top: rem(-30px);
+    }
+  }
+}
+
+.gigs__intro {
+  @include font-size(20);
+  color: $grey-dark;
+  line-height: 1.4;
+}
+
+.gigs__list {
+  margin: rem(15px 0);
+}
+
+.gigs__item {
+  @include font-size(18);
+  color: $grey-dark;
+  display: inline-block;
+  line-height: 1.4;
+  margin: rem(3px 16px 3px 0);
+  position: relative;
+  text-align: center;
+
+  &:last-of-type {
+    &::after {
+      content: none;
+    }
+  }
+
+  &::after {
+    background-color: $navy;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: rem(4px);
+    position: absolute;
+    right: rem(-10px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(4px);
+  }
+}
+
+.gig-separator {
+  +section {
+    @include breakpoint(lg) {
+      margin-top: rem(40px);
+    }
+  }
+}

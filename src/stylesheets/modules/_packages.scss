@@ -1,0 +1,64 @@
+.packages {
+  @include breakpoint(sm) {
+    margin-top: rem(20px);
+  }
+
+  @include breakpoint(md) {
+    margin-top: 0;
+  }
+
+  @include breakpoint(lg) {
+    display: flex;
+    margin-left: rem(-10px);
+    width: calc(100% + 20px);
+  }
+}
+
+.packages__package {
+  margin-bottom: rem(50px);
+
+  @include breakpoint(sm) {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  @include breakpoint(lg) {
+    display: block;
+    flex: 0 0 calc(33.333% - 20px);
+    margin: rem(0 10px);
+  }
+}
+
+.packages__package-image {
+  @include breakpoint(sm) {
+    flex: 1 0 150px;
+    margin-right: rem(20px);
+  }
+
+  @include breakpoint(md) {
+    flex-basis: 200px;
+  }
+
+  @include breakpoint(lg) {
+    width: 100%;
+  }
+}
+
+.packages__package-title {
+  @include font-size(32);
+  margin: rem(15px 0 5px);
+
+  @include breakpoint(sm) {
+    margin-top: 0;
+  }
+
+  @include breakpoint(lg) {
+    margin: rem(15px 0 5px);
+  }
+}
+
+.packages__package-info {
+  @include font-size(18);
+  color: $grey-dark;
+  line-height: 1.5;
+}

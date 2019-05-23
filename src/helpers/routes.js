@@ -19,8 +19,9 @@ export const menuRoutes = [
   routeFactory('Comedy', allRoutes.comedy),
   routeFactory('Tour', allRoutes.tour),
   // routeFactory('Press', allRoutes.press),
-  // routeFactory('Book Now', allRoutes.book),
 ]
+
+export const bookRoute = routeFactory('Book Now', allRoutes.book)
 
 export const socialRoutes = [
   routeFactory('Facebook', allRoutes.facebook),
