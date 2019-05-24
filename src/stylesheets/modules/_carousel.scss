@@ -94,11 +94,11 @@
   .slick-prev,
   .slick-next {
     @include breakpoint(md) {
-      background: none;
+      background-color: $highlight-light;
       height: rem(38px);
-      width: rem(38px);
       top: 48%;
       transition: all 0.3s;
+      width: rem(45px);
       z-index: 1;
     }
 
@@ -109,11 +109,12 @@
     &::before {
       @include breakpoint(md) {
         @include font-size(38);
-        content: "\2192";
-        position: absolute;
         color: $navy;
-        top: 0;
+        content: "\2192";
         left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
       }
     }
   }
@@ -121,7 +122,7 @@
   .slick-next {
     &:hover {
       @include breakpoint(md) {
-        transform: translate(15px, -50%)
+        transform: translate(25px, -50%)
       }
     }
   }
@@ -133,9 +134,10 @@
       }
     }
 
-    &:hover {
+    &:hover,
+    &:active {
       @include breakpoint(md) {
-        transform: translate(-15px, -50%)
+        transform: translate(-25px, -50%)
       }
     }
   }

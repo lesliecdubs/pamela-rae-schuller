@@ -54,18 +54,18 @@ class ComedyPage extends Component {
           </section>
         )}
 
-        {/* {pastShows && (
+        {pastShows && (
           <section>
             <h2>Places Pam Has Performed</h2>
-            <ul>
+            <ul className="comedy">
               {pastShows.map((place, index) => (
-                <li key={index}>
+                <li key={index} className="comedy__logo">
                   <Img fluid={place.logo} alt={place.place} />
                 </li>
               ))}
             </ul>
           </section>
-        )} */}
+        )}
       </Layout>
     )
   }
