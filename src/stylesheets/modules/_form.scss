@@ -1,6 +1,10 @@
 .form {
+  @include breakpoint(sm) {
+    margin: rem(20px 0);
+  }
+
   @include breakpoint(lg) {
-    margin: rem(0 auto);
+    margin: rem(20px auto 0);
     max-width: rem(700px);
   }
 }
@@ -53,6 +57,25 @@ input {
 
   .form__label {
     margin-bottom: rem(10px);
+  }
+}
+
+.form__group--checkboxes__all {
+  @include breakpoint(md) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: rem(5px);
+  }
+
+  .checkbox {
+    @include breakpoint(md) {
+      flex: 0 0 25%;
+    }
+
+    @include breakpoint(lg) {
+      margin: rem(10px 0);
+      flex: 0 0 33.333%;
+    }
   }
 }
 

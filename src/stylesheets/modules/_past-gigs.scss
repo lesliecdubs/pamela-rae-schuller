@@ -1,10 +1,6 @@
 .gigs {
   position: relative;
 
-  @include breakpoint(sm) {
-    margin-bottom: rem(30px);
-  }
-
   &::before {
     background: $navy;
     content: '';
