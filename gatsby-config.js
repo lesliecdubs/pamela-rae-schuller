@@ -36,6 +36,22 @@ module.exports = {
       options: {
         include: /assets\/images\/inline-svgs/
       },
-    }
+    },
+    {
+      resolve: "gatsby-plugin-hubspot",
+      options: {
+          trackingCode: "3978653",
+          respectDNT: true // optional
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-138326947-1",
+        head: false,
+        anonymize: true,
+        respectDNT: true
+      },
+    },
   ],
 }

@@ -5689,6 +5689,18 @@ gatsby-link@^2.1.1:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
+gatsby-plugin-google-analytics@^2.0.20:
+  version "2.0.20"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.20.tgz#ee8f10228a072247686a33d180d978abc574327c"
+  integrity sha512-bv2vlHdG14MIuZU0yUzGvb5Y3kL+UBY2Ii3v9PgYX7Bu7r5np/vMy82vtafkRUsrA3hcK9ipxUw8kmviurvFtQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
+gatsby-plugin-hubspot@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-hubspot/-/gatsby-plugin-hubspot-1.2.1.tgz#1f06f17b5b06ff193da53d1d61981f20c56a3b7c"
+  integrity sha512-tA6gCv3y9S7tz/h8eGmk+0Ql2TqOd5me80uOr4SbgmqekjSCQL8f5utUN6rSkeXWZiNSehOJMHgpTmgi3yDdsw==
+
 gatsby-plugin-offline@^2.0.11:
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.0.13.tgz#dcbd60e6949a1c7b676ded63277552cdddef9dd1"
