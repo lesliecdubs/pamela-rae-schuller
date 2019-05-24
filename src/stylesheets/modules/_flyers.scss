@@ -24,12 +24,18 @@
 
 .flyer__link {
   display: block;
-  height: 100%;
   opacity: 0.9;
-  transition: all 0.15s;
+  width: 100%;
+
+  .gatsby-image-wrapper {
+    transition: transform 0.15s;
+  }
 
   &:hover {
     opacity: 1;
-    transform: scale(1.035);
+    
+    .gatsby-image-wrapper {
+      transform: scale(1.075);
+    }
   }
 }

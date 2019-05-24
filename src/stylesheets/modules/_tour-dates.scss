@@ -142,6 +142,7 @@
 
 .tour__flyer {
   @include breakpoint(md) {
+    align-items: center;
     flex: 0 0 75px;
     margin-left: auto;
   }
@@ -157,6 +158,7 @@
   flex: 0 0 145px;
 
   @include breakpoint(md) {
+    margin-top: 0;
     margin-left: rem(20px);
   }
 

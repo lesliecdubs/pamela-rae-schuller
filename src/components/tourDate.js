@@ -61,7 +61,7 @@ const TourDate = ({
       </div>
     </div>
     {((flyer && flyer.file) || link) && (
-      <div className="tour__flyer is-visible-md">
+      <div className="tour__flyer is-visible-md--flex">
         {flyer && (
           <Flyer title={flyer.title} file={flyer.file} image={flyer.image} />
         )}

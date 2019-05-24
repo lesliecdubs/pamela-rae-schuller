@@ -75,6 +75,11 @@
   @include breakpoint(md) { display: block !important; }
 }
 
+.is-visible-md--flex {
+  display: none !important;
+  @include breakpoint(md) { display: flex !important; }
+}
+
 .is-visible-desktop {
   display: none !important;
   @include breakpoint(lg) { display: block !important; }
