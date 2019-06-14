@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
@@ -34,23 +35,23 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
-        include: /assets\/images\/inline-svgs/
+        include: /assets\/images\/inline-svgs/,
       },
     },
     {
-      resolve: "gatsby-plugin-hubspot",
+      resolve: 'gatsby-plugin-hubspot',
       options: {
-          trackingCode: "3978653",
-          respectDNT: true // optional
+        trackingCode: '3978653',
+        respectDNT: true, // optional
       },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-138326947-1",
+        trackingId: 'UA-138326947-1',
         head: true,
         anonymize: true,
-        respectDNT: true
+        respectDNT: true,
       },
     },
   ],
