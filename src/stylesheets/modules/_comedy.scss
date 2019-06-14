@@ -1,12 +1,16 @@
 .comedy {
-  @include breakpoint(md) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .comedy__logo {
+  flex: 0 0 50%;
+
+  @include breakpoint(sm) {
+    flex: 0 0 33.333%;
+  }
+
   @include breakpoint(lg) {
     flex: 0 0 25%;
   }
