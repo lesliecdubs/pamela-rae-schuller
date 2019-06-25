@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-force-trailing-slashes',
     // 'gatsby-plugin-remove-trailing-slashes', 
     'gatsby-plugin-sass',
     {
