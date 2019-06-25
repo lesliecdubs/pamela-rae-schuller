@@ -13,8 +13,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-force-trailing-slashes',
-    // 'gatsby-plugin-remove-trailing-slashes', 
+    'gatsby-plugin-remove-trailing-slashes', 
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
@@ -46,14 +45,14 @@ module.exports = {
         respectDNT: true, // optional
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-138326947-1',
-        head: true,
-        anonymize: true,
-        respectDNT: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: 'UA-138326947-1',
+    //     head: true,
+    //     anonymize: true,
+    //     respectDNT: true,
+    //   },
+    // },
   ],
 }
