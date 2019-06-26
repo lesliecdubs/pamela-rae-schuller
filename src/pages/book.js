@@ -24,11 +24,13 @@ class BookingPage extends Component {
     // that represent the form data we want to send to Netlify.
     const formData = {}
     Object.keys(this.refs).map(key => (formData[key] = this.refs[key].value))
+
+    console.log("axios submission url: ", this.props.location.href)
   
     // Set options for axios. The URL we're submitting to
     // (this.props.location.pathname) is the current page.
     const axiosOptions = {
-      url: this.props.location.pathname,
+      url: this.props.location.href,
       method: "post",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       data: qs.stringify(formData),
