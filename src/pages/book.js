@@ -24,13 +24,11 @@ class BookingPage extends Component {
     // that represent the form data we want to send to Netlify.
     const formData = {}
     Object.keys(this.refs).map(key => (formData[key] = this.refs[key].value))
-
-    console.log("axios submission url: ", this.props.location.href + "/")
   
     // Set options for axios. The URL we're submitting to
     // (this.props.location.pathname) is the current page.
     const axiosOptions = {
-      url: this.props.location.href + "/",
+      url: this.props.location.pathname,
       method: "post",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       data: qs.stringify(formData),
@@ -74,7 +72,7 @@ class BookingPage extends Component {
 
         <form
           className="form"
-          name="book-now"
+          name="book-pam"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
@@ -83,7 +81,7 @@ class BookingPage extends Component {
         >
           <input type="hidden" name="bot-field" />
           {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-          <input type="hidden" name="form-name" value="book-now" />
+          <input type="hidden" name="form-name" value="book-pam" />
 
           <div className="form__group form__group--split">
             <label className="form__label" htmlFor="name">
