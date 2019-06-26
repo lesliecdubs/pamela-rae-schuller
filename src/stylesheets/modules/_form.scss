@@ -9,6 +9,21 @@
   }
 }
 
+.page-section__wrap > p.form-message {
+  @include breakpoint(sm) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+
+  + .form-message {
+    @include breakpoint(sm) {
+      margin-top: 0;
+    }
+  }
+}
+
 .form__label {
   @include font-size(18);
   display: block;
