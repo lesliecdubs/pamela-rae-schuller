@@ -5,6 +5,7 @@
   "author": "Leslie Cohn-Wein <leslie@cohnwein.com>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
+    "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "dotenv": "^6.2.0",
     "eslint": "^5.16.0",
@@ -31,6 +32,7 @@
     "gatsby-transformer-sharp": "^2.1.4",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
+    "query-string": "^6.8.1",
     "react": "16.8.0",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-helmet": "6.0.0-beta",

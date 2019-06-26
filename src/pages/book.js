@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components'
 import { normalizeBookingPage } from '../helpers'
 import Img from 'gatsby-image'
+import axios from "axios"
+import * as qs from "query-string"
 
 class BookingPage extends Component {
   constructor(props) {
@@ -10,6 +12,43 @@ class BookingPage extends Component {
     this._bookingPage = normalizeBookingPage(
       props.data.allContentfulBookingPage.edges[0].node
     )
+    this.domRef = React.createRef()
+    this.state = { feedbackMsg: null }
+  }
+
+  handleSubmit(event) {
+    // Do not submit form via HTTP, since we're doing that via XHR request.
+    event.preventDefault()
+    // Loop through this component's refs (the fields) and add them to the
+    // formData object. What we're left with is an object of key-value pairs
+    // that represent the form data we want to send to Netlify.
+    const formData = {}
+    Object.keys(this.refs).map(key => (formData[key] = this.refs[key].value))
+  
+    // Set options for axios. The URL we're submitting to
+    // (this.props.location.pathname) is the current page.
+    const axiosOptions = {
+      url: this.props.location.pathname,
+      method: "post",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      data: qs.stringify(formData),
+    }
+  
+    // Submit to Netlify. Upon success, set the feedback message and clear all
+    // the fields within the form. Upon failure, keep the fields as they are,
+    // but set the feedback message to show the error state.
+    axios(axiosOptions)
+      .then(response => {
+        this.setState({
+          feedbackMsg: "Thanks! Your form submitted successfully. We'll get back to you soon.",
+        })
+        this.domRef.current.reset()
+      })
+      .catch(err =>
+        this.setState({
+          feedbackMsg: "We're sorry, your form could not be submitted.",
+        })
+      )
   }
 
   render() {
@@ -20,6 +59,8 @@ class BookingPage extends Component {
       separatorAlt,
       pastGigTypes,
     } = this._bookingPage
+
+    const { feedbackMsg } = this.state
 
     return (
       <Layout style="page--scroll" pageName={title}>
@@ -35,6 +76,8 @@ class BookingPage extends Component {
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          onSubmit={event => this.handleSubmit(event)}
+          ref={this.domRef}
         >
           <input type="hidden" name="bot-field" />
           {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -155,6 +198,8 @@ class BookingPage extends Component {
             </button>
           </div>
         </form>
+
+        {feedbackMsg && <p className="form-message">{feedbackMsg}</p>}
 
         <section>
           <h2 className="is-visually-hidden">Packages</h2>

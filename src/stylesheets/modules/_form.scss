@@ -9,6 +9,12 @@
   }
 }
 
+.form-message {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .form__label {
   @include font-size(18);
   display: block;
