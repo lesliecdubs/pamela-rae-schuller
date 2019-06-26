@@ -36,6 +36,7 @@ class BookingPage extends Component {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
+          <input type="hidden" name="bot-field" />
           {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
           <input type="hidden" name="form-name" value="book-now" />
 
