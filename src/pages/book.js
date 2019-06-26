@@ -32,7 +32,7 @@ class BookingPage extends Component {
         <form
           className="form"
           name="book-now"
-          method="post"
+          method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
