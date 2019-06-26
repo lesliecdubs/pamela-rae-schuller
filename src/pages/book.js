@@ -46,7 +46,7 @@ class BookingPage extends Component {
       })
       .catch(err =>
         this.setState({
-          feedbackMsg: "We're sorry, your form could not be submitted.",
+          feedbackMsg: "We're sorry, your form could not be submitted. Email us at booking@pamelacomedy.com.",
         })
       )
   }
