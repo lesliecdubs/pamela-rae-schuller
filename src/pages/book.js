@@ -32,11 +32,12 @@ class BookingPage extends Component {
         <form
           className="form"
           name="book-now"
-          method="post"
+          method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="book-now" value="book-now" />
+          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+          <input type="hidden" name="form-name" value="book-now" />
 
           <div className="form__group form__group--split">
             <label className="form__label" htmlFor="name">
