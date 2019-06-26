@@ -45,14 +45,14 @@ module.exports = {
         respectDNT: true, // optional
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: 'UA-138326947-1',
-    //     head: true,
-    //     anonymize: true,
-    //     respectDNT: true,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-138326947-1',
+        head: true,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
   ],
 }
