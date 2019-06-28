@@ -128,6 +128,11 @@ export const normalizeBookingPage = book => ({
   pastGigTypes: book.pastGigTypes,
 })
 
+export const normalizeThanksPage = thanks => ({
+  separator: thanks.separator.fluid,
+  separatorAlt: thanks.separator.description,
+})
+
 export const normalizeTourPage = tour => ({
   headline: tour.headline,
   hero: tour.hero.fluid,

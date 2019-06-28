@@ -12,10 +12,10 @@
 .page-section__wrap > p.form-message {
   @include breakpoint(sm) {
     margin-left: auto;
+
     margin-right: auto;
     text-align: center;
   }
-
 
   + .form-message {
     @include breakpoint(sm) {
@@ -30,12 +30,13 @@
   margin-bottom: rem(5px);
 }
 
-input {
+input,
+textarea {
   background-color: $white;
   border: rem(2px) solid $grey-medium;
   height: rem(38px);
-  width: 100%;
   padding: rem(8px 10px);
+  width: 100%;
 
   @include breakpoint(md) {
     height: rem(48px);
@@ -46,13 +47,21 @@ input {
   }
 }
 
+textarea {
+  height: auto;
+}
+
 .form__group {
   margin: rem(10px 0);
+
+  &:last-of-type {
+    margin-top: rem(20px);
+  }
 }
 
 .form__group--split {
-  width: calc(50% - 10px);
   display: inline-block;
+  width: calc(50% - 10px);
 
   @include breakpoint(sm) {
     width: calc(50% - 15px);
@@ -88,8 +97,8 @@ input {
     }
 
     @include breakpoint(lg) {
-      margin: rem(10px 0);
       flex: 0 0 33.333%;
+      margin: rem(10px 0);
     }
   }
 }
@@ -104,11 +113,11 @@ input {
   position: relative;
   user-select: none;
 
-  &:hover input~.checkbox__box {
+  &:hover input ~ .checkbox__box {
     background-color: $white;
   }
 
-  input:checked~.checkbox__box {
+  input:checked ~ .checkbox__box {
     &::after {
       display: block;
     }
@@ -131,7 +140,7 @@ input[type="checkbox"] {
   position: absolute;
   width: 0;
 
-  &:focus+.checkbox__box {
+  &:focus + .checkbox__box {
     border-color: $highlight;
   }
 }
@@ -146,8 +155,20 @@ input[type="checkbox"] {
   width: rem(24px);
 
   &::after {
-    content: '';
+    content: "";
     display: none;
     position: absolute;
+  }
+}
+
+.page-section__wrap > .thanks__p {
+  max-width: 100%;
+
+  + .thanks__p {
+    margin: rem(10px) 0;
+  }
+
+  a {
+    margin: rem(10px 0 0 0);
   }
 }

@@ -2,7 +2,14 @@ import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import { Layout } from '../components'
 import { normalizeBookingPage } from '../helpers'
+import { navigateTo } from 'gatsby-link'
 import Img from 'gatsby-image'
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 class BookingPage extends Component {
   constructor(props) {
@@ -10,6 +17,26 @@ class BookingPage extends Component {
     this._bookingPage = normalizeBookingPage(
       props.data.allContentfulBookingPage.edges[0].node
     )
+    this.state = {}
+  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...this.state,
+      }),
+    })
+      .then(() => navigateTo(form.getAttribute('action')))
+      .catch(error => alert(error))
   }
 
   render() {
@@ -38,10 +65,11 @@ class BookingPage extends Component {
         <form
           className="form"
           method="post"
-          action="#"
+          action="/thanks/"
           data-netlify="true"
           name="contact"
           data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="form__group form__group--split">
@@ -141,6 +169,13 @@ class BookingPage extends Component {
                 <span className="checkbox__box" tabIndex="1" />
               </label>
             </div>
+          </div>
+
+          <div className="form__group">
+            <label className="form__label" htmlFor="comments">
+              Additional comments
+            </label>
+            <textarea name="comments" id="comments" rows="4" />
           </div>
 
           <div className="form__group">
