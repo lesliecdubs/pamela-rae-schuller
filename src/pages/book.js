@@ -36,6 +36,7 @@ class BookingPage extends Component {
         </p> */}
 
         <form
+          className="form"
           method="post"
           action="#"
           data-netlify="true"
