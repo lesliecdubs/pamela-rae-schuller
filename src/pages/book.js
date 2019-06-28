@@ -82,6 +82,7 @@ class BookingPage extends Component {
               id="name"
               placeholder="First Last"
               required
+              onChange={this.handleChange}
             />
           </div>
 
@@ -95,6 +96,7 @@ class BookingPage extends Component {
               id="email"
               placeholder="email@me.com"
               required
+              onChange={this.handleChange}
             />
           </div>
 
@@ -107,6 +109,7 @@ class BookingPage extends Component {
               name="phone"
               id="phone"
               placeholder="(222) 222-2222"
+              onChange={this.handleChange}
             />
           </div>
 
@@ -114,21 +117,39 @@ class BookingPage extends Component {
             <label className="form__label" htmlFor="org">
               Company
             </label>
-            <input type="text" name="org" id="org" placeholder="Organization" />
+            <input
+              type="text"
+              name="org"
+              id="org"
+              placeholder="Organization"
+              onChange={this.handleChange}
+            />
           </div>
 
           <div className="form__group form__group--split">
             <label className="form__label" htmlFor="date">
               Ideal date
             </label>
-            <input type="text" id="date" name="date" placeholder="MM/DD/YYYY" />
+            <input
+              type="text"
+              id="date"
+              name="date"
+              placeholder="MM/DD/YYYY"
+              onChange={this.handleChange}
+            />
           </div>
 
           <div className="form__group form__group--split">
             <label className="form__label" htmlFor="age">
               Age group
             </label>
-            <input type="age" name="age" id="age" placeholder="18+" />
+            <input
+              type="age"
+              name="age"
+              id="age"
+              placeholder="18+"
+              onChange={this.handleChange}
+            />
           </div>
 
           <div className="form__group form__group--checkboxes">
@@ -136,12 +157,22 @@ class BookingPage extends Component {
             <div className="form__group--checkboxes__all">
               <label className="checkbox">
                 Keynote
-                <input type="checkbox" name="typeOfShow" value="Keynote" />
+                <input
+                  type="checkbox"
+                  name="typeOfShow"
+                  value="Keynote"
+                  onChange={this.handleChange}
+                />
                 <span className="checkbox__box" tabIndex="1" />
               </label>
               <label className="checkbox">
                 Workshop
-                <input type="checkbox" name="typeOfShow" value="Workshop" />
+                <input
+                  type="checkbox"
+                  name="typeOfShow"
+                  value="Workshop"
+                  onChange={this.handleChange}
+                />
                 <span className="checkbox__box" tabIndex="1" />
               </label>
               <label className="checkbox">
@@ -150,22 +181,38 @@ class BookingPage extends Component {
                   type="checkbox"
                   name="typeOfShow"
                   value="Professional development"
+                  onChange={this.handleChange}
                 />
                 <span className="checkbox__box" tabIndex="1" />
               </label>
               <label className="checkbox">
                 Motivational
-                <input type="checkbox" name="typeOfShow" value="Motivational" />
+                <input
+                  type="checkbox"
+                  name="typeOfShow"
+                  value="Motivational"
+                  onChange={this.handleChange}
+                />
                 <span className="checkbox__box" tabIndex="1" />
               </label>
               <label className="checkbox">
                 Stand-up
-                <input type="checkbox" name="typeOfShow" value="Stand-up" />
+                <input
+                  type="checkbox"
+                  name="typeOfShow"
+                  value="Stand-up"
+                  onChange={this.handleChange}
+                />
                 <span className="checkbox__box" tabIndex="1" />
               </label>
               <label className="checkbox">
                 Other
-                <input type="checkbox" name="typeOfShow" value="Other" />
+                <input
+                  type="checkbox"
+                  name="typeOfShow"
+                  value="Other"
+                  onChange={this.handleChange}
+                />
                 <span className="checkbox__box" tabIndex="1" />
               </label>
             </div>
@@ -175,7 +222,12 @@ class BookingPage extends Component {
             <label className="form__label" htmlFor="comments">
               Additional comments
             </label>
-            <textarea name="comments" id="comments" rows="4" />
+            <textarea
+              name="comments"
+              id="comments"
+              rows="4"
+              onChange={this.handleChange}
+            />
           </div>
 
           <div className="form__group">
