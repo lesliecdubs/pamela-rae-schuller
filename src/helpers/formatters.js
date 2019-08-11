@@ -114,10 +114,13 @@ export const normalizeComedyPage = comedy => ({
 export const normalizePressPage = press => ({
   headline: press.headline,
   hero: press.hero.fluid,
+  description: press.description.description,
   heroAlt: press.hero.description,
   asSeenOn: press.asSeenOn.map(l => normalizePressLogo(l)),
+  separator: press.separator.fluid,
   byPam: press.pressByPamela.map(p => normalizePressPiece(p)),
   aboutPam: press.pressAboutPamela.map(p => normalizePressPiece(p)),
+  packet: press.pressPacket.file.url,
 })
 
 export const normalizeBookingPage = book => ({

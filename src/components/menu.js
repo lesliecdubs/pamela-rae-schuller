@@ -48,7 +48,7 @@ const Menu = ({ isSquished, isTransparent = false }) => {
                 </LinkBtn>
               </li>
             ))}
-            <li key={bookRoute.path} className="menu__item">
+            <li key={bookRoute.path} className="menu__item booking">
               <LinkBtn to={bookRoute.path} className="cta">
                 {bookRoute.name}
               </LinkBtn>

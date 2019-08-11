@@ -16,29 +16,52 @@ class PressPage extends Component {
     const {
       headline,
       hero,
+      description,
       heroAlt,
       asSeenOn,
+      separator,
+      separatorAlt,
       byPam,
       aboutPam,
+      packet,
     } = this._pressPage
 
     return (
       <Layout style="page--scroll" pageName={headline}>
         <Img fluid={hero} alt={heroAlt} className="is-visible-sm" />
+        <p>{description}</p>
 
-        <h2>As Seen On</h2>
-        <ul className="press-logos">
-          {asSeenOn.map((logo, i) => (
-            <li key={i} className="press-logos__item">
-              <PressLogo {...logo} />
-            </li>
-          ))}
-        </ul>
+        <section>
+          <h2>As Seen On</h2>
+          <ul className="press-logos">
+            {asSeenOn.map((logo, i) => (
+              <li key={i} className="press-logos__item">
+                <PressLogo {...logo} />
+              </li>
+            ))}
+          </ul>
+        </section>
 
-        <div>
+        <Img
+          fluid={separator}
+          alt={separatorAlt}
+          className="tour__separator is-visible-md"
+        />
+
+        <div className="press-cols">
           <PressGroup title="Press About Pamela" data={aboutPam} />
           <PressGroup title="Press By Pamela" data={byPam} />
         </div>
+
+        <section className="gigs">
+          <p className="gigs__intro">
+            Download the press kit for ready-to-use content and assets about
+            Pamela.
+          </p>
+          <LinkBtn to={packet} className="cta" download>
+            Download Press Kit
+          </LinkBtn>
+        </section>
       </Layout>
     )
   }
@@ -56,6 +79,9 @@ export const query = graphql`
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
+          description {
+            description
+          }
           asSeenOn {
             title
             fluid(maxWidth: 660) {
@@ -63,6 +89,11 @@ export const query = graphql`
               sizes
               src
               srcSet
+            }
+          }
+          separator {
+            fluid(maxWidth: 1600) {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           pressByPamela {
@@ -75,6 +106,11 @@ export const query = graphql`
             publication
             publicationUrl
             byline
+          }
+          pressPacket {
+            file {
+              url
+            }
           }
         }
       }
