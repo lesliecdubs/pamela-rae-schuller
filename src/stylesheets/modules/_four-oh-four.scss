@@ -1,0 +1,35 @@
+.four-oh-four {
+  @include breakpoint(lg) {
+    align-items: center;
+    display: flex;
+  }
+
+  p {
+    @include font-size(20);
+  }
+}
+
+.four-oh-four__image {
+  width: 100%;
+
+  @include breakpoint(lg) {
+    margin-right: rem(20px);
+    width: 50%;
+  }
+
+  @include breakpoint(xl) {
+    margin-right: rem(50px);
+  }
+}
+
+.four-oh-four__copy { 
+  margin-top: rem(15px);
+
+  @include breakpoint(md) {
+    margin-top: rem(20px);
+  }
+
+  @include breakpoint(lg) {
+    margin-top: 0;
+  }
+}
