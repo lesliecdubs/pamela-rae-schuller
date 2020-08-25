@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { LinkBtn } from './'
 import Img from 'gatsby-image'
 

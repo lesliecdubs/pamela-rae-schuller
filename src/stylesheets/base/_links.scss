@@ -19,29 +19,29 @@ button {
 }
 
 $distance: 8px;
-$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 .link--drop-in {
   position: relative;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     background-color: $highlight;
     bottom: 2px;
-    content: '';
+    content: "";
     height: 2px;
     left: 0;
-    right: 0;
     position: absolute;
+    right: 0;
   }
 
-  &:before {
+  &::before {
     opacity: 0;
-    transform: translateY(- $distance);
+    transform: translateY(-$distance);
     transition: transform 0s $easeOutBack, opacity 0s;
   }
 
-  &:after {
+  &::after {
     opacity: 0;
     transform: translateY($distance/2);
     transition: transform 0.35s $easeOutBack, opacity 0.35s;
@@ -52,18 +52,44 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   &.active {
     color: inherit;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       opacity: 1;
       transform: translateY(0);
     }
 
-    &:before {
+    &::before {
       transition: transform 0.35s $easeOutBack, opacity 0.35s;
     }
 
-    &:after {
+    &::after {
       transition: transform 0s 0.35s $easeOutBack, opacity 0s 0.35s;
+    }
+  }
+}
+
+.link--underline {
+  line-height: 1.4;
+  position: relative;
+
+  span {
+    background-image: linear-gradient(to bottom, white 70%, transparent 70%),
+      linear-gradient(
+        to right,
+        rgba($highlight, 0.5) 33%,
+        $spinnaker 66%,
+        rgba($spinnaker, 0.4) 66%
+      );
+    background-position: 100% 0;
+    background-size: 306% 100%;
+    transition: 1s background-position;
+  }
+
+  &:hover {
+    color: inherit;
+
+    span {
+      background-position: 0%;
     }
   }
 }

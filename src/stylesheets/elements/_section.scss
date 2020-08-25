@@ -22,6 +22,7 @@ section {
 
   @include breakpoint(xl) {
     background-size: cover;
+    background-position: 0% 100%;
   }
 }
 
