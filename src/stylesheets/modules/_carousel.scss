@@ -19,7 +19,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin-left: 1px;
+      margin: rem(10px);
 
       > div {
         align-items: stretch;
@@ -57,14 +57,14 @@
   .slick-list {
     margin: 0 -5px;
   }
-  
+
   .slick-dots {
     bottom: rem(30px);
     margin-left: rem(3px);
 
     li {
-      width: auto;
       height: auto;
+      width: auto;
 
       button {
         height: rem(12px);
@@ -75,15 +75,15 @@
         &::before {
           background: $navy;
           border-radius: 50%;
-          content: '';
-          width: 100%;
+          content: "";
           height: 100%;
           transition: opacity 0.15s;
+          width: 100%;
         }
       }
 
       &.slick-active {
-        button:before {
+        button::before {
           color: $navy;
           opacity: 1;
         }
@@ -115,14 +115,7 @@
         position: absolute;
         right: 0;
         top: 0;
-      }
-    }
-  }
-
-  .slick-next {
-    &:hover {
-      @include breakpoint(md) {
-        transform: translate(25px, -50%)
+        transition: 0.15s all;
       }
     }
   }
@@ -133,11 +126,16 @@
         transform: rotate(180deg);
       }
     }
+  }
 
+  .slick-prev,
+  .slick-next {
     &:hover,
     &:active {
-      @include breakpoint(md) {
-        transform: translate(-25px, -50%)
+      &::before {
+        @include breakpoint(md) {
+          color: $white;
+        }
       }
     }
   }
