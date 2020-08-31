@@ -67,6 +67,12 @@
       @include breakpoint(lg) {
         @include font-size(18);
       }
+
+      &.booking {
+        @include breakpoint(lg) {
+          margin-top: rem(5px);
+        }
+      }
     }
   }
 }
