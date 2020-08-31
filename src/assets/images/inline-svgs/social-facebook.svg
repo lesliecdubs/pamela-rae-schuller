@@ -1,6 +1,6 @@
-<svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
   <g fill="none" fill-rule="evenodd">
     <!-- <circle stroke="#8A8A8A" stroke-width="2" cx="22" cy="22" r="21"/> -->
-    <path d="M24.315 34h-4.878V22.499H17v-3.963h2.437v-2.38c0-3.233 1.376-5.156 5.286-5.156h3.255v3.964h-2.034c-1.523 0-1.623.554-1.623 1.588l-.007 1.984H28l-.431 3.963h-3.255V34z" fill="#8A8A8A"/>
+    <path d="M24.315 34h-4.878V22.499H17v-3.963h2.437v-2.38c0-3.233 1.376-5.156 5.286-5.156h3.255v3.964h-2.034c-1.523 0-1.623.554-1.623 1.588l-.007 1.984H28l-.431 3.963h-3.255V34z" fill="#2c2f41"/>
   </g>
 </svg>

@@ -11,7 +11,7 @@
 
   @include breakpoint(md) {
     margin-top: 0;
-    margin-left: rem(30px);
+    margin-left: rem(10px);
   }
 
   p {
@@ -26,8 +26,15 @@
     transform: none;
 
     a {
-      height: 30px;
-      width: 30px;
+      height: 40px;
+      width: 40px;
+
+      &:hover,
+      &:focus {
+        path {
+          fill: $highlight;
+        }
+      }
     }
 
     svg {

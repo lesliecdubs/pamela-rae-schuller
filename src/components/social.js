@@ -1,6 +1,7 @@
 import React from 'react'
 import { LinkBtn } from './'
 import {
+  SocialYoutube,
   SocialFacebook,
   SocialTwitter,
   SocialInstagram,
@@ -8,6 +9,7 @@ import {
 import { socialRoutes } from '../helpers/routes'
 
 const COMPONENTS = {
+  Youtube: SocialYoutube,
   Facebook: SocialFacebook,
   Twitter: SocialTwitter,
   Instagram: SocialInstagram,
