@@ -4,7 +4,7 @@
 //
 //  ==========================================================================
 #___gatsby {
-  background: url("../assets/images/triangle-pattern@2x.png") repeat;
+  background: url('../assets/images/triangle-pattern@2x.png') repeat;
   background-attachment: fixed;
 }
 
@@ -41,7 +41,7 @@
   &.page--scroll {
     height: auto;
 
-    >.footer {
+    > .footer {
       margin-top: rem(20px);
 
       @include breakpoint(sm) {
@@ -54,6 +54,7 @@
       }
 
       @include breakpoint(lg) {
+        padding-left: rem(20px);
         margin-left: auto;
         margin-right: auto;
         margin-top: rem(50px);
@@ -64,7 +65,7 @@
   }
 
   &:not(.page--scroll) {
-    >.footer {
+    > .footer {
       @include breakpoint(md) {
         position: absolute;
         bottom: 0;
@@ -82,7 +83,7 @@
     }
   }
 
-  >.main {
+  > .main {
     flex: 1;
 
     @include breakpoint(md) {
@@ -120,11 +121,11 @@
 
   @include breakpoint(lg) {
     margin: 0 auto;
-    max-width: 1380px
+    max-width: 1380px;
   }
 }
 
-h1+.contain__block {
+h1 + .contain__block {
   @include breakpoint(md) {
     padding: rem(0 80px);
   }

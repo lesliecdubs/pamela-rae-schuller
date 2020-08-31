@@ -6,6 +6,7 @@ export const allRoutes = {
   tour: 'tour',
   press: 'press',
   book: 'book',
+  youtube: 'https://www.youtube.com/channel/UClgywpOftm8vFXCC8yzMfpw',
   facebook: 'https://www.facebook.com/PamelaRaeSchuller/',
   twitter: 'https://twitter.com/PamelaComedy',
   instagram: 'https://www.instagram.com/pamelacomedy/',
@@ -24,6 +25,7 @@ export const menuRoutes = [
 export const bookRoute = routeFactory('Book Now', allRoutes.book)
 
 export const socialRoutes = [
+  routeFactory('Youtube', allRoutes.youtube),
   routeFactory('Facebook', allRoutes.facebook),
   routeFactory('Twitter', allRoutes.twitter),
   routeFactory('Instagram', allRoutes.instagram),

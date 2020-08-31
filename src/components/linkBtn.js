@@ -16,6 +16,7 @@ export default class LinkBtn extends Component {
         <a
           href={to}
           target={this._isExternalLink ? '_blank' : '_self'}
+          rel={this._isExternaLink ? 'noopener noreferrer' : ''}
           className={className}
           download={download ? true : false}
           {...attrs}
