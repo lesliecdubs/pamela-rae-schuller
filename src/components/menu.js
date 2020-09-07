@@ -13,7 +13,7 @@ const Menu = ({ isSquished, isTransparent = false }) => {
 
   return (
     <>
-      <a class="skip-to-content-link" href="#main">
+      <a className="skip-to-content-link" href="#main">
         Skip to content
       </a>
       <nav
