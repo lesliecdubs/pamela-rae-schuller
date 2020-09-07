@@ -6,11 +6,18 @@
 // --------------------------------------------------
 // Font Face Includes
 // --------------------------------------------------
-@mixin declare-font-face($font-family, $font-filename, $font-weight: normal, $font-style: normal, $font-stretch: normal) {
+@mixin declare-font-face(
+  $font-family,
+  $font-filename,
+  $font-weight: normal,
+  $font-style: normal,
+  $font-stretch: normal
+) {
   @font-face {
     font-family: '#{$font-family}';
     src: url('#{$font-filename}.woff2') format('woff2'),
-    url('#{$font-filename}.woff') format('woff');
+      url('#{$font-filename}.woff') format('woff');
+    font-display: swap;
     font-style: $font-style;
     font-stretch: $font-stretch;
     font-weight: $font-weight;
@@ -22,10 +29,9 @@
 // --------------------------------------------------
 // Clearfix Mixin
 @mixin clearfix() {
-
   &:before,
   &:after {
-    content: " ";
+    content: ' ';
     display: table;
   }
 
@@ -62,12 +68,12 @@
 
   &:before {
     display: block;
-    content: "";
+    content: '';
     width: 100%;
     padding-top: ($height / $width) * 100%;
   }
 
-  >* {
+  > * {
     bottom: 0;
     left: 0;
     position: absolute;
@@ -123,15 +129,19 @@
 }
 
 @mixin linear-gradient-hover($direction, $color1, $color2) {
-  background: linear-gradient(to $direction, $color1 0%, $color1 50%, $color2 50%, $color2 100%);
+  background: linear-gradient(
+    to $direction,
+    $color1 0%,
+    $color1 50%,
+    $color2 50%,
+    $color2 100%
+  );
   transition: all $default-transition-duration ease-in-out;
 
-  @if $direction=='bottom'or 'top' {
+  @if $direction== 'bottom' or 'top' {
     background-size: 100% 200%;
     background-position: 0% 200%;
-  }
-
-  @else {
+  } @else {
     background-size: 200% 100%;
     background-position: 100%;
   }
@@ -139,11 +149,13 @@
 
 @mixin text-gradient-with-hover($color1, $color2) {
   color: $color1;
-  background: -webkit-linear-gradient(left,
+  background: -webkit-linear-gradient(
+    left,
     $color1 0%,
     $color1 50%,
     $color2 51%,
-    $color2 100%);
+    $color2 100%
+  );
   background-position: 200%;
   background-size: 202% 100%;
   transition: all $default-transition-duration ease-in-out;
@@ -161,13 +173,29 @@
 // --------------------------------------------------
 // Responsive Breakpoints
 // --------------------------------------------------
-$breakpoints: ('xs' : (min-width: $break-xs),
-'sm' : (min-width: $break-sm),
-'md' : (min-width: $break-md),
-'lg' : (min-width: $break-lg),
-'xl' : (min-width: $break-xl));
+$breakpoints: (
+  'xs': (
+    min-width: $break-xs,
+  ),
+  'sm': (
+    min-width: $break-sm,
+  ),
+  'md': (
+    min-width: $break-md,
+  ),
+  'lg': (
+    min-width: $break-lg,
+  ),
+  'xl': (
+    min-width: $break-xl,
+  ),
+);
 
-$heights: ('sm' : (max-height: $height-sm));
+$heights: (
+  'sm': (
+    max-height: $height-sm,
+  ),
+);
 
 @mixin breakpoint($name) {
   @media #{inspect(map-get($breakpoints, $name))} {
@@ -185,28 +213,24 @@ $heights: ('sm' : (max-height: $height-sm));
 // Break out style so it only applies to non-touch devices
 // --------------------------------------------------
 // 'state' applies to a specific action, like :hover, :active, :focus
-@mixin no-touch($state: "") {
-  @if $state !="" {
+@mixin no-touch($state: '') {
+  @if $state != '' {
     @at-root .no-touch #{& + $state} {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @at-root .no-touch #{&} {
       @content;
     }
   }
 }
 
-@mixin touch($state: "") {
-  @if $state !="" {
+@mixin touch($state: '') {
+  @if $state != '' {
     @at-root .touch #{& + $state} {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @at-root .touch #{&} {
       @content;
     }
@@ -217,7 +241,6 @@ $heights: ('sm' : (max-height: $height-sm));
 // Retina Media Query
 // --------------------------------------------------
 @mixin retina() {
-
   @media (-webkit-min-device-pixel-ratio: 2),
     (-moz-min-device-pixel-ratio: 2),
     (-o-min-device-pixel-ratio: 3/2),
@@ -238,7 +261,7 @@ $heights: ('sm' : (max-height: $height-sm));
     $animations: #{$animations + nth($animate, $i)};
 
     @if $i < $max {
-      $animations: #{$animations + ", "};
+      $animations: #{$animations + ', '};
     }
   }
 
