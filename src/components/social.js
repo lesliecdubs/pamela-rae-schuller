@@ -21,7 +21,11 @@ const Social = props => (
       const Icon = COMPONENTS[route.name]
       return (
         <li key={route.path} className="menu__list-social__item">
-          <LinkBtn to={route.path} className="link--social">
+          <LinkBtn
+            to={route.path}
+            className="link--social"
+            rel="noopener noreferrer"
+          >
             <Icon />
             <span className="is-visually-hidden">{route.name}</span>
           </LinkBtn>

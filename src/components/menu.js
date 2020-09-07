@@ -22,6 +22,7 @@ const Menu = ({ isSquished, isTransparent = false }) => {
       <div className="menu-wrapper-group">
         <div className="menu-bar">
           <LinkBtn to={allRoutes.home} className="menu-brand__logo">
+            <span className="is-visually-hidden">Pamela Rae Schuller</span>
             <Logo />
           </LinkBtn>
 
