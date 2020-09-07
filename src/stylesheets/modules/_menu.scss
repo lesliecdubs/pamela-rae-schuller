@@ -3,6 +3,21 @@
 //  Menu
 //
 //  ==========================================================================
+.skip-to-content-link {
+  background: $navy;
+  color: $white;
+  left: 50%;
+  padding: rem(12px 26px);
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+  z-index: 99;
+}
+
+.skip-to-content-link:focus {
+  transform: translateY(0%);
+}
+
 .menu-wrapper {
   @include breakpoint(lg) {
     background: rgba($white, 0.925);

@@ -14,19 +14,22 @@ const LayoutHome = ({ pageName, style, children }) => {
     }
   }
 
-  useEffect(() => {
-    window.addEventListener('scroll', listener);
-    return () => {
-      window.removeEventListener('scroll', listener);
-    };
-  }, [isTop]);
+  useEffect(
+    () => {
+      window.addEventListener('scroll', listener)
+      return () => {
+        window.removeEventListener('scroll', listener)
+      }
+    },
+    [isTop]
+  )
 
   return (
     <>
       <Meta lang="en" pageName={pageName} />
       <Menu isSquished={!isTop} isTransparent={true} />
       <div className={`page ${style}`}>
-        <main className="main">
+        <main className="main" id="main">
           {children}
         </main>
         <Footer />
