@@ -14,25 +14,26 @@ const Layout = ({ pageName, style, children }) => {
     }
   }
 
-  useEffect(() => {
-    window.addEventListener('scroll', listener);
-    return () => {
-      window.removeEventListener('scroll', listener);
-    };
-  }, [isTop]);
+  useEffect(
+    () => {
+      window.addEventListener('scroll', listener)
+      return () => {
+        window.removeEventListener('scroll', listener)
+      }
+    },
+    [isTop]
+  )
 
   return (
     <>
       <Meta lang="en" pageName={pageName} />
       <Menu isSquished={!isTop} />
       <div className={`page ${style}`}>
-        <main className="main">
+        <main className="main" id="main">
           <div className="paint is-visible-md" />
           <div className="page-section contain">
             <h1 className="page-section__title">{pageName}</h1>
-            <div className="page-section__wrap">
-              {children}
-            </div>
+            <div className="page-section__wrap">{children}</div>
           </div>
         </main>
         <Footer />
