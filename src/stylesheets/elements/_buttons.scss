@@ -15,7 +15,7 @@
   transition: color 0.25s;
   z-index: 1;
 
-  &[type="submit"] {
+  &[type='submit'] {
     margin-top: 0;
   }
 
@@ -45,9 +45,10 @@
     transform: translateX(100%);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: white;
-    
+
     &::before {
       transform: translateX(-49%);
     }

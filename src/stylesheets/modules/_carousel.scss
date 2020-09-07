@@ -75,7 +75,7 @@
         &::before {
           background: $navy;
           border-radius: 50%;
-          content: "";
+          content: '';
           height: 100%;
           transition: opacity 0.15s;
           width: 100%;
@@ -110,7 +110,7 @@
       @include breakpoint(md) {
         @include font-size(38);
         color: $navy;
-        content: "\2192";
+        content: '\2192';
         left: 0;
         position: absolute;
         right: 0;
@@ -131,6 +131,7 @@
   .slick-prev,
   .slick-next {
     &:hover,
+    &:focus,
     &:active {
       &::before {
         @include breakpoint(md) {
