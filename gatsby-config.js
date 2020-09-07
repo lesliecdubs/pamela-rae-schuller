@@ -53,5 +53,6 @@ module.exports = {
         respectDNT: true,
       },
     },
+    'gatsby-plugin-netlify',
   ],
 }
