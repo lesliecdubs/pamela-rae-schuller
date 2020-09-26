@@ -55,7 +55,7 @@ class TourPage extends Component {
         <section className="gigs">
           <p className="gigs__intro">
             Pam has performed in six countries, almost every state in the US,
-            and for more than 350,000 people, at places like:{' '}
+            and for well over 100,000 people, at places like:{' '}
           </p>
           <ul className="gigs__list">
             {pastShows.map((gig, i) => (
