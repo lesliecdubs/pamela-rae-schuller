@@ -26,7 +26,7 @@
     "gatsby-plugin-sharp": "^2.0.7",
     "gatsby-source-contentful": "^2.0.33",
     "gatsby-source-filesystem": "^2.0.4",
-    "gatsby-transformer-sharp": "^2.1.4",
+    "gatsby-transformer-sharp": "^2.2.23",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "react": "16.8.0",
