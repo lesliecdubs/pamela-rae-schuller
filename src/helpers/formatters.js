@@ -152,6 +152,8 @@ export const normalizeTourPage = tour => ({
 })
 
 export const normalizeLinksPage = link => ({
-  headline: link.headline,
+  pageName: link.pageName,
+  photo: link.profilePicture.fluid,
+  photoAlt: link.profilePicture.description,
   links: link.links.map(l => normalizeLink(l))
 })

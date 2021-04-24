@@ -1,0 +1,21 @@
+//  ==========================================================================
+//
+//  Links Page
+//
+//  ==========================================================================
+.links__profile-picture {
+  border-radius: 50%;
+  border: 6px solid $white;
+  margin: rem(0 auto 5px);
+  width: 106px;
+}
+
+.links__logo {
+  display: block;
+  margin: rem(0 auto 10px);
+  width: 280px;
+
+  svg {
+    width: 100%;
+  }
+}

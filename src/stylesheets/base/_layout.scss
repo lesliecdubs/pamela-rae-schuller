@@ -133,7 +133,16 @@
   }
 
   &.contain--centered-content {
+    margin: rem(10px 20px);
     text-align: center;
+
+    @include breakpoint(md) {
+      width: 100%;
+    }
+
+    @include breakpoint(lg) {
+      margin: rem(30px auto 10px);
+    }
   }
 }
 

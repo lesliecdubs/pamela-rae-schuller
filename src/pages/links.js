@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import { LayoutNoMenu, LinkBtn } from '../components'
+import { Logo } from '../assets/images'
 import { normalizeLinksPage } from '../helpers'
-// import Img from 'gatsby-image'
+import { allRoutes } from '../helpers/routes'
+import Img from 'gatsby-image'
 
 class LinksPage extends Component {
   constructor(props) {
@@ -13,12 +15,19 @@ class LinksPage extends Component {
   }
 
   render() {
-    const { headline, links } = this._linkPage
+    const { pageName, photo, photoAlt, links } = this._linkPage
+    const title = `${pageName} | Pamela Rae Schuller`
 
     return (
-      <LayoutNoMenu pageName={`${headline} | Pamela Rae Schuller`}>
+      <LayoutNoMenu pageName={title}>
         <header>
-          <h1 className="is-hidden">{headline}</h1>
+          <h1 className="is-hidden">{title}</h1>
+          <Img
+            className="links__profile-picture"
+            fluid={photo} 
+            alt={photoAlt} 
+          />
+          <Logo className="links__logo" />
         </header>
         <ul>
           {links.map((link, i) => (
@@ -39,7 +48,13 @@ export const query = graphql`
     allContentfulLinktreeLinksPage {
       edges {
         node {
-          headline
+          pageName
+          profilePicture {
+            description
+            fluid(maxWidth: 500) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
           links {
             linkText
             linkUrl

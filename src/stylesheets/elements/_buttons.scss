@@ -60,6 +60,7 @@
 
   &.cta--centered {
     background: $white;
+    font-family: $font-bold;
     margin-top: rem(10px);
     max-width: $content-width;
     text-align: center;
@@ -68,12 +69,15 @@
 
     &:hover,
     &:focus {
-      background: $navy;
+      color: $navy;
     }
 
-    &::before,
+    &::before {
+      border-bottom-color: $spinnaker;
+    }
+
     &::after {
-      content: none;
+      border-top-color: $spinnaker;
     }
   }
 }
