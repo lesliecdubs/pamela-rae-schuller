@@ -75,6 +75,11 @@ export const normalizeTourDate = tour => ({
   flyer: tour.relevantFlyer && normalizeFlyer(tour.relevantFlyer),
 })
 
+export const normalizeLink = link => ({
+  linkText: link.linkText,
+  link: link.linkUrl
+})
+
 // Normalize pages
 export const normalizeHomepage = home => ({
   headline: home.headline,
@@ -144,4 +149,9 @@ export const normalizeTourPage = tour => ({
   separator: tour.separatorImage.fluid,
   separatorAlt: tour.separatorImage.description,
   pastShows: tour.pastShows,
+})
+
+export const normalizeLinksPage = link => ({
+  headline: link.headline,
+  links: link.links.map(l => normalizeLink(l))
 })

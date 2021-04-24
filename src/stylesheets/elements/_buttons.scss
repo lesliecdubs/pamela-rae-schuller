@@ -57,4 +57,23 @@
       transform: translateX(49%);
     }
   }
+
+  &.cta--centered {
+    background: $white;
+    margin-top: rem(10px);
+    max-width: $content-width;
+    text-align: center;
+    transition: 0.25s all;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background: $navy;
+    }
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
 }

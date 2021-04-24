@@ -6,6 +6,7 @@ export const allRoutes = {
   tour: 'tour',
   press: 'press',
   book: 'book',
+  links: 'links',
   youtube: 'https://www.youtube.com/channel/UClgywpOftm8vFXCC8yzMfpw',
   facebook: 'https://www.facebook.com/PamelaRaeSchuller/',
   twitter: 'https://twitter.com/PamelaComedy',

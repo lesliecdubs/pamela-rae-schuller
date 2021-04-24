@@ -1,9 +1,9 @@
 import React from 'react'
 import { Social } from './'
 
-const Footer = () => (
+const Footer = ({ withSocial = true }) => (
   <footer className="footer">
-    <Social />
+    {withSocial ? <Social /> : null}
     <p>&copy; {new Date().getFullYear()} Pamela Comedy</p>
   </footer>
 )

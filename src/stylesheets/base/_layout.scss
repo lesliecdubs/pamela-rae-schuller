@@ -83,6 +83,14 @@
     }
   }
 
+  &.page--no-menu {
+    padding-top: 0;
+
+    .main {
+      padding-top: 0;
+    }
+  }
+
   > .main {
     flex: 1;
 
@@ -122,6 +130,10 @@
   @include breakpoint(lg) {
     margin: 0 auto;
     max-width: 1380px;
+  }
+
+  &.contain--centered-content {
+    text-align: center;
   }
 }
 
