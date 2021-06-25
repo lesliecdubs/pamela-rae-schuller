@@ -1,0 +1,20 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "11:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - lesliecdubs
+  assignees:
+  - lesliecdubs
+  ignore:
+  - dependency-name: gatsby-plugin-react-helmet
+    versions:
+    - 3.7.0
+    - 3.9.0
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
