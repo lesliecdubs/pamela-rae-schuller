@@ -108,7 +108,7 @@ const Meta = ({ lang, pageName }) => {
       <link rel="icon" type="image/png" href={favicon32} sizes="32x32" />
       <link rel="icon" type="image/png" href={favicon16} sizes="16x16" />
       <link rel="icon" type="image/png" href={favicon128} sizes="128x128" />
-      <meta name="application-name" content="NYC Pride 2019" />
+      <meta name="application-name" content="Pamela Rae Schuller | Comedian. Speaker. Advocate." />
       <meta name="msapplication-TileColor" content="#FFFFFF" />
       <meta name="msapplication-TileImage" content={faviconMSTile144} />
       <meta name="msapplication-square70x70logo" content={faviconMSTile70} />
