@@ -101,24 +101,24 @@
 // Rem size calculator
 @mixin font-size($sizeValue) {
   font-size: $sizeValue + px;
-  font-size: ($sizeValue / $font-size-root) + rem;
+  font-size: calc($sizeValue / $font-size-root) + rem;
 }
 
 // Pixel to unitless line height calculation
 @mixin line-height($pixelLineHeight, $fontSize) {
-  line-height: ($pixelLineHeight / $fontSize);
+  line-height: calc($pixelLineHeight / $fontSize);
 }
 
 //  Set combined font size & line height
 @mixin font-line-height-px($fontSize, $pixelLineHeight) {
   font-size: $fontSize + px;
-  font-size: ($fontSize / $font-size-root) + rem;
-  line-height: ($pixelLineHeight / $fontSize);
+  font-size: calc($fontSize / $font-size-root) + rem;
+  line-height: calc($pixelLineHeight / $fontSize);
 }
 
 // Photoshop to CSS letter spacing calcuation
 @mixin letter-spacing($spacingValue) {
-  letter-spacing: ($spacingValue / 1000) + em;
+  letter-spacing: calc($spacingValue / 1000) + em;
 }
 
 // ------------------------------------------------
