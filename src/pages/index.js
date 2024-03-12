@@ -30,11 +30,6 @@ class HomePage extends Component {
               {cta}
             </LinkBtn>
           </div>
-          {/* <image
-            className="home-img is-visible-md"
-            src=""
-            alt="Pam smiling, wearing a teal top with navy cardigan and jeans, with hands on hips"
-          /> */}
           <Img
             className="home-img is-visible-md"
             fluid={hero}
@@ -68,13 +63,6 @@ export const query = graphql`
         }
       }
     }
-    # pamPrimary: file(relativePath: { eq: "pam-primary.png" }) {
-    #   childImageSharp {
-    #     fluid(maxWidth: 1000) {
-    #       ...GatsbyImageSharpFluid
-    #     }
-    #   }
-    # }
     pamPrimaryMobile: file(relativePath: { eq: "pam-primary-mobile.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
