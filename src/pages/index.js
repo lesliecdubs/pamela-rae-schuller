@@ -33,7 +33,7 @@ class HomePage extends Component {
           <Img
             className="home-img is-visible-md"
             fluid={pamPrimary.childImageSharp.fluid}
-            alt="Pam smiling with hands on hips"
+            alt="Pam smiling, wearing a teal top with navy cardigan and jeans, with hands on hips"
           />
         </div>
       </LayoutHome>
