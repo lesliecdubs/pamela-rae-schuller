@@ -13,8 +13,8 @@ class HomePage extends Component {
   }
 
   render() {
-    const { headline, description, cta, ctaLink } = this._homepage
-    const { pamPrimary, pamPrimaryMobile } = this.props.data
+    const { headline, description, cta, ctaLink, hero, heroAlt } = this._homepage
+    const { pamPrimaryMobile } = this.props.data
 
     return (
       <LayoutHome>
@@ -32,8 +32,8 @@ class HomePage extends Component {
           </div>
           <Img
             className="home-img is-visible-md"
-            fluid={pamPrimary.childImageSharp.fluid}
-            alt="Pam smiling with hands on hips"
+            fluid={hero}
+            alt={heroAlt}
           />
         </div>
       </LayoutHome>
@@ -47,6 +47,12 @@ export const query = graphql`
       edges {
         node {
           headline
+          hero {
+            description
+            fluid(maxWidth: 1600) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
           description {
             description
           }
@@ -54,13 +60,6 @@ export const query = graphql`
             __typename
           }
           callToActionText
-        }
-      }
-    }
-    pamPrimary: file(relativePath: { eq: "pam-primary.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

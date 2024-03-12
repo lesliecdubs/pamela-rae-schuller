@@ -86,6 +86,8 @@ export const normalizeHomepage = home => ({
   description: home.description.description,
   cta: home.callToActionText,
   ctaLink: typeMap[home.callToActionLink.__typename],
+  hero: home.hero.fluid,
+  heroAlt: home.hero.description,
 })
 
 export const normalizeMeetPage = meet => ({
